@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Parcels | Mobiliário & Decoração Premium</title>
+    <title>Luxury Parcels | Premium Furniture & Home Decor</title>
     <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -984,17 +984,17 @@
     <!-- Notification Toast -->
     <div class="toast" id="toast">
         <i class="fa-solid fa-circle-check"></i>
-        <span id="toastMsg">Item adicionado ao carrinho!</span>
+        <span id="toastMsg">Item added to cart!</span>
     </div>
 
     <!-- Top Announcement Bar -->
     <div class="top-bar">
-        ENCOMENDAS PREMIUM PARA MOÇAMBIQUE • MAPUTO & PROVÍNCIAS
+        PREMIUM ORDERS FOR MOZAMBIQUE • MAPUTO & PROVINCES
     </div>
 
     <!-- Header Navigation -->
     <header>
-        <nav class="navbar" aria-label="Navegação Principal">
+        <nav class="navbar" aria-label="Main Navigation">
             <a href="#" class="brand-logo">
                 <div class="logo-circle">
                     <span>LP</span>
@@ -1006,18 +1006,18 @@
             </a>
 
             <ul class="nav-links" id="navLinks">
-                <li><a href="#catalogo" onclick="closeMobileMenu()">Catálogo</a></li>
-                <li><a href="#galeria" onclick="closeMobileMenu()">Galeria</a></li>
-                <li><a href="#como-encomendar" onclick="closeMobileMenu()">Como Encomendar</a></li>
-                <li><a href="#contactos" onclick="closeMobileMenu()">Contactos</a></li>
+                <li><a href="#catalog" onclick="closeMobileMenu()">Catalog</a></li>
+                <li><a href="#gallery" onclick="closeMobileMenu()">Gallery</a></li>
+                <li><a href="#how-to-order" onclick="closeMobileMenu()">How to Order</a></li>
+                <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
             </ul>
 
             <div class="nav-right">
-                <button class="cart-icon-btn" id="cartToggle" aria-label="Abrir carrinho de compras" onclick="openCart()">
+                <button class="cart-icon-btn" id="cartToggle" aria-label="Open shopping cart" onclick="openCart()">
                     <i class="fa-solid fa-bag-shopping"></i>
                     <span class="cart-count" id="cartCount">0</span>
                 </button>
-                <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+                <button class="menu-toggle" id="menuToggle" aria-label="Open Menu">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
@@ -1027,155 +1027,155 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <p class="hero-subtitle">Mobiliário & Decoração Exclusiva</p>
-            <h1>Eleve o seu Espaço com Peças de Luxo por Encomenda</h1>
-            <p>Mobiliário de alta qualidade, consolas, mesas de centro, cabeceiras e acessórios decorativos selecionados especialmente para o seu lar ou empresa.</p>
-            <a href="#catalogo" class="btn-gold">Explorar Catálogo</a>
+            <p class="hero-subtitle">Exclusive Furniture & Decor</p>
+            <h1>Elevate Your Space with Bespoke Luxury Pieces</h1>
+            <p>High-end custom furniture, console tables, coffee tables, headboards, and decorative accessories specially selected for your home or business.</p>
+            <a href="#catalog" class="btn-gold">Explore Catalog</a>
         </div>
     </section>
 
     <!-- Value Badges -->
-    <section class="badges-section" aria-label="Destaques dos Nossos Serviços">
+    <section class="badges-section" aria-label="Our Service Highlights">
         <div class="badges-grid">
             <div class="badge-item">
                 <i class="fa-solid fa-pen-ruler"></i>
-                <h3>Por Encomenda</h3>
-                <p>Personalizamos dimensões e acabamentos para as suas necessidades.</p>
+                <h3>Made to Order</h3>
+                <p>We customize dimensions and finishes to meet your exact needs.</p>
             </div>
             <div class="badge-item">
                 <i class="fa-solid fa-truck-fast"></i>
-                <h3>Entrega 10 - 15 Dias</h3>
-                <p>Envio rápido e seguro para Maputo e restantes províncias.</p>
+                <h3>10 - 15 Days Delivery</h3>
+                <p>Fast and secure shipping to Maputo and all other provinces.</p>
             </div>
             <div class="badge-item">
                 <i class="fa-solid fa-credit-card"></i>
-                <h3>Sinal de 60%</h3>
-                <p>Pagamento flexível: 60% no pedido e o restante na entrega.</p>
+                <h3>60% Deposit</h3>
+                <p>Flexible payment: 60% upon ordering and the rest upon delivery.</p>
             </div>
             <div class="badge-item">
                 <i class="fa-solid fa-gem"></i>
-                <h3>Qualidade Premium</h3>
-                <p>Produtos rigorosamente selecionados com design requintado.</p>
+                <h3>Premium Quality</h3>
+                <p>Rigorously selected products featuring exquisite design.</p>
             </div>
         </div>
     </section>
 
     <!-- Catalog Section -->
-    <section class="catalog-section" id="catalogo">
+    <section class="catalog-section" id="catalog">
         <div class="section-header">
-            <h2>Nosso Catálogo</h2>
+            <h2>Our Catalog</h2>
             <div></div>
         </div>
 
         <!-- Filter Buttons -->
-        <div class="filter-container" role="tablist" aria-label="Categorias de produtos">
-            <button class="filter-btn active" onclick="filterProducts('all', event)">Todos</button>
-            <button class="filter-btn" onclick="filterProducts('consolas', event)">Consolas & Espelhos</button>
-            <button class="filter-btn" onclick="filterProducts('mesas', event)">Mesas de Centro</button>
-            <button class="filter-btn" onclick="filterProducts('cabeceiras', event)">Cabeceiras & Camas</button>
-            <button class="filter-btn" onclick="filterProducts('exterior', event)">Exterior / OutDoor</button>
+        <div class="filter-container" role="tablist" aria-label="Product categories">
+            <button class="filter-btn active" onclick="filterProducts('all', event)">All</button>
+            <button class="filter-btn" onclick="filterProducts('consoles', event)">Consoles & Mirrors</button>
+            <button class="filter-btn" onclick="filterProducts('tables', event)">Coffee Tables</button>
+            <button class="filter-btn" onclick="filterProducts('headboards', event)">Headboards & Beds</button>
+            <button class="filter-btn" onclick="filterProducts('outdoor', event)">Outdoor</button>
         </div>
 
         <!-- Products Grid -->
         <div class="products-grid" id="productsGrid">
             <!-- Product 1 -->
-            <div class="product-card" data-category="consolas">
-                <div class="product-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1200&q=80', 'Consola Gold Curved & Espelho Redondo')">
-                    <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=600&q=80" alt="Consola Gold Curved & Espelho Redondo" class="product-img">
+            <div class="product-card" data-category="consoles">
+                <div class="product-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1200&q=80', 'Gold Curved Console & Round Mirror')">
+                    <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=600&q=80" alt="Gold Curved Console & Round Mirror" class="product-img">
                     <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                 </div>
                 <div class="product-info">
-                    <span class="product-tag">Consolas & Espelhos</span>
-                    <h3 class="product-title">Consola Gold Curved & Espelho</h3>
-                    <p class="product-desc">Design contemporâneo em acentuado dourado metálico com topo em mármore sintético branco.</p>
+                    <span class="product-tag">Consoles & Mirrors</span>
+                    <h3 class="product-title">Gold Curved Console & Mirror</h3>
+                    <p class="product-desc">Contemporary design in accented metallic gold with a white synthetic marble top.</p>
                     <div class="product-meta">
                         <span class="product-price">8,500.00 MZN</span>
-                        <button class="btn-add-cart" onclick="addToCart('Consola Gold Curved & Espelho', 8500)">Adicionar</button>
+                        <button class="btn-add-cart" onclick="addToCart('Gold Curved Console & Mirror', 8500)">Add to Cart</button>
                     </div>
                 </div>
             </div>
 
             <!-- Product 2 -->
-            <div class="product-card" data-category="mesas">
-                <div class="product-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1533779283484-8ad4940aa3a8?auto=format&fit=crop&w=1200&q=80', 'Mesa de Centro Marble Triple Tier')">
-                    <img src="https://images.unsplash.com/photo-1533779283484-8ad4940aa3a8?auto=format&fit=crop&w=600&q=80" alt="Mesa de Centro Marble Triple Tier" class="product-img">
+            <div class="product-card" data-category="tables">
+                <div class="product-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1533779283484-8ad4940aa3a8?auto=format&fit=crop&w=1200&q=80', 'Triple Tier Marble Coffee Table')">
+                    <img src="https://images.unsplash.com/photo-1533779283484-8ad4940aa3a8?auto=format&fit=crop&w=600&q=80" alt="Triple Tier Marble Coffee Table" class="product-img">
                     <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                 </div>
                 <div class="product-info">
-                    <span class="product-tag">Mesas de Centro</span>
-                    <h3 class="product-title">Mesa Marble Triple Tier</h3>
-                    <p class="product-desc">Conjunto de mesas ovais em camada tripla com acabamento em mármore refinado.</p>
+                    <span class="product-tag">Coffee Tables</span>
+                    <h3 class="product-title">Triple Tier Marble Table</h3>
+                    <p class="product-desc">Set of triple-layer oval tables featuring a refined marble finish.</p>
                     <div class="product-meta">
                         <span class="product-price">9,800.00 MZN</span>
-                        <button class="btn-add-cart" onclick="addToCart('Mesa Marble Triple Tier', 9800)">Adicionar</button>
+                        <button class="btn-add-cart" onclick="addToCart('Triple Tier Marble Table', 9800)">Add to Cart</button>
                     </div>
                 </div>
             </div>
 
             <!-- Product 3 -->
-            <div class="product-card" data-category="mesas">
-                <div class="product-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=1200&q=80', 'Mesa Block Modernist Bicolor')">
-                    <img src="https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=600&q=80" alt="Mesa Block Modernist Bicolor" class="product-img">
+            <div class="product-card" data-category="tables">
+                <div class="product-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=1200&q=80', 'Bicolor Modernist Block Table')">
+                    <img src="https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=600&q=80" alt="Bicolor Modernist Block Table" class="product-img">
                     <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                 </div>
                 <div class="product-info">
-                    <span class="product-tag">Mesas de Centro</span>
-                    <h3 class="product-title">Mesa Block Modernist Bicolor</h3>
-                    <p class="product-desc">Mesa de centro retangular modular em conceito preto e branco contrastante com gaveta embutida.</p>
+                    <span class="product-tag">Coffee Tables</span>
+                    <h3 class="product-title">Bicolor Modernist Block Table</h3>
+                    <p class="product-desc">Modular rectangular coffee table featuring a contrasting black and white concept with a built-in drawer.</p>
                     <div class="product-meta">
                         <span class="product-price">2,000.00 MZN</span>
-                        <button class="btn-add-cart" onclick="addToCart('Mesa Block Modernist Bicolor', 2000)">Adicionar</button>
+                        <button class="btn-add-cart" onclick="addToCart('Bicolor Modernist Block Table', 2000)">Add to Cart</button>
                     </div>
                 </div>
             </div>
 
             <!-- Product 4 -->
-            <div class="product-card" data-category="cabeceiras">
-                <div class="product-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80', 'Cabeceira Royal Velvet King')">
-                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80" alt="Cabeceira Royal Velvet King" class="product-img">
+            <div class="product-card" data-category="headboards">
+                <div class="product-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80', 'Royal Velvet King Headboard')">
+                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80" alt="Royal Velvet King Headboard" class="product-img">
                     <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                 </div>
                 <div class="product-info">
-                    <span class="product-tag">Cabeceiras & Camas</span>
-                    <h3 class="product-title">Cabeceira Royal Velvet King</h3>
-                    <p class="product-desc">Cabeceira estofada em veludo de alta densidade com detalhe geométrico e costura artesanal.</p>
+                    <span class="product-tag">Headboards & Beds</span>
+                    <h3 class="product-title">Royal Velvet King Headboard</h3>
+                    <p class="product-desc">Upholstered headboard in high-density velvet with geometric detailing and handcrafted stitching.</p>
                     <div class="product-meta">
                         <span class="product-price">4,000.00 MZN</span>
-                        <button class="btn-add-cart" onclick="addToCart('Cabeceira Royal Velvet King', 4000)">Adicionar</button>
+                        <button class="btn-add-cart" onclick="addToCart('Royal Velvet King Headboard', 4000)">Add to Cart</button>
                     </div>
                 </div>
             </div>
 
             <!-- Product 5 -->
-            <div class="product-card" data-category="exterior">
-                <div class="product-img-wrapper" onclick="openLightbox('1.jpg', 'Conjunto Outdoor Rattan Lounge')">
-                    <img src="1.jpg" alt="Conjunto Outdoor Rattan Lounge" class="product-img">
+            <div class="product-card" data-category="outdoor">
+                <div class="product-img-wrapper" onclick="openLightbox('1.jpg', 'Outdoor Rattan Lounge Set')">
+                    <img src="1.jpg" alt="Outdoor Rattan Lounge Set" class="product-img">
                     <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                 </div>
                 <div class="product-info">
-                    <span class="product-tag">Exterior / OutDoor</span>
-                    <h3 class="product-title">Conjunto Outdoor Rattan</h3>
-                    <p class="product-desc">Poltronas e mesa auxiliar para exterior resistentes a intempéries com almofadas náuticas impermeáveis.</p>
+                    <span class="product-tag">Outdoor</span>
+                    <h3 class="product-title">Outdoor Rattan Set</h3>
+                    <p class="product-desc">Weather-resistant outdoor armchairs and side table with waterproof nautical cushions.</p>
                     <div class="product-meta">
                         <span class="product-price">5,000.00 MZN</span>
-                        <button class="btn-add-cart" onclick="addToCart('Conjunto Outdoor Rattan', 5000)">Adicionar</button>
+                        <button class="btn-add-cart" onclick="addToCart('Outdoor Rattan Set', 5000)">Add to Cart</button>
                     </div>
                 </div>
             </div>
 
             <!-- Product 6 -->
-            <div class="product-card" data-category="consolas">
-                <div class="product-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80', 'Poltrona Accent Shell Cream')">
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80" alt="Poltrona Accent Shell Cream" class="product-img">
+            <div class="product-card" data-category="consoles">
+                <div class="product-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80', 'Cream Shell Accent Armchair')">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80" alt="Cream Shell Accent Armchair" class="product-img">
                     <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                 </div>
                 <div class="product-info">
-                    <span class="product-tag">Sofás & Poltronas</span>
-                    <h3 class="product-title">Poltrona Accent Shell Cream</h3>
-                    <p class="product-desc">Design concha elegante com pés em latão dourado. O toque de requinte que a sua sala precisa.</p>
+                    <span class="product-tag">Sofas & Armchairs</span>
+                    <h3 class="product-title">Cream Shell Accent Armchair</h3>
+                    <p class="product-desc">Elegant shell design with golden brass legs. The touch of refinement your living room needs.</p>
                     <div class="product-meta">
                         <span class="product-price">6,500.00 MZN</span>
-                        <button class="btn-add-cart" onclick="addToCart('Poltrona Accent Shell Cream', 6500)">Adicionar</button>
+                        <button class="btn-add-cart" onclick="addToCart('Cream Shell Accent Armchair', 6500)">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -1183,43 +1183,43 @@
     </section>
 
     <!-- Gallery Section -->
-    <section class="gallery-section" id="galeria">
+    <section class="gallery-section" id="gallery">
         <div class="section-header">
-            <h2>Galeria de Inspiração</h2>
-            <p style="color: var(--text-muted); margin-top: 5px;">Ambientes reais e projetos exclusivos Luxury Parcels</p>
+            <h2>Inspiration Gallery</h2>
+            <p style="color: var(--text-muted); margin-top: 5px;">Real environments and exclusive Luxury Parcels projects</p>
             <div style="margin-top: 15px;"></div>
         </div>
 
         <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80', 'Sala de Estar Contemporânea')">
-                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80" alt="Sala Contemporânea">
-                <div class="gallery-caption">Sala de Estar Contemporânea</div>
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80', 'Contemporary Living Room')">
+                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80" alt="Contemporary Living Room">
+                <div class="gallery-caption">Contemporary Living Room</div>
             </div>
-            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80', 'Hall de Entrada Moderno')">
-                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="Hall de Entrada">
-                <div class="gallery-caption">Hall de Entrada Moderno</div>
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80', 'Modern Entrance Hall')">
+                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="Entrance Hall">
+                <div class="gallery-caption">Modern Entrance Hall</div>
             </div>
-            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=1200&q=80', 'Quarto Principal com Cabeceira Estofada')">
-                <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=600&q=80" alt="Quarto Principal">
-                <div class="gallery-caption">Quarto Principal Suite</div>
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=1200&q=80', 'Master Bedroom with Upholstered Headboard')">
+                <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=600&q=80" alt="Master Bedroom">
+                <div class="gallery-caption">Master Bedroom Suite</div>
             </div>
-            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80', 'Varanda Gourmet Outdoor')">
-                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Varanda Outdoor">
-                <div class="gallery-caption">Espaço Outdoor & Lounge</div>
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80', 'Outdoor Gourmet Balcony')">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Outdoor Balcony">
+                <div class="gallery-caption">Outdoor Space & Lounge</div>
             </div>
         </div>
     </section>
 
     <!-- Info & How it Works Section -->
-    <section class="info-banner" id="como-encomendar">
+    <section class="info-banner" id="how-to-order">
         <div class="info-card">
             <div class="info-block">
-                <h3><i class="fa-solid fa-list-check"></i> Como Encomendar?</h3>
-                <p>Navegue pelo catálogo, escolha os artigos pretendidos e adicione ao carrinho. Ao finalizar, clique no carrinho no topo da página e selecione <strong>Enviar Pedido via WhatsApp</strong>!</p>
+                <h3><i class="fa-solid fa-list-check"></i> How to Order?</h3>
+                <p>Browse the catalog, choose your desired items, and add them to your cart. When ready, click the cart icon at the top of the page and select <strong>Send Order via WhatsApp</strong>!</p>
             </div>
             <div class="info-block">
-                <h3><i class="fa-solid fa-handshake"></i> Termos de Pagamento</h3>
-                <p>Trabalhamos com sistema de encomenda flexível: <strong>60% de depósito inicial</strong> para confirmação da ordem e 40% remanescentes na entrega do artigo.</p>
+                <h3><i class="fa-solid fa-handshake"></i> Payment Terms</h3>
+                <p>We work with a flexible ordering system: <strong>60% initial deposit</strong> to confirm the order, and the remaining 40% upon item delivery.</p>
             </div>
         </div>
     </section>
@@ -1228,19 +1228,19 @@
     <div class="cart-overlay" id="cartOverlay" onclick="closeCartDrawer()"></div>
     <div class="cart-modal" id="cartModal">
         <div class="cart-header">
-            <h3>Seu Pedido</h3>
+            <h3>Your Order</h3>
             <button class="close-cart" id="closeCart" onclick="closeCartDrawer()">&times;</button>
         </div>
         <div class="cart-items" id="cartItems">
-            <p style="color: var(--text-muted); text-align: center; margin-top: 40px;">O seu carrinho está vazio.</p>
+            <p style="color: var(--text-muted); text-align: center; margin-top: 40px;">Your cart is empty.</p>
         </div>
 
-        <!-- Seletor de Províncias / Entrega -->
+        <!-- Province / Delivery Selector -->
         <div class="cart-shipping">
-            <label for="shippingProvince"><i class="fa-solid fa-truck-ramp-box"></i> Província de Entrega:</label>
+            <label for="shippingProvince"><i class="fa-solid fa-truck-ramp-box"></i> Delivery Province:</label>
             <select id="shippingProvince" onchange="updateCartUI()">
-                <option value="Maputo Cidade" data-cost="500">Maputo Cidade (500 MZN)</option>
-                <option value="Maputo Província" data-cost="800">Maputo Província (800 MZN)</option>
+                <option value="Maputo Cidade" data-cost="500">Maputo City (500 MZN)</option>
+                <option value="Maputo Província" data-cost="800">Maputo Province (800 MZN)</option>
                 <option value="Gaza" data-cost="1500">Gaza (1,500 MZN)</option>
                 <option value="Inhambane" data-cost="2000">Inhambane (2,000 MZN)</option>
                 <option value="Sofala (Beira)" data-cost="2500">Sofala - Beira (2,500 MZN)</option>
@@ -1259,15 +1259,15 @@
                 <span id="subtotalPrice">0.00 MZN</span>
             </div>
             <div class="cart-summary-line">
-                <span>Taxa de Envio:</span>
+                <span>Shipping Fee:</span>
                 <span id="shippingPrice">0.00 MZN</span>
             </div>
             <div class="cart-total">
-                <span>Total Estimado:</span>
+                <span>Estimated Total:</span>
                 <span class="cart-total-price" id="totalPrice">0.00 MZN</span>
             </div>
             <button class="btn-whatsapp" onclick="checkoutWhatsApp()">
-                <i class="fa-brands fa-whatsapp"></i> Enviar Pedido via WhatsApp
+                <i class="fa-brands fa-whatsapp"></i> Send Order via WhatsApp
             </button>
         </div>
     </div>
@@ -1276,23 +1276,23 @@
     <div class="lightbox-modal" id="lightboxModal">
         <button class="close-lightbox" onclick="closeLightbox()">&times;</button>
         <div class="lightbox-img-wrapper">
-            <img src="" alt="Zoom da Imagem" class="lightbox-img" id="lightboxImg">
+            <img src="" alt="Image Zoom" class="lightbox-img" id="lightboxImg">
         </div>
         <div class="lightbox-caption" id="lightboxCaption"></div>
         <div class="lightbox-controls">
-            <button class="lightbox-btn" onclick="zoomImage(1.2)" title="Aumentar Zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
-            <button class="lightbox-btn" onclick="zoomImage(0.8)" title="Diminuir Zoom"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
-            <button class="lightbox-btn" onclick="resetZoom()" title="Tamanho Normal"><i class="fa-solid fa-rotate-right"></i></button>
+            <button class="lightbox-btn" onclick="zoomImage(1.2)" title="Zoom In"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+            <button class="lightbox-btn" onclick="zoomImage(0.8)" title="Zoom Out"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+            <button class="lightbox-btn" onclick="resetZoom()" title="Reset Zoom"><i class="fa-solid fa-rotate-right"></i></button>
         </div>
     </div>
 
     <!-- Organized Footer -->
-    <footer id="contactos">
+    <footer id="contact">
         <div class="footer-grid">
             <!-- Col 1: Brand Info -->
             <div class="footer-col">
                 <h4>LUXURY PARCELS</h4>
-                <p>Especialistas em mobiliário e decoração de alto padrão por encomenda em Moçambique. Transformamos o seu lar com elegância, qualidade superior e requinte.</p>
+                <p>Specialists in custom high-end furniture and decor in Mozambique. We transform your home with elegance, superior quality, and sophistication.</p>
                 <div class="footer-socials">
                     <a href="https://wa.me/258840353058" target="_blank" class="social-btn" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                     <a href="https://instagram.com/luxury_parcels00" target="_blank" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1301,29 +1301,29 @@
 
             <!-- Col 2: Quick Links -->
             <div class="footer-col">
-                <h4>Navegação</h4>
+                <h4>Navigation</h4>
                 <ul class="footer-links-list">
-                    <li><a href="#catalogo">Catálogo de Produtos</a></li>
-                    <li><a href="#galeria">Galeria de Inspiração</a></li>
-                    <li><a href="#como-encomendar">Como Funciona</a></li>
-                    <li><a href="#contactos">Contacte-nos</a></li>
+                    <li><a href="#catalog">Product Catalog</a></li>
+                    <li><a href="#gallery">Inspiration Gallery</a></li>
+                    <li><a href="#how-to-order">How It Works</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </div>
 
             <!-- Col 3: Direct Contacts -->
             <div class="footer-col">
-                <h4>Atendimento & Contactos</h4>
+                <h4>Customer Support & Contact</h4>
                 <ul class="footer-contact-list">
-                    <li><i class="fa-solid fa-location-dot"></i> Maputo, Moçambique (Atendimento Online & Encomendas)</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Maputo, Mozambique (Online Orders & Support)</li>
                     <li><i class="fa-solid fa-phone"></i> +258 84 035 3058</li>
-                    <li><i class="fa-brands fa-whatsapp"></i> Directo WhatsApp: +258 84 035 3058</li>
-                    <li><i class="fa-solid fa-clock"></i> Seg - Sáb: 08:00 - 18:00</li>
+                    <li><i class="fa-brands fa-whatsapp"></i> Direct WhatsApp: +258 84 035 3058</li>
+                    <li><i class="fa-solid fa-clock"></i> Mon - Sat: 08:00 AM - 06:00 PM</li>
                 </ul>
             </div>
         </div>
 
         <div class="copyright">
-            &copy; 2026 Luxury Parcels. Todos os direitos reservados. | Desenvolvido com excelência pela <strong>DF TECH</strong>[cite: 1, 2].
+            &copy; 2026 Luxury Parcels. All rights reserved. | Developed with excellence by <strong>DF TECH</strong>.
         </div>
     </footer>
 
@@ -1333,9 +1333,9 @@
         let cart = [];
         let currentScale = 1;
 
-        // Utility: Formatar moeda em MZN
+        // Utility: Format currency in MZN
         function formatMZN(val) {
-            return val.toLocaleString('pt-MZ', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' MZN';
+            return val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' MZN';
         }
 
         // Elements
@@ -1389,7 +1389,7 @@
         function addToCart(name, price) {
             cart.push({ name, price });
             updateCartUI();
-            showToast(`"${name}" adicionado ao carrinho!`);
+            showToast(`"${name}" added to cart!`);
         }
 
         // Remove from Cart
@@ -1403,7 +1403,7 @@
             cartCount.textContent = cart.length;
 
             if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<p style="color: var(--text-muted); text-align: center; margin-top: 40px;">O seu carrinho está vazio.</p>';
+                cartItemsContainer.innerHTML = '<p style="color: var(--text-muted); text-align: center; margin-top: 40px;">Your cart is empty.</p>';
                 subtotalPriceEl.textContent = formatMZN(0);
                 shippingPriceEl.textContent = formatMZN(0);
                 totalPriceEl.textContent = formatMZN(0);
@@ -1416,13 +1416,13 @@
                         <div class="cart-item-title">${item.name}</div>
                         <div class="cart-item-price">${formatMZN(item.price)}</div>
                     </div>
-                    <button class="remove-item" onclick="removeFromCart(${index})" title="Remover item">
+                    <button class="remove-item" onclick="removeFromCart(${index})" title="Remove item">
                         <i class="fa-solid fa-trash"></i>
                     </button>
                 </div>
             `).join('');
 
-            // Cálculos
+            // Calculations
             const subtotal = cart.reduce((acc, item) => acc + item.price, 0);
             const selectedOption = shippingSelect.options[shippingSelect.selectedIndex];
             const shippingCost = parseFloat(selectedOption.getAttribute('data-cost')) || 0;
@@ -1461,7 +1461,7 @@
         // WhatsApp Checkout
         function checkoutWhatsApp() {
             if (cart.length === 0) {
-                alert('Adicione pelo menos um item ao carrinho antes de enviar o pedido.');
+                alert('Please add at least one item to the cart before placing the order.');
                 return;
             }
 
@@ -1472,21 +1472,21 @@
             const shippingCost = parseFloat(selectedOption.getAttribute('data-cost')) || 0;
             const total = subtotal + shippingCost;
 
-            let message = "Olá, equipa da *Luxury Parcels*! Gostaria de efetuar o seguinte pedido através do site:\n\n";
-            message += "*ARTIGOS ENCOMENDADOS:*\n";
+            let message = "Hello, *Luxury Parcels* team! I would like to place the following order through the website:\n\n";
+            message += "*ORDERED ITEMS:*\n";
             
             cart.forEach((item, index) => {
                 message += `${index + 1}. *${item.name}* - ${formatMZN(item.price)}\n`;
             });
 
-            message += `\n*DETALHES DA ENTREGA:*\n`;
-            message += `📍 Província de Destino: *${provinceName}*\n`;
-            message += `🚚 Taxa de Envio: *${formatMZN(shippingCost)}*\n`;
-            message += `\n*RESUMO FINANCEIRO:*\n`;
+            message += `\n*DELIVERY DETAILS:*\n`;
+            message += `📍 Destination Province: *${provinceName}*\n`;
+            message += `🚚 Shipping Fee: *${formatMZN(shippingCost)}*\n`;
+            message += `\n*FINANCIAL SUMMARY:*\n`;
             message += `Subtotal: ${formatMZN(subtotal)}\n`;
-            message += `*Total Final: ${formatMZN(total)}*\n`;
-            message += `(Sinal de 60% para início de produção: ${formatMZN(total * 0.6)})\n\n`;
-            message += "Por favor, confirmem a disponibilidade dos itens e os dados de pagamento. Obrigado!";
+            message += `*Final Total: ${formatMZN(total)}*\n`;
+            message += `(60% Deposit to start production: ${formatMZN(total * 0.6)})\n\n`;
+            message += "Please confirm item availability and payment details. Thank you!";
 
             const encodedMessage = encodeURIComponent(message);
             window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
