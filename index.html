@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Parcels | Mobiliário & Decoração Premium</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --gold-light: #F3E5AB;
+            --gold-hover: #B89628;
+            --dark-bg: #0F0F11;
+            --card-bg: #18181C;
+            --surface-bg: #222227;
+            --text-light: #F5F5F7;
+            --text-muted: #A1A1AA;
+            --whatsapp-green: #25D366;
+            --font-heading: 'Cinzel', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Accessibility focus ring */
+        a:focus, button:focus, input:focus, select:focus {
+            outline: 2px solid var(--primary-gold);
+            outline-offset: 3px;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(15, 15, 17, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .top-bar {
+            background: linear-gradient(90deg, #111, var(--primary-gold), #111);
+            color: #000;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 6px 15px;
+            letter-spacing: 1px;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            position: relative;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-circle {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .logo-circle span {
+            font-family: var(--font-heading);
+            color: var(--primary-gold);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .brand-name {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--text-light);
+        }
+
+        .brand-name span {
+            color: var(--primary-gold);
+            display: block;
+            font-size: 0.65rem;
+            letter-spacing: 4px;
+            font-family: var(--font-body);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        /* Mobile Menu Toggle Button */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .cart-icon-btn {
+            position: relative;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.3rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -8px;
+            background-color: var(--primary-gold);
+            color: #000;
+            font-weight: bold;
+            font-size: 0.75rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Notification Toast */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--card-bg);
+            color: var(--text-light);
+            border: 1px solid var(--primary-gold);
+            padding: 12px 20px;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 3000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast i {
+            color: var(--primary-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 15, 17, 0.75), rgba(15, 15, 17, 0.9)), 
+                        url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            padding: 100px 20px 80px;
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-subtitle {
+            color: var(--primary-gold);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: #FFF;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            background: linear-gradient(45deg, #B89628, var(--primary-gold), var(--gold-light));
+            color: #000;
+            padding: 14px 32px;
+            font-weight: 700;
+            border-radius: 4px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Value Badges Section */
+        .badges-section {
+            background-color: var(--card-bg);
+            padding: 35px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .badges-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .badge-item {
+            padding: 15px;
+        }
+
+        .badge-item i {
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+        }
+
+        .badge-item h3 {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badge-item p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Catalog Section */
+        .catalog-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .section-header div {
+            width: 60px;
+            height: 3px;
+            background: var(--primary-gold);
+            margin: 0 auto;
+        }
+
+        /* Filter Controls */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            background: var(--card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--text-light);
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-gold);
+            color: #000;
+            font-weight: 600;
+            border-color: var(--primary-gold);
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+
+        .product-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            background-color: #222;
+            transition: transform 0.4s ease;
+        }
+
+        .product-img-wrapper:hover .product-img {
+            transform: scale(1.05);
+        }
+
+        .zoom-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .product-img-wrapper:hover .zoom-overlay {
+            opacity: 1;
+        }
+
+        .zoom-overlay i {
+            color: var(--primary-gold);
+            font-size: 1.8rem;
+            background: rgba(0,0,0,0.6);
+            padding: 12px;
+            border-radius: 50%;
+            border: 1px solid var(--primary-gold);
+        }
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-tag {
+            font-size: 0.7rem;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        .product-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .product-price {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+        }
+
+        .btn-add-cart {
+            background: transparent;
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            padding: 8px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-add-cart:hover {
+            background: var(--primary-gold);
+            color: #000;
+        }
+
+        /* Image Gallery Section */
+        .gallery-section {
+            background-color: var(--card-bg);
+            padding: 60px 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .gallery-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            height: 220px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            padding: 15px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+        }
+
+        /* Order Info Section */
+        .info-banner {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, var(--card-bg), var(--surface-bg));
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            padding: 40px 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .info-block h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-gold);
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-block p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Cart Modal / Drawer */
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            right: -420px;
+            width: 400px;
+            height: 100%;
+            background-color: var(--card-bg);
+            z-index: 2000;
+            box-shadow: -5px 0 25px rgba(0,0,0,0.8);
+            transition: right 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-modal.open {
+            right: 0;
+        }
+
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1999;
+            display: none;
+        }
+
+        .cart-overlay.open {
+            display: block;
+        }
+
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-gold);
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cart-items {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            align-items: center;
+        }
+
+        .cart-item-details {
+            flex-grow: 1;
+        }
+
+        .cart-item-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .cart-item-price {
+            font-size: 0.85rem;
+            color: var(--primary-gold);
+        }
+
+        .remove-item {
+            color: #ff5555;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            padding: 5px;
+        }
+
+        .cart-shipping {
+            padding: 15px 20px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            background: rgba(0,0,0,0.2);
+        }
+
+        .cart-shipping label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .cart-shipping select {
+            width: 100%;
+            padding: 10px;
+            background: var(--surface-bg);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: var(--text-light);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        .cart-footer {
+            padding: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            background: var(--surface-bg);
+        }
+
+        .cart-summary-line {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed rgba(255,255,255,0.15);
+        }
+
+        .cart-total-price {
+            color: var(--primary-gold);
+        }
+
+        .btn-whatsapp {
+            width: 100%;
+            background-color: var(--whatsapp-green);
+            color: #fff;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1ebc57;
+        }
+
+        /* Image Zoom Lightbox Modal */
+        .lightbox-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2500;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .lightbox-modal.open {
+            display: flex;
+        }
+
+        .lightbox-img-wrapper {
+            max-width: 90%;
+            max-height: 80vh;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            cursor: grab;
+        }
+
+        .lightbox-controls {
+            margin-top: 15px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .lightbox-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .lightbox-btn:hover {
+            background: var(--primary-gold);
+            color: #000;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            color: #fff;
+            font-size: 2.2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .lightbox-caption {
+            color: var(--text-light);
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #08080A;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 60px 20px 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-heading);
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 35px;
+            height: 2px;
+            background-color: var(--primary-gold);
+        }
+
+        .footer-col p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-contact-list {
+            list-style: none;
+        }
+
+        .footer-contact-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+
+        .footer-contact-list i {
+            color: var(--primary-gold);
+            width: 18px;
+        }
+
+        .footer-links-list {
+            list-style: none;
+        }
+
+        .footer-links-list li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s, padding-left 0.3s;
+            display: inline-block;
+        }
+
+        .footer-links-list a:hover {
+            color: var(--primary-gold);
+            padding-left: 5px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .social-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--surface-bg);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            background: var(--primary-gold);
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Design Adjustments */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(15, 15, 17, 0.98);
+                backdrop-filter: blur(15px);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .cart-modal {
+                width: 100%;
+                right: -100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMsg">Item adicionado ao carrinho!</span>
+    </div>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        ENCOMENDAS PREMIUM PARA MOÇAMBIQUE • MAPUTO & PROVÍNCIAS
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <nav class="navbar" aria-label="Navegação Principal">
+            <a href="#" class="brand-logo">
+                <div class="logo-circle">
+                    <span>LP</span>
+                </div>
+                <div class="brand-name">
+                    LUXURY PARCELS
+                    <span>ELEVATE YOUR SPACE</span>
+                </div>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#catalogo" onclick="closeMobileMenu()">Catálogo</a></li>
+                <li><a href="#galeria" onclick="closeMobileMenu()">Galeria</a></li>
+                <li><a href="#como-encomendar" onclick="closeMobileMenu()">Como Encomendar</a></li>
+                <li><a href="#contactos" onclick="closeMobileMenu()">Contactos</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <button class="cart-icon-btn" id="cartToggle" aria-label="Abrir carrinho de compras" onclick="openCart()">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">Mobiliário & Decoração Exclusiva</p>
+            <h1>Eleve o seu Espaço com Peças de Luxo por Encomenda</h1>
+            <p>Mobiliário de alta qualidade, consolas, mesas de centro, cabeceiras e acessórios decorativos selecionados especialmente para o seu lar ou empresa.</p>
+            <a href="#catalogo" class="btn-gold">Explorar Catálogo</a>
+        </div>
+    </section>
+
+    <!-- Value Badges -->
+    <section class="badges-section" aria-label="Destaques dos Nossos Serviços">
+        <div class="badges-grid">
+            <div class="badge-item">
+                <i class="fa-solid fa-pen-ruler"></i>
+                <h3>Por Encomenda</h3>
+                <p>Personalizamos dimensões e acabamentos para as suas necessidades.</p>
+            </div>
+            <div class="badge-item">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>Entrega 10 - 15 Dias</h3>
+                <p>Envio rápido e seguro para Maputo e restantes províncias.</p>
+            </div>
+            <div class="badge-item">
+                <i class="fa-solid fa-credit-card"></i>
+                <h3>Sinal de 60%</h3>
+                <p>Pagamento flexível: 60% no pedido e o restante na entrega.</p>
+            </div>
+            <div class="badge-item">
+                <i class="fa-solid fa-gem"></i>
+                <h3>Qualidade Premium</h3>
+                <p>Produtos rigorosamente selecionados com design requintado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section class="catalog-section" id="catalogo">
+        <div class="section-header">
+            <h2>Nosso Catálogo</h2>
+            <div></div>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-container" role="tablist" aria-label="Categorias de produtos">
+            <button class="filter-btn active" onclick="filterProducts('all', event)">Todos</button>
+            <button class="filter-btn" onclick="filterProducts('consolas', event)">Consolas & Espelhos</button>
+            <button class="filter-btn" onclick="filterProducts('mesas', event)">Mesas de Centro</button>
+            <button class="filter-btn" onclick="filterProducts('cabeceiras', event)">Cabeceiras & Camas</button>
+            <button class="filter-btn" onclick="filterProducts('exterior', event)">Exterior / OutDoor</button>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid">
+            <!-- Product 1 -->
+            <div class="product-card" data-category="consolas">
+                <div class="product-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1200&q=80', 'Consola Gold Curved & Espelho Redondo')">
+                    <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=600&q=80" alt="Consola Gold Curved & Espelho Redondo" class="product-img">
+                    <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Consolas & Espelhos</span>
+                    <h3 class="product-title">Consola Gold Curved & Espelho</h3>
+                    <p class="product-desc">Design contemporâneo em acentuado dourado metálico com topo em mármore sintético branco.</p>
+                    <div class="product-meta">
+                        <span class="product-price">8,500.00 MZN</span>
+                        <button class="btn-add-cart" onclick="addToCart('Consola Gold Curved & Espelho', 8500)">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card" data-category="mesas">
+                <div class="product-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1533779283484-8ad4940aa3a8?auto=format&fit=crop&w=1200&q=80', 'Mesa de Centro Marble Triple Tier')">
+                    <img src="https://images.unsplash.com/photo-1533779283484-8ad4940aa3a8?auto=format&fit=crop&w=600&q=80" alt="Mesa de Centro Marble Triple Tier" class="product-img">
+                    <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Mesas de Centro</span>
+                    <h3 class="product-title">Mesa Marble Triple Tier</h3>
+                    <p class="product-desc">Conjunto de mesas ovais em camada tripla com acabamento em mármore refinado.</p>
+                    <div class="product-meta">
+                        <span class="product-price">9,800.00 MZN</span>
+                        <button class="btn-add-cart" onclick="addToCart('Mesa Marble Triple Tier', 9800)">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card" data-category="mesas">
+                <div class="product-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=1200&q=80', 'Mesa Block Modernist Bicolor')">
+                    <img src="https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=600&q=80" alt="Mesa Block Modernist Bicolor" class="product-img">
+                    <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Mesas de Centro</span>
+                    <h3 class="product-title">Mesa Block Modernist Bicolor</h3>
+                    <p class="product-desc">Mesa de centro retangular modular em conceito preto e branco contrastante com gaveta embutida.</p>
+                    <div class="product-meta">
+                        <span class="product-price">2,000.00 MZN</span>
+                        <button class="btn-add-cart" onclick="addToCart('Mesa Block Modernist Bicolor', 2000)">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card" data-category="cabeceiras">
+                <div class="product-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80', 'Cabeceira Royal Velvet King')">
+                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80" alt="Cabeceira Royal Velvet King" class="product-img">
+                    <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Cabeceiras & Camas</span>
+                    <h3 class="product-title">Cabeceira Royal Velvet King</h3>
+                    <p class="product-desc">Cabeceira estofada em veludo de alta densidade com detalhe geométrico e costura artesanal.</p>
+                    <div class="product-meta">
+                        <span class="product-price">4,000.00 MZN</span>
+                        <button class="btn-add-cart" onclick="addToCart('Cabeceira Royal Velvet King', 4000)">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card" data-category="exterior">
+                <div class="product-img-wrapper" onclick="openLightbox('1.jpg', 'Conjunto Outdoor Rattan Lounge')">
+                    <img src="1.jpg" alt="Conjunto Outdoor Rattan Lounge" class="product-img">
+                    <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Exterior / OutDoor</span>
+                    <h3 class="product-title">Conjunto Outdoor Rattan</h3>
+                    <p class="product-desc">Poltronas e mesa auxiliar para exterior resistentes a intempéries com almofadas náuticas impermeáveis.</p>
+                    <div class="product-meta">
+                        <span class="product-price">5,000.00 MZN</span>
+                        <button class="btn-add-cart" onclick="addToCart('Conjunto Outdoor Rattan', 5000)">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card" data-category="consolas">
+                <div class="product-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80', 'Poltrona Accent Shell Cream')">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80" alt="Poltrona Accent Shell Cream" class="product-img">
+                    <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Sofás & Poltronas</span>
+                    <h3 class="product-title">Poltrona Accent Shell Cream</h3>
+                    <p class="product-desc">Design concha elegante com pés em latão dourado. O toque de requinte que a sua sala precisa.</p>
+                    <div class="product-meta">
+                        <span class="product-price">6,500.00 MZN</span>
+                        <button class="btn-add-cart" onclick="addToCart('Poltrona Accent Shell Cream', 6500)">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="galeria">
+        <div class="section-header">
+            <h2>Galeria de Inspiração</h2>
+            <p style="color: var(--text-muted); margin-top: 5px;">Ambientes reais e projetos exclusivos Luxury Parcels</p>
+            <div style="margin-top: 15px;"></div>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80', 'Sala de Estar Contemporânea')">
+                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80" alt="Sala Contemporânea">
+                <div class="gallery-caption">Sala de Estar Contemporânea</div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80', 'Hall de Entrada Moderno')">
+                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="Hall de Entrada">
+                <div class="gallery-caption">Hall de Entrada Moderno</div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=1200&q=80', 'Quarto Principal com Cabeceira Estofada')">
+                <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=600&q=80" alt="Quarto Principal">
+                <div class="gallery-caption">Quarto Principal Suite</div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80', 'Varanda Gourmet Outdoor')">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Varanda Outdoor">
+                <div class="gallery-caption">Espaço Outdoor & Lounge</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info & How it Works Section -->
+    <section class="info-banner" id="como-encomendar">
+        <div class="info-card">
+            <div class="info-block">
+                <h3><i class="fa-solid fa-list-check"></i> Como Encomendar?</h3>
+                <p>Navegue pelo catálogo, escolha os artigos pretendidos e adicione ao carrinho. Ao finalizar, clique no carrinho no topo da página e selecione <strong>Enviar Pedido via WhatsApp</strong>!</p>
+            </div>
+            <div class="info-block">
+                <h3><i class="fa-solid fa-handshake"></i> Termos de Pagamento</h3>
+                <p>Trabalhamos com sistema de encomenda flexível: <strong>60% de depósito inicial</strong> para confirmação da ordem e 40% remanescentes na entrega do artigo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide Cart Modal -->
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCartDrawer()"></div>
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Seu Pedido</h3>
+            <button class="close-cart" id="closeCart" onclick="closeCartDrawer()">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p style="color: var(--text-muted); text-align: center; margin-top: 40px;">O seu carrinho está vazio.</p>
+        </div>
+
+        <!-- Seletor de Províncias / Entrega -->
+        <div class="cart-shipping">
+            <label for="shippingProvince"><i class="fa-solid fa-truck-ramp-box"></i> Província de Entrega:</label>
+            <select id="shippingProvince" onchange="updateCartUI()">
+                <option value="Maputo Cidade" data-cost="500">Maputo Cidade (500 MZN)</option>
+                <option value="Maputo Província" data-cost="800">Maputo Província (800 MZN)</option>
+                <option value="Gaza" data-cost="1500">Gaza (1,500 MZN)</option>
+                <option value="Inhambane" data-cost="2000">Inhambane (2,000 MZN)</option>
+                <option value="Sofala (Beira)" data-cost="2500">Sofala - Beira (2,500 MZN)</option>
+                <option value="Manica" data-cost="2500">Manica (2,500 MZN)</option>
+                <option value="Tete" data-cost="3000">Tete (3,000 MZN)</option>
+                <option value="Zambézia" data-cost="3000">Zambézia (3,000 MZN)</option>
+                <option value="Nampula" data-cost="3500">Nampula (3,500 MZN)</option>
+                <option value="Cabo Delgado" data-cost="4000">Cabo Delgado (4,000 MZN)</option>
+                <option value="Niassa" data-cost="4000">Niassa (4,000 MZN)</option>
+            </select>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-summary-line">
+                <span>Subtotal:</span>
+                <span id="subtotalPrice">0.00 MZN</span>
+            </div>
+            <div class="cart-summary-line">
+                <span>Taxa de Envio:</span>
+                <span id="shippingPrice">0.00 MZN</span>
+            </div>
+            <div class="cart-total">
+                <span>Total Estimado:</span>
+                <span class="cart-total-price" id="totalPrice">0.00 MZN</span>
+            </div>
+            <button class="btn-whatsapp" onclick="checkoutWhatsApp()">
+                <i class="fa-brands fa-whatsapp"></i> Enviar Pedido via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Image Zoom Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <button class="close-lightbox" onclick="closeLightbox()">&times;</button>
+        <div class="lightbox-img-wrapper">
+            <img src="" alt="Zoom da Imagem" class="lightbox-img" id="lightboxImg">
+        </div>
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+        <div class="lightbox-controls">
+            <button class="lightbox-btn" onclick="zoomImage(1.2)" title="Aumentar Zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+            <button class="lightbox-btn" onclick="zoomImage(0.8)" title="Diminuir Zoom"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+            <button class="lightbox-btn" onclick="resetZoom()" title="Tamanho Normal"><i class="fa-solid fa-rotate-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Organized Footer -->
+    <footer id="contactos">
+        <div class="footer-grid">
+            <!-- Col 1: Brand Info -->
+            <div class="footer-col">
+                <h4>LUXURY PARCELS</h4>
+                <p>Especialistas em mobiliário e decoração de alto padrão por encomenda em Moçambique. Transformamos o seu lar com elegância, qualidade superior e requinte.</p>
+                <div class="footer-socials">
+                    <a href="https://wa.me/258840353058" target="_blank" class="social-btn" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/luxury_parcels00" target="_blank" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Col 2: Quick Links -->
+            <div class="footer-col">
+                <h4>Navegação</h4>
+                <ul class="footer-links-list">
+                    <li><a href="#catalogo">Catálogo de Produtos</a></li>
+                    <li><a href="#galeria">Galeria de Inspiração</a></li>
+                    <li><a href="#como-encomendar">Como Funciona</a></li>
+                    <li><a href="#contactos">Contacte-nos</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Direct Contacts -->
+            <div class="footer-col">
+                <h4>Atendimento & Contactos</h4>
+                <ul class="footer-contact-list">
+                    <li><i class="fa-solid fa-location-dot"></i> Maputo, Moçambique (Atendimento Online & Encomendas)</li>
+                    <li><i class="fa-solid fa-phone"></i> +258 84 035 3058</li>
+                    <li><i class="fa-brands fa-whatsapp"></i> Directo WhatsApp: +258 84 035 3058</li>
+                    <li><i class="fa-solid fa-clock"></i> Seg - Sáb: 08:00 - 18:00</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; 2026 Luxury Parcels. Todos os direitos reservados. | Desenvolvido com excelência pela <strong>DF TECH</strong>[cite: 1, 2].
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // State
+        let cart = [];
+        let currentScale = 1;
+
+        // Utility: Formatar moeda em MZN
+        function formatMZN(val) {
+            return val.toLocaleString('pt-MZ', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' MZN';
+        }
+
+        // Elements
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const cartModal = document.getElementById('cartModal');
+        const cartOverlay = document.getElementById('cartOverlay');
+        const cartCount = document.getElementById('cartCount');
+        const cartItemsContainer = document.getElementById('cartItems');
+        const subtotalPriceEl = document.getElementById('subtotalPrice');
+        const shippingPriceEl = document.getElementById('shippingPrice');
+        const totalPriceEl = document.getElementById('totalPrice');
+        const shippingSelect = document.getElementById('shippingProvince');
+        
+        const toast = document.getElementById('toast');
+        const toastMsg = document.getElementById('toastMsg');
+        
+        const lightboxModal = document.getElementById('lightboxModal');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+
+        // Mobile Navigation Toggle
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+        });
+
+        // Close Mobile Menu
+        function closeMobileMenu() {
+            navLinks.classList.remove('active');
+        }
+
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                closeMobileMenu();
+            }
+        });
+
+        // Cart Drawer Handlers
+        function openCart() {
+            cartModal.classList.add('open');
+            cartOverlay.classList.add('open');
+        }
+
+        function closeCartDrawer() {
+            cartModal.classList.remove('open');
+            cartOverlay.classList.remove('open');
+        }
+
+        // Add to Cart
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCartUI();
+            showToast(`"${name}" adicionado ao carrinho!`);
+        }
+
+        // Remove from Cart
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        // Update Cart UI
+        function updateCartUI() {
+            cartCount.textContent = cart.length;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p style="color: var(--text-muted); text-align: center; margin-top: 40px;">O seu carrinho está vazio.</p>';
+                subtotalPriceEl.textContent = formatMZN(0);
+                shippingPriceEl.textContent = formatMZN(0);
+                totalPriceEl.textContent = formatMZN(0);
+                return;
+            }
+
+            cartItemsContainer.innerHTML = cart.map((item, index) => `
+                <div class="cart-item">
+                    <div class="cart-item-details">
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-price">${formatMZN(item.price)}</div>
+                    </div>
+                    <button class="remove-item" onclick="removeFromCart(${index})" title="Remover item">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            `).join('');
+
+            // Cálculos
+            const subtotal = cart.reduce((acc, item) => acc + item.price, 0);
+            const selectedOption = shippingSelect.options[shippingSelect.selectedIndex];
+            const shippingCost = parseFloat(selectedOption.getAttribute('data-cost')) || 0;
+            const total = subtotal + shippingCost;
+
+            subtotalPriceEl.textContent = formatMZN(subtotal);
+            shippingPriceEl.textContent = formatMZN(shippingCost);
+            totalPriceEl.textContent = formatMZN(total);
+        }
+
+        // Show Toast Notification
+        function showToast(message) {
+            toastMsg.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Filter Products
+        function filterProducts(category, event) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            if(event) event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // WhatsApp Checkout
+        function checkoutWhatsApp() {
+            if (cart.length === 0) {
+                alert('Adicione pelo menos um item ao carrinho antes de enviar o pedido.');
+                return;
+            }
+
+            const phone = "258840353058";
+            const subtotal = cart.reduce((acc, item) => acc + item.price, 0);
+            const selectedOption = shippingSelect.options[shippingSelect.selectedIndex];
+            const provinceName = selectedOption.value;
+            const shippingCost = parseFloat(selectedOption.getAttribute('data-cost')) || 0;
+            const total = subtotal + shippingCost;
+
+            let message = "Olá, equipa da *Luxury Parcels*! Gostaria de efetuar o seguinte pedido através do site:\n\n";
+            message += "*ARTIGOS ENCOMENDADOS:*\n";
+            
+            cart.forEach((item, index) => {
+                message += `${index + 1}. *${item.name}* - ${formatMZN(item.price)}\n`;
+            });
+
+            message += `\n*DETALHES DA ENTREGA:*\n`;
+            message += `📍 Província de Destino: *${provinceName}*\n`;
+            message += `🚚 Taxa de Envio: *${formatMZN(shippingCost)}*\n`;
+            message += `\n*RESUMO FINANCEIRO:*\n`;
+            message += `Subtotal: ${formatMZN(subtotal)}\n`;
+            message += `*Total Final: ${formatMZN(total)}*\n`;
+            message += `(Sinal de 60% para início de produção: ${formatMZN(total * 0.6)})\n\n`;
+            message += "Por favor, confirmem a disponibilidade dos itens e os dados de pagamento. Obrigado!";
+
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
+        }
+
+        // Image Zoom Lightbox Functions
+        function openLightbox(src, caption) {
+            lightboxImg.src = src;
+            lightboxCaption.textContent = caption;
+            lightboxModal.classList.add('open');
+            resetZoom();
+        }
+
+        function closeLightbox() {
+            lightboxModal.classList.remove('open');
+        }
+
+        function zoomImage(factor) {
+            currentScale *= factor;
+            if (currentScale < 0.5) currentScale = 0.5;
+            if (currentScale > 3) currentScale = 3;
+            lightboxImg.style.transform = `scale(${currentScale})`;
+        }
+
+        function resetZoom() {
+            currentScale = 1;
+            lightboxImg.style.transform = 'scale(1)';
+        }
+    </script>
+</body>
+</html>
