@@ -1,0 +1,2587 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta Tags Principais -->
+    <title>Luxury Parcels | Móveis Premium & Decoração de Luxo em Moçambique</title>
+    <meta name="title" content="Luxury Parcels | Móveis Premium & Decoração de Luxo">
+    <meta name="description" content="Eleve o seu espaço em Moçambique. Móveis sob medida, aparadores, estofados e acessórios decorativos exclusivos de alta qualidade.">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Luxury Parcels | Móveis Premium & Decoração">
+    <meta property="og:description" content="Mobiliário sob medida e peças de alto padrão em Moçambique. Encomende online.">
+    <meta property="og:image" content="img/lux1.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-body: #FAFAF7;
+            --bg-surface: #FFFFFF;
+            --bg-dark: #121212;
+            --text-main: #1C1B1A;
+            --text-muted: #6E6D6A;
+            --text-light: #F4F3EE;
+            --gold: #C5A059;
+            --gold-hover: #AA8743;
+            --sand: #EFECE6;
+            --sand-light: #F7F5F0;
+            --border-color: #E2DFD7;
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.04);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            top: 0 !important;
+            position: static !important;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        button, input, select, textarea {
+            font-family: inherit;
+            border: none;
+            outline: none;
+        }
+
+        button {
+            cursor: pointer;
+            background: none;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* OCULTAR BARRA DO GOOGLE TRANSLATE */
+        .goog-te-banner-frame,
+        .goog-te-banner,
+        .goog-te-balloon-frame,
+        #goog-gt-tt,
+        .goog-te-spinner-pos,
+        iframe.goog-te-banner-frame {
+            display: none !important;
+            visibility: hidden !important;
+            height: 0 !important;
+            width: 0 !important;
+            opacity: 0 !important;
+        }
+
+        .skiptranslate {
+            display: none !important;
+        }
+
+        body > .skiptranslate {
+            display: none !important;
+        }
+
+        .goog-te-gadget {
+            height: 0 !important;
+            overflow: hidden !important;
+            visibility: hidden !important;
+            display: none !important;
+        }
+
+        font {
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
+
+        /* Botão de Tradução */
+        .lang-switch {
+            display: inline-flex;
+            align-items: center;
+            background: var(--sand-light);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 3px;
+            gap: 2px;
+            transition: var(--transition);
+        }
+
+        .lang-switch:focus-within {
+            outline: 2px solid var(--gold);
+        }
+
+        .lang-btn {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 5px 10px;
+            border-radius: 14px;
+            color: var(--text-muted);
+            transition: var(--transition);
+            text-transform: uppercase;
+        }
+
+        .lang-btn.active {
+            background: var(--gold);
+            color: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(197, 160, 89, 0.3);
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: var(--text-main);
+        }
+
+        /* Tipografia de Secções */
+        .section-title-wrap {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 56px;
+        }
+
+        .section-subtitle {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        /* Cabeçalho e Navegação */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(250, 250, 247, 0.95);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(226, 223, 215, 0.6);
+            transition: var(--transition);
+        }
+
+        .nav {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.45rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-link {
+            font-size: 0.8rem;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after,
+        .nav-link:focus::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .cart-trigger {
+            position: relative;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .cart-trigger:hover {
+            color: var(--gold);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--gold);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 600;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            padding: 8px;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn:hover {
+            color: var(--gold);
+        }
+
+        /* Menu Mobile Drawer */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(18, 18, 18, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 150;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav-drawer {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100%;
+            background: var(--bg-surface);
+            z-index: 160;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .mobile-nav-drawer.active {
+            right: 0;
+        }
+
+        .mobile-nav-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 24px;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .mobile-nav-links a {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: var(--text-main);
+            display: block;
+        }
+
+        .mobile-nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 80px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(180deg, var(--sand-light) 0%, var(--bg-body) 100%);
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            max-width: 480px;
+            margin-bottom: 36px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            padding: 16px 32px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            border-radius: 0;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold);
+            color: #FFFFFF;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--text-main);
+            color: var(--text-main);
+            padding: 16px 32px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background: var(--sand);
+            border-color: var(--sand);
+        }
+
+        .hero-image-wrap {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image-card {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            background: #FFFFFF;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border-radius: 4px;
+        }
+
+        .hero-image-card img {
+            width: 100%;
+            height: auto;
+            max-height: 520px;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        .hero-image-card:hover img {
+            transform: scale(1.02);
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--bg-surface);
+            padding: 20px 24px;
+            box-shadow: var(--shadow-sm);
+            border-left: 3px solid var(--gold);
+        }
+
+        .hero-badge p {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+        }
+
+        .hero-badge strong {
+            display: block;
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-main);
+            margin-top: 4px;
+        }
+
+        /* Destaques / Benefícios */
+        .features-section {
+            padding: 60px 0;
+            background: var(--bg-surface);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 32px;
+            text-align: center;
+        }
+
+        .feature-item h3 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .feature-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* Catálogo de Produtos */
+        .catalog-section {
+            padding: 100px 0;
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .filter-btn {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 10px 20px;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            border-color: var(--bg-dark);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 36px 28px;
+        }
+
+        .product-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-sm);
+            border-color: var(--gold);
+        }
+
+        .product-thumb {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: #FFFFFF;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+
+        .product-thumb img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:hover .product-thumb img {
+            transform: scale(1.05);
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(18, 18, 18, 0.85);
+            backdrop-filter: blur(4px);
+            color: #FFFFFF;
+            font-size: 0.65rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            z-index: 2;
+        }
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .product-code {
+            font-size: 0.7rem;
+            color: var(--gold);
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .product-name {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .product-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-bottom: 14px;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+
+        .product-price {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        .btn-add-cart {
+            width: 100%;
+            padding: 12px 18px;
+            background: var(--bg-dark);
+            color: #FFFFFF;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: var(--transition);
+            margin-top: auto;
+        }
+
+        .btn-add-cart:hover {
+            background: var(--gold);
+        }
+
+        /* Secção "Como Encomendar & Condições" */
+        .info-section {
+            padding: 100px 0;
+            background: var(--sand-light);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            padding: 40px 32px;
+            border-left: 3px solid var(--gold);
+        }
+
+        .info-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 14px;
+        }
+
+        .info-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* Secção Sobre */
+        .about-section {
+            padding: 100px 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .about-image {
+            background: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border-radius: 4px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            max-height: 550px;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+        }
+
+        .about-quote {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 24px;
+            line-height: 1.4;
+        }
+
+        .about-text {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .representative-card {
+            margin-top: 28px;
+            padding: 20px 24px;
+            background: var(--sand-light);
+            border-left: 2px solid var(--gold);
+        }
+
+        .rep-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .rep-name {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--text-main);
+        }
+
+        /* Carrinho Lateral */
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(18, 18, 18, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 200;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .drawer-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 440px;
+            height: 100%;
+            background: var(--bg-surface);
+            z-index: 210;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            flex-direction: column;
+            transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .cart-drawer.active {
+            right: 0;
+        }
+
+        .drawer-header {
+            padding: 24px 28px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .drawer-title {
+            font-family: var(--font-serif);
+            font-size: 1.45rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .close-btn {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            padding: 4px;
+            line-height: 1;
+            transition: var(--transition);
+        }
+
+        .close-btn:hover {
+            color: var(--text-main);
+        }
+
+        .drawer-body {
+            padding: 24px 28px;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 48px 0;
+            color: var(--text-muted);
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .cart-item-title {
+            font-family: var(--font-serif);
+            font-size: 1.05rem;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .cart-item-price {
+            font-size: 0.85rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .remove-item {
+            color: #C24545;
+            font-size: 0.8rem;
+            padding: 4px;
+            cursor: pointer;
+        }
+
+        .drawer-footer {
+            padding: 24px 28px;
+            border-top: 1px solid var(--border-color);
+            background: var(--bg-surface);
+        }
+
+        .drawer-subtotal {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .drawer-subtotal span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+
+        .drawer-subtotal strong {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-main);
+        }
+
+        .shipping-selector {
+            margin-bottom: 16px;
+        }
+
+        .shipping-selector label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .shipping-selector select {
+            width: 100%;
+            background: var(--sand-light);
+            border: 1px solid var(--border-color);
+            padding: 10px 12px;
+            font-size: 0.82rem;
+            color: var(--text-main);
+        }
+
+        .btn-whatsapp {
+            width: 100%;
+            background: #25D366;
+            color: #FFFFFF;
+            padding: 16px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .btn-whatsapp:hover {
+            background: #1EBE5D;
+        }
+
+        /* Rodapé */
+        .footer {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            padding: 80px 0 32px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 64px;
+        }
+
+        .footer-logo {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .footer-logo span {
+            color: var(--gold);
+        }
+
+        .footer-desc {
+            font-size: 0.85rem;
+            color: #A09E99;
+            font-weight: 300;
+            max-width: 360px;
+            line-height: 1.8;
+        }
+
+        .footer-heading {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-list {
+            list-style: none;
+        }
+
+        .footer-list li {
+            font-size: 0.85rem;
+            color: #A09E99;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            color: #6E6D6A;
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--bg-dark);
+            color: white;
+            padding: 12px 24px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: var(--shadow-lg);
+            z-index: 300;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        /* Responsividade */
+        @media (max-width: 900px) {
+            .hero-grid, .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-desc {
+                margin: 0 auto 36px;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+
+            .hero-image-wrap {
+                order: -1;
+            }
+
+            .hero-badge {
+                left: 10px;
+                bottom: 10px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .cart-drawer {
+                max-width: 100%;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+            
+            .desktop-lang {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <div class="toast" id="toast">Item adicionado ao carrinho</div>
+
+    <!-- Navegação -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav" aria-label="Navegação Principal">
+                <a href="#" class="logo">Luxury <span>Parcels</span></a>
+                
+                <ul class="nav-links">
+                    <li><a href="#catalogo" class="nav-link">Catálogo</a></li>
+                    <li><a href="#como-encomendar" class="nav-link">Como Encomendar</a></li>
+                    <li><a href="#sobre" class="nav-link">A Marca</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <div class="lang-switch desktop-lang" aria-label="Seletor de Idioma">
+                        <button class="lang-btn active" id="btn-pt" onclick="translatePage('pt')" aria-label="Mudar para Português">PT</button>
+                        <button class="lang-btn" id="btn-en" onclick="translatePage('en')" aria-label="Switch to English">EN</button>
+                    </div>
+
+                    <button class="cart-trigger" id="cartToggle" aria-label="Abrir Carrinho" onclick="toggleCart()">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Abrir Menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menu Drawer Mobile -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-nav-drawer" id="mobileDrawer">
+        <div class="mobile-nav-header">
+            <a href="#" class="logo">Luxury <span>Parcels</span></a>
+            <button class="close-btn" onclick="toggleMobileMenu()">&times;</button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#catalogo" onclick="toggleMobileMenu()">Catálogo</a></li>
+            <li><a href="#como-encomendar" onclick="toggleMobileMenu()">Como Encomendar</a></li>
+            <li><a href="#sobre" onclick="toggleMobileMenu()">A Marca</a></li>
+            <li><a href="#contacto" onclick="toggleMobileMenu()">Contacto</a></li>
+        </ul>
+        <div class="lang-switch" style="width: 100%; justify-content: center;" aria-label="Seletor de Idioma Mobile">
+            <button class="lang-btn active" id="m-btn-pt" style="flex:1; text-align:center;" onclick="translatePage('pt')" aria-label="Mudar para Português">PT - Português</button>
+            <button class="lang-btn" id="m-btn-en" style="flex:1; text-align:center;" onclick="translatePage('en')" aria-label="Switch to English">EN - English</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="hero-tag">Móveis Exclusivos & Decoração</span>
+                    <h1 class="hero-title">Eleve o Seu Espaço com Peças de Alto Padrão</h1>
+                    <p class="hero-desc">Mobiliário sob medida, plantas artificiais premium, estofados e acessórios decorativos selecionados com rigor e sofisticação para o seu ambiente.</p>
+                    <div class="hero-btns">
+                        <a href="#catalogo" class="btn-primary">Explorar Catálogo</a>
+                        <a href="#como-encomendar" class="btn-secondary">Como Encomendar</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrap">
+                    <div class="hero-image-card">
+                        <img src="img/logo.jpeg" alt="Luxury Parcels - Apresentação">
+                    </div>
+                    <div class="hero-badge">
+                        <p>Design Exclusivo</p>
+                        <strong>Luxury Parcels</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destaques -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>Sob Medida</h3>
+                    <p>Personalização total de dimensões e acabamentos.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Entrega 10-15 Dias</h3>
+                    <p>Envio seguro para Maputo e províncias.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Depósito de 60%</h3>
+                    <p>Facilidade de pagamento: 60% inicial e 40% na entrega.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Qualidade Premium</h3>
+                    <p>Materiais nobres e design refinado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catálogo de Produtos -->
+    <section class="catalog-section" id="catalogo">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-subtitle">Coleções Selecionadas</span>
+                <h2 class="section-title">Nosso Catálogo</h2>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filter-container">
+                <button class="filter-btn active" onclick="filterProducts('all', event)">Todos</button>
+                <button class="filter-btn" onclick="filterProducts('furniture', event)">Móveis & Estofados</button>
+                <button class="filter-btn" onclick="filterProducts('decor', event)">Decoração & Flores</button>
+                <button class="filter-btn" onclick="filterProducts('kitchen', event)">Cozinha</button>
+                <button class="filter-btn" onclick="filterProducts('lighting', event)">Iluminação & TV</button>
+            </div>
+
+            <!-- Grelha de Produtos -->
+            <div class="product-grid" id="productGrid">
+
+                <!-- NOVAS ORQUÍDEAS (orchids9.jpeg a orchids12.jpeg) -->
+
+                <!-- 10. LUXURY WHITE PHALAENOPSIS IN GOLDEN BOWL -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <img src="img/orchids/orchidas9.jpeg" alt="LUXURY WHITE PHALAENOPSIS IN GOLDEN BOWL">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ORC10U1</span>
+                        <h3 class="product-name">LUXURY WHITE PHALAENOPSIS IN GOLDEN BOWL</h3>
+                        <p class="product-desc">Exquisite multi-stem white phalaenopsis orchid in a luxurious metallic gold bowl.</p>
+                        <div class="product-price">4.900,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('LUXURY WHITE PHALAENOPSIS IN GOLDEN BOWL (ORC10U1)', 4900)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- 11. ELEGANT WHITE ORCHID ARRANGEMENT -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <img src="img/orchids/orchidas10.jpeg" alt="ELEGANT WHITE ORCHID ARRANGEMENT">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ORC11U1</span>
+                        <h3 class="product-name">ELEGANT WHITE ORCHID ARRANGEMENT</h3>
+                        <p class="product-desc">Sophisticated white artificial orchid arrangement designed for high-end decor.</p>
+                        <div class="product-price">4.400,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ELEGANT WHITE ORCHID ARRANGEMENT (ORC11U1)', 4400)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- 12. ROYAL PURPLE ORCHID IN BLACK POT -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <img src="img/orchids/orchidas11.jpeg" alt="ROYAL PURPLE ORCHID IN BLACK POT">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ORC12U1</span>
+                        <h3 class="product-name">ROYAL PURPLE ORCHID IN BLACK POT</h3>
+                        <p class="product-desc">Deep magenta and royal purple artificial orchid set in a minimalist black pot.</p>
+                        <div class="product-price">4.150,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ROYAL PURPLE ORCHID IN BLACK POT (ORC12U1)', 4150)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- 13. GRAND WHITE ORCHID DISPLAY -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <img src="img/orchids/orchidas12.jpeg" alt="GRAND WHITE ORCHID DISPLAY">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ORC13U1</span>
+                        <h3 class="product-name">GRAND WHITE ORCHID DISPLAY</h3>
+                        <p class="product-desc">Magnificent multi-branch white orchid arrangement crafted with premium real-touch materials.</p>
+                        <div class="product-price">5.100,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GRAND WHITE ORCHID DISPLAY (ORC13U1)', 5100)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- NOVAS ORQUÍDEAS ADICIONADAS ANTERIORMENTE -->
+
+                <!-- 1. ORCHID ARRANGEMENT IN CERAMIC POT -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <img src="img/orchids/orchidas.jpeg" alt="ORCHID ARRANGEMENT IN CERAMIC POT">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ORC01U1</span>
+                        <h3 class="product-name">ORCHID ARRANGEMENT IN CERAMIC POT</h3>
+                        <p class="product-desc">Premium artificial orchid arrangement in elegance ceramic pot.</p>
+                        <div class="product-price">3.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ORCHID ARRANGEMENT IN CERAMIC POT (ORC01U1)', 3800)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- 2. WHITE ORCHID WITH GOLD POT -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <img src="img/orchids/orchidas1.jpeg" alt="WHITE ORCHID WITH GOLD POT">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ORC02U1</span>
+                        <h3 class="product-name">WHITE ORCHID WITH GOLD POT</h3>
+                        <p class="product-desc">Elegant white artificial orchid set in a luxury gold pot.</p>
+                        <div class="product-price">4.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('WHITE ORCHID WITH GOLD POT (ORC02U1)', 4200)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- 3. PURPLE PHALAENOPSIS ORCHID -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <img src="img/orchids/orchidas2.jpeg" alt="PURPLE PHALAENOPSIS ORCHID">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ORC03U1</span>
+                        <h3 class="product-name">PURPLE PHALAENOPSIS ORCHID</h3>
+                        <p class="product-desc">Vibrant purple phalaenopsis orchid in a modern planter.</p>
+                        <div class="product-price">3.950,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('PURPLE PHALAENOPSIS ORCHID (ORC03U1)', 3950)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- 4. DUAL STEM WHITE ORCHID -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <img src="img/orchids/orchidas3.jpeg" alt="DUAL STEM WHITE ORCHID">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ORC04U1</span>
+                        <h3 class="product-name">DUAL STEM WHITE ORCHID</h3>
+                        <p class="product-desc">Refined dual stem white orchid in decorative base.</p>
+                        <div class="product-price">4.100,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('DUAL STEM WHITE ORCHID (ORC04U1)', 4100)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- 5. PINK BLOOM ORCHID SET -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <img src="img/orchids/orchidas4.jpeg" alt="PINK BLOOM ORCHID SET">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ORC05U1</span>
+                        <h3 class="product-name">PINK BLOOM ORCHID SET</h3>
+                        <p class="product-desc">Soft pink blooming orchid arrangement for home decoration.</p>
+                        <div class="product-price">3.750,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('PINK BLOOM ORCHID SET (ORC05U1)', 3750)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- 6. LUXURY TALL ORCHID PLANTER -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <img src="img/orchids/orchidas5.jpeg" alt="LUXURY TALL ORCHID PLANTER">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ORC06U1</span>
+                        <h3 class="product-name">LUXURY TALL ORCHID PLANTER</h3>
+                        <p class="product-desc">Tall luxury orchid display suited for modern living spaces.</p>
+                        <div class="product-price">4.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('LUXURY TALL ORCHID PLANTER (ORC06U1)', 4800)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- 7. CLASSIC BOTANICAL ORCHID -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <img src="img/orchids/orchidas6.jpeg" alt="CLASSIC BOTANICAL ORCHID">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ORC07U1</span>
+                        <h3 class="product-name">CLASSIC BOTANICAL ORCHID</h3>
+                        <p class="product-desc">Classic artificial orchid arrangement with natural texture.</p>
+                        <div class="product-price">3.600,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CLASSIC BOTANICAL ORCHID (ORC07U1)', 3600)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- 8. GOLD BASE REAL-TOUCH ORCHID -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <img src="img/orchids/orchidas7.jpeg" alt="GOLD BASE REAL-TOUCH ORCHID">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ORC08U1</span>
+                        <h3 class="product-name">GOLD BASE REAL-TOUCH ORCHID</h3>
+                        <p class="product-desc">Real-touch artificial orchid seated on a golden base.</p>
+                        <div class="product-price">4.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GOLD BASE REAL-TOUCH ORCHID (ORC08U1)', 4500)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- 9. MULTI-FLOWER ORCHID POT -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <img src="img/orchids/orchidas8.jpeg" alt="MULTI-FLOWER ORCHID POT">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ORC09U1</span>
+                        <h3 class="product-name">MULTI-FLOWER ORCHID POT</h3>
+                        <p class="product-desc">Dense multi-flower orchid arrangement in table planter.</p>
+                        <div class="product-price">4.300,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MULTI-FLOWER ORCHID POT (ORC09U1)', 4300)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- PRODUTOS ADICIONADOS ANTERIORMENTE -->
+
+                <!-- 1. TRI BLACK POT STAND 31X18CM -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <img src="img/Vazos/TRIBLACKPOTSTAND_31X18CM.jpeg" alt="TRI BLACK POT STAND 31X18CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: NZ788U1</span>
+                        <h3 class="product-name">TRI BLACK POT STAND 31X18CM</h3>
+                        <p class="product-desc">PLANTERS & BUCKETS</p>
+                        <div class="product-price">4.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('TRI BLACK POT STAND 31X18CM (NZ788U1)', 4800)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- 2. JUXTON PLANT STAND 50CM -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <img src="img/Vazos/JUXTONPLANTSTAND_50CM.jpeg" alt="JUXTON PLANT STAND 50CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: NZ821U1</span>
+                        <h3 class="product-name">JUXTON PLANT STAND 50CM</h3>
+                        <p class="product-desc">PLANTERS & BUCKETS</p>
+                        <div class="product-price">5.600,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('JUXTON PLANT STAND 50CM (NZ821U1)', 5600)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- CHAD BLACK PLANT STAND SET/3 -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">SET OF 3</span>
+                        <img src="img/Vazos/PLANTERBUCKETS_CHADBLACKPLANTSTANT_SET3.jpeg" alt="CHAD BLACK PLANT STAND SET/3">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: NX182U1</span>
+                        <h3 class="product-name">CHAD BLACK PLANT STAND SET/3</h3>
+                        <p class="product-desc">PLANTERS & BUCKETS</p>
+                        <div class="product-price">8.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CHAD BLACK PLANT STAND SET/3 (NX182U1)', 8500)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- CHAD WHITE PLANT STAND SET/3 -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/Vazos/CHADWHITE_PLANT_STANT-SET3.jpeg" alt="CHAD WHITE PLANT STAND SET/3">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: NX181U1</span>
+                        <h3 class="product-name">CHAD WHITE PLANT STAND SET/3</h3>
+                        <p class="product-desc">PLANTERS & BUCKETS</p>
+                        <div class="product-price">8.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CHAD WHITE PLANT STAND SET/3 (NX181U1)', 8500)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- PLANT STAND BLACK 50CM -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sale!</span>
+                        <img src="img/Vazos/PLANTSTANDBLACK_50CM.jpeg" alt="PLANT STAND BLACK 50CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: NZ659U1</span>
+                        <h3 class="product-name">PLANT STAND BLACK 50CM</h3>
+                        <p class="product-desc">PLANTERS & BUCKETS</p>
+                        <div class="product-price">5.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('PLANT STAND BLACK 50CM (NZ659U1)', 5200)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- PLANT STAND BLACK 60CM -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <img src="img/Vazos/PLANTSTANDBLACK_60CM.jpeg" alt="PLANT STAND BLACK 60CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: NZ658U1</span>
+                        <h3 class="product-name">PLANT STAND BLACK 60CM</h3>
+                        <p class="product-desc">PLANTERS & BUCKETS</p>
+                        <div class="product-price">5.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('PLANT STAND BLACK 60CM (NZ658U1)', 5800)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- HANDLED POT STAND SMALL 61CM -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <img src="img/Vazos/Plantersbuckets_HANDLEDPOTSTANDMEDIUM_61CM.jpeg" alt="HANDLED POT STAND SMALL 61CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMG18U1</span>
+                        <h3 class="product-name">HANDLED POT STAND SMALL 61CM</h3>
+                        <p class="product-desc">PLANTERS & BUCKETS</p>
+                        <div class="product-price">6.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('HANDLED POT STAND SMALL 61CM (FMG18U1)', 6200)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- HANDLED POT STAND MEDIUM 68CM -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <img src="img/Vazos/Plantersbuckets_HANDLEDPOTSTANDMEDIUM_68CM.jpeg" alt="HANDLED POT STAND MEDIUM 68CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMG17U1</span>
+                        <h3 class="product-name">HANDLED POT STAND MEDIUM 68CM</h3>
+                        <p class="product-desc">PLANTERS & BUCKETS</p>
+                        <div class="product-price">7.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('HANDLED POT STAND MEDIUM 68CM (FMG17U1)', 7500)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- HANDLED POT STAND LARGE 74CM -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/Vazos/Plantersbuckets_HANDLEDPOTSTANDMEDIUM_74CM.jpeg" alt="HANDLED POT STAND LARGE 74CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMG16U1</span>
+                        <h3 class="product-name">HANDLED POT STAND LARGE 74CM</h3>
+                        <p class="product-desc">PLANTERS & BUCKETS</p>
+                        <div class="product-price">8.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('HANDLED POT STAND LARGE 74CM (FMG16U1)', 8800)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- FANTASY METAL POT TRI LEG 69CM -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <img src="img/Vazos/PlantersBuckets_Fantasy_Metal_PotTRILEG_69CM.jpeg" alt="FANTASY METAL POT TRI LEG 69CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMR41U1</span>
+                        <h3 class="product-name">FANTASY METAL POT TRI LEG 69CM</h3>
+                        <p class="product-desc">PLANTERS & BUCKETS</p>
+                        <div class="product-price">7.900,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('FANTASY METAL POT TRI LEG 69CM (FMR41U1)', 7900)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- ANTEGO MEDIUM PLANTER 37CM -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <img src="img/Vazos/Planterbucket_ANEGO_MEDIUM_PLANTER_37CM.jpeg" alt="ANTEGO MEDIUM PLANTER 37CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMG94U1</span>
+                        <h3 class="product-name">ANTEGO MEDIUM PLANTER 37CM</h3>
+                        <p class="product-desc">PLANTERS & BUCKETS</p>
+                        <div class="product-price">6.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ANTEGO MEDIUM PLANTER 37CM (FMG94U1)', 6800)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- ANTEGO LARGE PLANTER 44CM -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <img src="img/Vazos/Planterbucket_ANEGO_MEDIUM_PLANTER_44CM.jpeg" alt="ANTEGO LARGE PLANTER 44CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMG93U1</span>
+                        <h3 class="product-name">ANTEGO LARGE PLANTER 44CM</h3>
+                        <p class="product-desc">Home / DECOR / PLANTERS & BUCKETS / ANTEGO LARGE PLANTER 44CM</p>
+                        <div class="product-price">8.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ANTEGO LARGE PLANTER 44CM (FMG93U1)', 8200)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- MAYA BLACK FLOWER POT 20X25CM -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <img src="img/Vazos/MAYA_BLACK_FLOWER_OT_20X25CM.png" alt="MAYA BLACK FLOWER POT 20X25CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: NX786U1</span>
+                        <h3 class="product-name">MAYA BLACK FLOWER POT 20X25CM</h3>
+                        <p class="product-desc">Home / DECOR / PLANTERS & BUCKETS / MAYA BLACK FLOWER POT 20X25CM</p>
+                        <div class="product-price">4.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MAYA BLACK FLOWER POT 20X25CM (NX786U1)', 4500)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- GOLD SPEKANI POT 39HX36D -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/Vazos/Planterbuckets_Gold_Spekani_Pot_39HX36D.jpeg" alt="GOLD SPEKANI POT 39HX36D">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMG37U1</span>
+                        <h3 class="product-name">GOLD SPEKANI POT 39HX36D</h3>
+                        <p class="product-desc">PLANTERS & BUCKETS</p>
+                        <div class="product-price">7.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GOLD SPEKANI POT 39HX36D (FMG37U1)', 7200)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- GOLD SPEKANI POT 48HX47D -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/Vazos/Planterbuckets_Gold_Spekani_Pot_48HX47D.jpeg" alt="GOLD SPEKANI POT 48HX47D">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMG36U1</span>
+                        <h3 class="product-name">GOLD SPEKANI POT 48HX47D</h3>
+                        <p class="product-desc">PLANTERS & BUCKETS</p>
+                        <div class="product-price">8.900,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GOLD SPEKANI POT 48HX47D (FMG36U1)', 8900)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- GOLD SPEKANI POT 58HX60D -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <img src="img/Vazos/Planterbuckets_Gold_Spekani_Pot_58HX60D.jpeg" alt="GOLD SPEKANI POT 58HX60D">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMG35U1</span>
+                        <h3 class="product-name">GOLD SPEKANI POT 58HX60D</h3>
+                        <p class="product-desc">PLANTERS & BUCKETS</p>
+                        <div class="product-price">10.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GOLD SPEKANI POT 58HX60D (FMG35U1)', 10500)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- LAS VEGAS COFFEE TABLE -->
+                <div class="product-card" data-category="furniture">
+                    <div class="product-thumb">
+                        <span class="product-tag">17 in stock</span>
+                        <img src="img/metalsidetables/Lasvigas_Coffe_Table_40H61D.jpg" alt="LAS VEGAS COFFEE TABLE 40H61D">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: TFI47U1</span>
+                        <h3 class="product-name">LAS VEGAS COFFEE TABLE 40H61D</h3>
+                        <p class="product-desc">COFFEE TABLES</p>
+                        <div class="product-price">12.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('LAS VEGAS COFFEE TABLE 40H61D (TFI47U1)', 12500)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- HOBNAIL FOLDED TABLE -->
+                <div class="product-card" data-category="furniture">
+                    <div class="product-thumb">
+                        <span class="product-tag">36 in stock</span>
+                        <img src="img/metalsidetables/Sidetables_HobNail_56cm.jpg" alt="HOBNAIL FOLDED TABLE 56X56CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMG97U1</span>
+                        <h3 class="product-name">HOBNAIL FOLDED TABLE 56X56CM</h3>
+                        <p class="product-desc">SIDE TABLES</p>
+                        <div class="product-price">8.900,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('HOBNAIL FOLDED TABLE 56X56CM (FMG97U1)', 8900)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- SUNRAY FOLDED TABLE -->
+                <div class="product-card" data-category="furniture">
+                    <div class="product-thumb">
+                        <span class="product-tag">24 in stock</span>
+                        <img src="img/metalsidetables/sideable_sunray_62cm.jpg" alt="SUNRAY FOLDED TABLE 62X61CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMG95U1</span>
+                        <h3 class="product-name">SUNRAY FOLDED TABLE 62X61CM</h3>
+                        <p class="product-desc">SIDE TABLES</p>
+                        <div class="product-price">9.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SUNRAY FOLDED TABLE 62X61CM (FMG95U1)', 9200)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- MELO TABLE WITH MIRROR TOP 46X61C -->
+                <div class="product-card" data-category="furniture">
+                    <div class="product-thumb">
+                        <span class="product-tag">21 in stock</span>
+                        <img src="img/metalsidetables/coffetable_Melo_46Cmx61.jpg" alt="MELO TABLE WITH MIRROR TOP 46X61C">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMG79U1</span>
+                        <h3 class="product-name">MELO TABLE WITH MIRROR TOP 46X61C</h3>
+                        <p class="product-desc">COFFEE TABLES</p>
+                        <div class="product-price">11.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MELO TABLE WITH MIRROR TOP 46X61C (FMG79U1)', 11800)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- MELO TABLE WITH MIRROR TOP 41X51C -->
+                <div class="product-card" data-category="furniture">
+                    <div class="product-thumb">
+                        <span class="product-tag">21 in stock</span>
+                        <img src="img/metalsidetables/coffetable_Melo_41Cmx51cm.jpg" alt="MELO TABLE WITH MIRROR TOP 41X51C">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMG80U1</span>
+                        <h3 class="product-name">MELO TABLE WITH MIRROR TOP 41X51C</h3>
+                        <p class="product-desc">COFFEE TABLES</p>
+                        <div class="product-price">10.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MELO TABLE WITH MIRROR TOP 41X51C (FMG80U1)', 10500)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- SILHOUETTE TABLE -->
+                <div class="product-card" data-category="furniture">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/metalsidetables/Furniture_SilhoutteTable_44x45cm.jpg" alt="SILHOUETTE TABLE 44X45CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: AHM91U1</span>
+                        <h3 class="product-name">SILHOUETTE TABLE 44X45CM</h3>
+                        <p class="product-desc">FURNITURE</p>
+                        <div class="product-price">14.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SILHOUETTE TABLE 44X45CM (AHM91U1)', 14000)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- ALU OCCASIONAL TABLE -->
+                <div class="product-card" data-category="furniture">
+                    <div class="product-thumb">
+                        <span class="product-tag">3 in stock</span>
+                        <img src="img/metalsidetables/sidetables_ALUOC_53X38CM.jpg" alt="ALU OCCASIONAL TABLE 53X38cm">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MAR17U1</span>
+                        <h3 class="product-name">ALU OCCASIONAL TABLE 53X38cm</h3>
+                        <p class="product-desc">SIDE TABLES</p>
+                        <div class="product-price">7.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ALU OCCASIONAL TABLE 53X38cm (MAR17U1)', 7800)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- EKZOTA TABLE 45CM GOLD -->
+                <div class="product-card" data-category="furniture">
+                    <div class="product-thumb">
+                        <span class="product-tag">85 in stock</span>
+                        <img src="img/metalsidetables/SIDETABLE_EKZOTA_45CM.jpg" alt="EKZOTA TABLE 45CM GOLD">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMB41U1</span>
+                        <h3 class="product-name">EKZOTA TABLE 45CM GOLD</h3>
+                        <p class="product-desc">SIDE TABLES</p>
+                        <div class="product-price">9.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('EKZOTA TABLE 45CM GOLD (FMB41U1)', 9500)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- EKZOTA TABLE 50CM GOLD -->
+                <div class="product-card" data-category="furniture">
+                    <div class="product-thumb">
+                        <span class="product-tag">43 in stock</span>
+                        <img src="img/metalsidetables/SIDETABLE_EKZOTA_50CM.jpg" alt="EKZOTA TABLE 50CM GOLD">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMB40U1</span>
+                        <h3 class="product-name">EKZOTA TABLE 50CM GOLD</h3>
+                        <p class="product-desc">SIDE TABLES</p>
+                        <div class="product-price">10.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('EKZOTA TABLE 50CM GOLD (FMB40U1)', 10800)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- COOPER SIDE TABLE 52X44X44CM -->
+                <div class="product-card" data-category="furniture">
+                    <div class="product-thumb">
+                        <span class="product-tag">3 in stock</span>
+                        <img src="img/metalsidetables/SIDETABLE_CopperSideTable52x44x44cm.jpg" alt="COOPER SIDE TABLE 52X44X44CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMD21U1</span>
+                        <h3 class="product-name">COOPER SIDE TABLE 52X44X44CM</h3>
+                        <p class="product-desc">SIDE TABLES</p>
+                        <div class="product-price">11.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('COOPER SIDE TABLE 52X44X44CM (FMD21U1)', 11200)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- COOPER SIDE TABLE 43X37X37CM -->
+                <div class="product-card" data-category="furniture">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/metalsidetables/SIDETABLE_CopperSideTable43x37x37cm.jpg" alt="COOPER SIDE TABLE 43X37X37CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMD22U1</span>
+                        <h3 class="product-name">COOPER SIDE TABLE 43X37X37CM</h3>
+                        <p class="product-desc">SIDE TABLES</p>
+                        <div class="product-price">9.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('COOPER SIDE TABLE 43X37X37CM (FMD22U1)', 9800)">Add to cart</button>
+                    </div>
+                </div>
+                
+                <!-- METAL DECOR BASKET -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">63 in stock</span>
+                        <img src="img/DecMeta/MetalDecorBasket_25x11x26cm.jpg" alt="METAL DECOR BASKET 25X11X26CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMG09U1</span>
+                        <h3 class="product-name">METAL DECOR BASKET 25X11X26CM</h3>
+                        <p class="product-desc">DECORATIVE METAL</p>
+                        <div class="product-price">4.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('METAL DECOR BASKET 25X11X26CM (FMG09U1)', 4500)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- TULIPA CANDLE HOLDER -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">21 in stock</span>
+                        <img src="img/DecMeta/TULIPACANDLEHOLDER_21X39X36CM.jpg" alt="TULIPA CANDLE HOLDER 21X39X36CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMB98U1</span>
+                        <h3 class="product-name">TULIPA CANDLE HOLDER 21X39X36CM</h3>
+                        <p class="product-desc">DECORATIVE METAL</p>
+                        <div class="product-price">4.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('TULIPA CANDLE HOLDER 21X39X36CM (FMB98U1)', 4200)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- FOLHA FTD VASE 38CM -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/DecMeta/FOLHA_FTD_VASE_38CM.jpg" alt="FOLHA FTD VASE 38CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMB93U1</span>
+                        <h3 class="product-name">FOLHA FTD VASE 38CM</h3>
+                        <p class="product-desc">DECORATIVE METAL</p>
+                        <div class="product-price">4.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('FOLHA FTD VASE 38CM (FMB93U1)', 4800)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- FOLHA FTD VASE 49CM -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">29 in stock</span>
+                        <img src="img/DecMeta/FOLHA_FTD_VASE_49CM.jpg" alt="FOLHA FTD VASE 49CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMB92U1</span>
+                        <h3 class="product-name">FOLHA FTD VASE 49CM</h3>
+                        <p class="product-desc">DECORATIVE METAL</p>
+                        <div class="product-price">5.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('FOLHA FTD VASE 49CM (FMB92U1)', 5500)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- MEIA-LUHA VASE -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">6 in stock</span>
+                        <img src="img/DecMeta/MEIA_LUHA_VASE_36X30X12CM.jpg" alt="MEIA-LUHA VASE 36X30X12CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMB91U1</span>
+                        <h3 class="product-name">MEIA-LUHA VASE 36X30X12CM</h3>
+                        <p class="product-desc">DECORATIVE METAL</p>
+                        <div class="product-price">3.900,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MEIA-LUHA VASE 36X30X12CM (FMB91U1)', 3900)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- FOLHA GIANT VASE -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">16 in stock</span>
+                        <img src="img/DecMeta/FOLHA_GIANT_VASE_101CM.jpg" alt="FOLHA GIANT VASE 101CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMB89U1</span>
+                        <h3 class="product-name">FOLHA GIANT VASE 101CM</h3>
+                        <p class="product-desc">DECORATIVE METAL</p>
+                        <div class="product-price">7.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('FOLHA GIANT VASE 101CM (FMB89U1)', 7500)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- SABI FTD BOWL GOLD -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">56 in stock</span>
+                        <img src="img/DecMeta/SABI_FTD_BWL_19X40CM_GOLD.jpg" alt="SABI FTD BOWL 19X40CM GOLD">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MED06U1</span>
+                        <h3 class="product-name">SABI FTD BOWL 19X40CM GOLD</h3>
+                        <p class="product-desc">DECORATIVE METAL</p>
+                        <div class="product-price">4.600,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SABI FTD BOWL 19X40CM GOLD (MED06U1)', 4600)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- SABI FTD SPARKLE BOWL -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">64 in stock</span>
+                        <img src="img/DecMeta/SABI_FTD_BWL_19X40CM_GOLD.jpg" alt="SABI FTD SPARKLE BOWL 18X33CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MED05U1</span>
+                        <h3 class="product-name">SABI FTD SPARKLE BOWL 18X33CM</h3>
+                        <p class="product-desc">DECORATIVE METAL</p>
+                        <div class="product-price">4.100,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SABI FTD SPARKLE BOWL 18X33CM (MED05U1)', 4100)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- BOLAE VASE WHITE -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">9 in stock</span>
+                        <img src="img/DecMeta/BOLAE_VASE_WHITE_36X22CM.jpg" alt="BOLAE VASE WHITE 36X22CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMG33U1</span>
+                        <h3 class="product-name">BOLAE VASE WHITE 36X22CM</h3>
+                        <p class="product-desc">DECORATIVE METAL</p>
+                        <div class="product-price">4.300,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('BOLAE VASE WHITE 36X22CM (FMG33U1)', 4300)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- TULIP GOLD POT -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/DecMeta/TULIPACANDLEHOLDER_21X39X36CM.jpg" alt="TULIP GOLD POT 31X15CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMG32U1</span>
+                        <h3 class="product-name">TULIP GOLD POT 31X15CM</h3>
+                        <p class="product-desc">DECORATIVE METAL</p>
+                        <div class="product-price">3.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('TULIP GOLD POT 31X15CM (FMG32U1)', 3500)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- HONEY BOWL ROUGH GOLD -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">3 in stock</span>
+                        <img src="img/DecMeta/HONEY_BOWL_ROUGH_GOLD_42X42X11CM.jpg" alt="HONEY BOWL ROUGH GOLD 42X42X11CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: DEC32U1</span>
+                        <h3 class="product-name">HONEY BOWL ROUGH GOLD 42X42X11CM</h3>
+                        <p class="product-desc">DECORATIVE METAL</p>
+                        <div class="product-price">5.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('HONEY BOWL ROUGH GOLD 42X42X11CM (DEC32U1)', 5000)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- SPARKLE OVAL WIDE VASE -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">11 in stock</span>
+                        <img src="img/DecMeta/SPARKLE_OVAL_WIDE_VASE_30X53X15.jpg" alt="SPARKLE OVAL WIDE VASE 30X53X15">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MED27U1</span>
+                        <h3 class="product-name">SPARKLE OVAL WIDE VASE 30X53X15</h3>
+                        <p class="product-desc">DECORATIVE METAL</p>
+                        <div class="product-price">5.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SPARKLE OVAL WIDE VASE 30X53X15 (MED27U1)', 5200)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- ALU SPARKLE FLARED FTD VASE -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/DecMeta/ALU_SPARKLE_FLARED_FTD_VASE_43CM.jpg" alt="ALU SPARKLE FLARED FTD VASE 43CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MSE97U1</span>
+                        <h3 class="product-name">ALU SPARKLE FLARED FTD VASE 43CM</h3>
+                        <p class="product-desc">DECORATIVE METAL</p>
+                        <div class="product-price">4.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ALU SPARKLE FLARED FTD VASE 43CM (MSE97U1)', 4800)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- ALU SPARKLE SQUAT VASE -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/DecMeta/ALU_SPARKLE_SQUA_VASE_31X31X20CM.jpg" alt="ALU SPARKLE SQUAT VASE 31X31X20CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MSE95U1</span>
+                        <h3 class="product-name">ALU SPARKLE SQUAT VASE 31X31X20CM</h3>
+                        <p class="product-desc">DECORATIVE METAL</p>
+                        <div class="product-price">4.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ALU SPARKLE SQUAT VASE 31X31X20CM (MSE95U1)', 4000)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- ALU SPARKLE JAR VASE -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/DecMeta/ALU_SPARKLE_JAR_VASE_39CM.jpg" alt="ALU SPARKLE JAR VASE 39CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MSE94U1</span>
+                        <h3 class="product-name">ALU SPARKLE JAR VASE 39CM</h3>
+                        <p class="product-desc">DECORATIVE METAL</p>
+                        <div class="product-price">4.400,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ALU SPARKLE JAR VASE 39CM (MSE94U1)', 4400)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- HONEY VASE GOLD -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">5 in stock</span>
+                        <img src="img/DecMeta/HONEY_VASE_GOLD_30CM.jpg" alt="HONEY VASE GOLD 30CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: DEC31U1</span>
+                        <h3 class="product-name">HONEY VASE GOLD 30CM</h3>
+                        <p class="product-desc">DECORATIVE METAL</p>
+                        <div class="product-price">4.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('HONEY VASE GOLD 30CM (DEC31U1)', 4200)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- SCULPTURE SWIRL ROUGH NICKEL -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">41 in stock</span>
+                        <img src="img/DecMeta/SCULPTURE_SWIRL_ROUGH_NICKEL52X30.jpg" alt="SCULPTURE SWIRL ROUGH NICKEL 52X30">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: DPC32U1</span>
+                        <h3 class="product-name">SCULPTURE SWIRL ROUGH NICKEL 52X30</h3>
+                        <p class="product-desc">DECORATIVE METAL</p>
+                        <div class="product-price">5.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SCULPTURE SWIRL ROUGH NICKEL 52X30 (DPC32U1)', 5800)">Add to cart</button>
+                    </div>
+                </div>
+
+                <!-- Planta 1 -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">Botânica</span>
+                        <img src="img/plantas/planta.jpeg" alt="Lemon Tree 1.2M">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: NX287U1</span>
+                        <h3 class="product-name">Lemon Tree 1.2M</h3>
+                        <p class="product-desc">Videira de limão artificial decorativa com vaso preto. Altura de 1.2 metros.</p>
+                        <div class="product-price">4.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Lemon Tree 1.2M (NX287U1)', 4500)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <!-- Planta 2 -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">Botânica</span>
+                        <img src="img/plantas/planta1.jpeg" alt="Palm In Pot 150CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: BEC65U1</span>
+                        <h3 class="product-name">Palm In Pot 150CM</h3>
+                        <p class="product-desc">Palmeira decorativa em vaso com folhagem densa. Altura de 150 cm.</p>
+                        <div class="product-price">5.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Palm In Pot 150CM (BEC65U1)', 5200)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <!-- Planta 3 -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">Botânica</span>
+                        <img src="img/plantas/planta2.jpeg" alt="Bamboo Tree In Pot 1.2M">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: BEC52U1</span>
+                        <h3 class="product-name">Bamboo Tree In Pot 1.2M</h3>
+                        <p class="product-desc">Bambu artificial elegante em vaso preto. Altura de 1.2 metros.</p>
+                        <div class="product-price">4.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Bamboo Tree In Pot 1.2M (BEC52U1)', 4800)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <!-- Planta 4 -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">Botânica</span>
+                        <img src="img/plantas/planta3.jpeg" alt="Olive Tree 109CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: YIG37U1</span>
+                        <h3 class="product-name">Olive Tree 109CM</h3>
+                        <p class="product-desc">Oliveira decorativa com vaso em estilo cimento. Altura de 109 cm.</p>
+                        <div class="product-price">4.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Olive Tree 109CM (YIG37U1)', 4200)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <!-- Planta 5 -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">Botânica</span>
+                        <img src="img/plantas/planta4.jpeg" alt="Dracaena With Plastic Pot 114CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: BEC60U1</span>
+                        <h3 class="product-name">Dracaena With Plastic Pot 114CM</h3>
+                        <p class="product-desc">Planta Dracena com detalhes vibrantes e vaso plástico. Altura de 114 cm.</p>
+                        <div class="product-price">4.600,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Dracaena With Plastic Pot 114CM (BEC60U1)', 4600)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <!-- Planta 6 -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">Botânica</span>
+                        <img src="img/plantas/planta5.jpeg" alt="Banana Leaf Plant In Pot 1.5M">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: NZ667U1</span>
+                        <h3 class="product-name">Banana Leaf Plant In Pot 1.5M</h3>
+                        <p class="product-desc">Planta de folhas de bananeira em vaso preto. Altura de 1.5 metros.</p>
+                        <div class="product-price">5.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Banana Leaf Plant In Pot 1.5M (NZ667U1)', 5500)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <!-- Planta 7 -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">Botânica</span>
+                        <img src="img/plantas/planta6.jpeg" alt="Banana Leaf Plant In Pot 1.3M">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: NX928U1</span>
+                        <h3 class="product-name">Banana Leaf Plant In Pot 1.3M</h3>
+                        <p class="product-desc">Planta de bananeira tropical com folhas largas e volumosas. Altura de 1.3 metros.</p>
+                        <div class="product-price">4.900,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Banana Leaf Plant In Pot 1.3M (NX928U1)', 4900)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <!-- Planta 8 -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">Botânica</span>
+                        <img src="img/plantas/planta7.jpeg" alt="Cycas In Pot 95CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: BEC64U1</span>
+                        <h3 class="product-name">Cycas In Pot 95CM</h3>
+                        <p class="product-desc">Palmeira Cycas de tronco duplo em vaso preto. Altura de 95 cm.</p>
+                        <div class="product-price">3.900,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Cycas In Pot 95CM (BEC64U1)', 3900)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <!-- Planta 8 (Banana Leaf Plant 1.9M) -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">Botânica</span>
+                        <img src="img/plantas/planta8.jpeg" alt="Banana Leaf Plant 1.9M">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: NX755U1</span>
+                        <h3 class="product-name">Banana Leaf Plant 1.9M</h3>
+                        <p class="product-desc">Planta de folhas de bananeira de grande porte em vaso preto. Altura de 1.9 metros.</p>
+                        <div class="product-price">6.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Banana Leaf Plant 1.9M (NX755U1)', 6200)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <!-- Planta 9 (Fiddle Fig Leaf Tree In Pot 120CM) -->
+                <div class="product-card" data-category="decor">
+                    <div class="product-thumb">
+                        <span class="product-tag">Botânica</span>
+                        <img src="img/plantas/planta9.jpeg" alt="Fiddle Fig Leaf Tree In Pot 120CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: YIG73U1</span>
+                        <h3 class="product-name">Fiddle Fig Leaf Tree In Pot 120CM</h3>
+                        <p class="product-desc">Árvore de figueira-lira artificial elegante em vaso preto. Altura de 120 cm.</p>
+                        <div class="product-price">4.700,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Fiddle Fig Leaf Tree In Pot 120CM (YIG73U1)', 4700)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <!-- Outros Produtos Exemplo -->
+                <div class="product-card" data-category="furniture">
+                    <div class="product-thumb">
+                        <span class="product-tag">Móveis</span>
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80" alt="Poltrona Velvet">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-PV01</span>
+                        <h3 class="product-name">Poltrona Velvet Royale</h3>
+                        <p class="product-desc">Ergonomia avançada com veludo toque suave e base dourada.</p>
+                        <div class="product-price">12.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Poltrona Velvet Royale', 12500)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="furniture">
+                    <div class="product-thumb">
+                        <span class="product-tag">Móveis</span>
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80" alt="Sofá Modular">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-SF02</span>
+                        <h3 class="product-name">Sofá Modular Executive</h3>
+                        <p class="product-desc">Sofá de 3 lugares com espuma de alta densidade e tecido premium.</p>
+                        <div class="product-price">28.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Sofá Modular Executive', 28000)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Encomendar -->
+    <section class="info-section" id="como-encomendar">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-subtitle">Transparência & Processo</span>
+                <h2 class="section-title">Como Funciona</h2>
+            </div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>1. Seleção & Encomenda</h3>
+                    <p>Navegue pelo nosso catálogo, adicione os móveis ou artigos decorativos ao carrinho e envie a sua encomenda diretamente via WhatsApp para confirmação de especificações.</p>
+                </div>
+                <div class="info-card">
+                    <h3>2. Pagamento Facilitado</h3>
+                    <p>Trabalhamos com o regime de 60% de sinal de depósito no momento da reserva ou início de produção, sendo os restantes 40% liquidados no ato da entrega.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre a Marca -->
+    <section class="about-section" id="sobre">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="img/soja3.jpeg" alt="Luxury Parcels - Identidade Corporativa">
+                </div>
+                <div class="about-content">
+                    <span class="section-subtitle">Exclusividade em Moçambique</span>
+                    <h2 class="section-title" style="margin-bottom: 24px;">Sobre a Luxury Parcels</h2>
+                    <p class="about-quote">"Criamos ambientes requintados unindo a estética contemporânea ao conforto absoluto."</p>
+                    <p class="about-text">A Luxury Parcels é especializada no fornecimento e criação de mobiliário de alto padrão e soluções decorativas sob medida. Atendemos projetos residenciais e corporativos em Maputo e em todas as províncias de Moçambique.</p>
+                    <p class="about-text">Garantimos um acompanhamento rigoroso desde o fabrico até à montagem final, assegurando materiais de qualidade ímpar e prazos eficientes.</p>
+                    <div class="representative-card">
+                        <span class="rep-title">Atendimento VIP</span>
+                        <div class="rep-name">Luxury Parcels Mozambique</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrinho Drawer -->
+    <div class="drawer-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="drawer-header">
+            <h3 class="drawer-title">Sua Encomenda</h3>
+            <button class="close-btn" onclick="toggleCart()">&times;</button>
+        </div>
+        
+        <div class="drawer-body" id="cartItems">
+            <div class="cart-empty">Seu carrinho está vazio.</div>
+        </div>
+
+        <div class="drawer-footer">
+            <div class="shipping-selector">
+                <label for="shippingProvince">Província de Entrega:</label>
+                <select id="shippingProvince" onchange="renderCart()">
+                    <option value="Maputo Cidade" data-cost="500">Maputo Cidade (500 MZN)</option>
+                    <option value="Maputo Província" data-cost="800">Maputo Província (800 MZN)</option>
+                    <option value="Gaza" data-cost="1500">Gaza (1.500 MZN)</option>
+                    <option value="Inhambane" data-cost="2000">Inhambane (2.000 MZN)</option>
+                    <option value="Sofala (Beira)" data-cost="2500">Sofala - Beira (2.500 MZN)</option>
+                    <option value="Manica" data-cost="2500">Manica (2.500 MZN)</option>
+                    <option value="Tete" data-cost="3000">Tete (3.000 MZN)</option>
+                    <option value="Zambézia" data-cost="3000">Zambézia (3.000 MZN)</option>
+                    <option value="Nampula" data-cost="3500">Nampula (3.500 MZN)</option>
+                    <option value="Cabo Delgado" data-cost="4000">Cabo Delgado (4.000 MZN)</option>
+                    <option value="Niassa" data-cost="4000">Niassa (4.000 MZN)</option>
+                </select>
+            </div>
+            
+            <div class="drawer-subtotal">
+                <span>Subtotal:</span>
+                <strong id="subtotalVal">0.00 MZN</strong>
+            </div>
+            <div class="drawer-subtotal">
+                <span>Envio:</span>
+                <strong id="shippingVal">0.00 MZN</strong>
+            </div>
+            <div class="drawer-subtotal" style="margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border-color);">
+                <span>Total Estimado:</span>
+                <strong id="totalVal" style="color: var(--gold); font-size: 1.3rem;">0.00 MZN</strong>
+            </div>
+
+            <button class="btn-whatsapp" onclick="checkoutWhatsApp()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.099 4.017 4.042-1.061z"/>
+                </svg>
+                Enviar via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">Luxury <span>Parcels</span></div>
+                    <p class="footer-desc">Especialistas em mobiliário e decoração de alto padrão sob medida em Moçambique. Elegância e distinção para a sua casa ou empresa.</p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Navegação</h4>
+                    <ul class="footer-list">
+                        <li><a href="#catalogo">Catálogo</a></li>
+                        <li><a href="#como-encomendar">Como Encomendar</a></li>
+                        <li><a href="#sobre">A Marca</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Contactos</h4>
+                    <ul class="footer-list">
+                        <li>Maputo, Moçambique</li>
+                        <li>+258 84 035 3058</li>
+                        <li>Seg - Sáb: 08:00h - 18:00h</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Luxury Parcels. Todos os direitos reservados.</p>
+                <p>Moçambique</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'pt',
+                includedLanguages: 'en,pt',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Scripts -->
+    <script>
+        let cart = [];
+
+        function translatePage(lang) {
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = lang;
+                select.dispatchEvent(new Event('change'));
+            } else {
+                let retries = 0;
+                const checkExist = setInterval(() => {
+                    const selectRetry = document.querySelector('.goog-te-combo');
+                    if (selectRetry) {
+                        selectRetry.value = lang;
+                        selectRetry.dispatchEvent(new Event('change'));
+                        clearInterval(checkExist);
+                    }
+                    retries++;
+                    if (retries > 10) clearInterval(checkExist);
+                }, 200);
+            }
+
+            document.body.style.top = '0px';
+
+            const btnPt = document.getElementById('btn-pt');
+            const btnEn = document.getElementById('btn-en');
+            const mBtnPt = document.getElementById('m-btn-pt');
+            const mBtnEn = document.getElementById('m-btn-en');
+
+            if (lang === 'en') {
+                btnPt?.classList.remove('active');
+                btnEn?.classList.add('active');
+                mBtnPt?.classList.remove('active');
+                mBtnEn?.classList.add('active');
+                document.documentElement.lang = 'en';
+            } else {
+                btnEn?.classList.remove('active');
+                btnPt?.classList.add('active');
+                mBtnEn?.classList.remove('active');
+                mBtnPt?.classList.add('active');
+                document.documentElement.lang = 'pt';
+            }
+        }
+
+        function formatMZN(val) {
+            return val.toLocaleString('pt-PT', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' MZN';
+        }
+
+        function toggleCart() {
+            document.getElementById('cartDrawer').classList.toggle('active');
+            document.getElementById('cartOverlay').classList.toggle('active');
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileDrawer').classList.toggle('active');
+            document.getElementById('mobileOverlay').classList.toggle('active');
+        }
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            renderCart();
+            showToast(`"${name}" adicionado!`);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            renderCart();
+        }
+
+        function renderCart() {
+            const cartCountEl = document.getElementById('cartCount');
+            const cartItemsEl = document.getElementById('cartItems');
+            const subtotalValEl = document.getElementById('subtotalVal');
+            const shippingValEl = document.getElementById('shippingVal');
+            const totalValEl = document.getElementById('totalVal');
+            const shippingSelect = document.getElementById('shippingProvince');
+
+            cartCountEl.textContent = cart.length;
+
+            if (cart.length === 0) {
+                cartItemsEl.innerHTML = '<div class="cart-empty">Seu carrinho está vazio.</div>';
+                subtotalValEl.textContent = formatMZN(0);
+                shippingValEl.textContent = formatMZN(0);
+                totalValEl.textContent = formatMZN(0);
+                return;
+            }
+
+            cartItemsEl.innerHTML = cart.map((item, idx) => `
+                <div class="cart-item">
+                    <div>
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-price">${formatMZN(item.price)}</div>
+                    </div>
+                    <span class="remove-item" onclick="removeFromCart(${idx})">&times; Remover</span>
+                </div>
+            `).join('');
+
+            const subtotal = cart.reduce((acc, i) => acc + i.price, 0);
+            const selectedOpt = shippingSelect.options[shippingSelect.selectedIndex];
+            const shipping = parseFloat(selectedOpt.getAttribute('data-cost')) || 0;
+            const total = subtotal + shipping;
+
+            subtotalValEl.textContent = formatMZN(subtotal);
+            shippingValEl.textContent = formatMZN(shipping);
+            totalValEl.textContent = formatMZN(total);
+        }
+
+        function filterProducts(category, event) {
+            const btns = document.querySelectorAll('.filter-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            if(event) event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        function checkoutWhatsApp() {
+            if (cart.length === 0) {
+                alert('Adicione pelo menos um item ao carrinho.');
+                return;
+            }
+
+            const phone = "258840353058";
+            const shippingSelect = document.getElementById('shippingProvince');
+            const selectedOpt = shippingSelect.options[shippingSelect.selectedIndex];
+            const province = selectedOpt.value;
+            const shipping = parseFloat(selectedOpt.getAttribute('data-cost')) || 0;
+            const subtotal = cart.reduce((acc, i) => acc + i.price, 0);
+            const total = subtotal + shipping;
+
+            let msg = "Olá equipe *Luxury Parcels*! Gostaria de realizar o seguinte pedido:\n\n";
+            msg += "*ITENS SELECIONADOS:*\n";
+            cart.forEach((item, index) => {
+                msg += `${index + 1}. *${item.name}* - ${formatMZN(item.price)}\n`;
+            });
+
+            msg += `\n*DETALHES DE ENTREGA:*\n`;
+            msg += `📍 Província: *${province}*\n`;
+            msg += `🚚 Taxa de Envio: *${formatMZN(shipping)}*\n\n`;
+            msg += `Subtotal: ${formatMZN(subtotal)}\n`;
+            msg += `*Total Final: ${formatMZN(total)}*\n`;
+            msg += `(Sinal de 60% para reserva/produção: ${formatMZN(total * 0.6)})\n\n`;
+            msg += "Por favor, confirmem a disponibilidade. Obrigado!";
+
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
