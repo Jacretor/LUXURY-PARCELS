@@ -59,6 +59,7 @@
             -webkit-font-smoothing: antialiased;
             top: 0 !important;
             position: static !important;
+            transition: opacity 0.05s ease;
         }
 
         a {
@@ -1095,7 +1096,6 @@
 </head>
 <body>
 
-    <div id="google_translate_element"></div>
 
     <div class="toast" id="toast">Item adicionado ao carrinho</div>
 
@@ -3571,141 +3571,380 @@
         </div>
     </div>
 
-    <!-- Scripts da Funcionalidade da Página e Tradução Automática -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'pt',
-                includedLanguages: 'pt,en',
-                autoDisplay: false
-            }, 'google_translate_element');
+   <script>
+    // ============================================
+    // DICIONÁRIO DE TRADUÇÕES - PRÉ-CARREGADO
+    // ============================================
+    const translations = {
+        pt: {
+            // Navegação
+            'nav-catalogo': 'Catálogo',
+            'nav-como': 'Como Encomendar',
+            'nav-sobre': 'A Marca',
+            'nav-contacto': 'Contacto',
+            
+            // Hero
+            'hero-tag': 'Móveis Exclusivos & Decoração',
+            'hero-title': 'Eleve o Seu Espaço com Peças de Alto Padrão',
+            'hero-desc': 'Mobiliário sob medida, plantas artificiais premium, estofados e acessórios decorativos selecionados com rigor e sofisticação para o seu ambiente.',
+            'hero-btn1': 'Explorar Catálogo',
+            'hero-btn2': 'Como Encomendar',
+            'hero-badge': 'Design Exclusivo',
+            
+            // Features
+            'feat1-t': 'Sob Medida',
+            'feat1-d': 'Personalização total de dimensões e acabamentos.',
+            'feat2-t': 'Entrega 10-15 Dias',
+            'feat2-d': 'Envio seguro para Maputo e províncias.',
+            'feat3-t': 'Depósito de 60%',
+            'feat3-d': 'Facilidade de pagamento: 60% inicial e 40% na entrega.',
+            'feat4-t': 'Qualidade Premium',
+            'feat4-d': 'Materiais nobres e design refinado.',
+            
+            // Catálogo
+            'cat-sub': 'Coleções Selecionadas',
+            'cat-title': 'Nosso Catálogo',
+            'btn-add': 'Adicionar ao Carrinho',
+            
+            // Info / Como Encomendar
+            'info-sub': 'Transparência & Processo',
+            'info-title': 'Como Funciona',
+            'step1-t': '1. Seleção & Encomenda',
+            'step1-d': 'Navegue pelo nosso catálogo, adicione os móveis ou artigos decorativos ao carrinho e envie a sua encomenda diretamente via WhatsApp para confirmação de especificações.',
+            'step2-t': '2. Pagamento Facilitado',
+            'step2-d': 'Trabalhamos com o regime de 60% de sinal de depósito no momento da reserva ou início de produção, sendo os restantes 40% liquidados no ato da entrega.',
+            
+            // Sobre
+            'about-sub': 'Exclusividade em Moçambique',
+            'about-title': 'Sobre a Luxury Parcels',
+            'about-quote': '"Criamos ambientes requintados unindo a estética contemporânea ao conforto absoluto."',
+            'about-p1': 'A Luxury Parcels é especializada no fornecimento e criação de mobiliário de alto padrão e soluções decorativas sob medida. Atendemos projetos residenciais e corporativos em Maputo e em todas as províncias de Moçambique.',
+            'about-p2': 'Garantimos um acompanhamento rigoroso desde o fabrico até à montagem final, assegurando materiais de qualidade ímpar e prazos eficientes.',
+            'about-vip': 'Atendimento VIP',
+            
+            // Carrinho
+            'cart-title': 'Sua Encomenda',
+            'cart-empty': 'Seu carrinho está vazio.',
+            'subtotal': 'Subtotal:',
+            'total': 'Total Estimado:',
+            
+            // Filtros
+            'filter-all': 'Todos',
+            'filter-flowers': 'Artificial Flowers',
+            'filter-vase': 'Vase(planters)',
+            'filter-poltron': 'Poltron',
+            'filter-sofa': 'Sofa',
+            'filter-kitchen': 'Kitchen',
+            'filter-orchids': 'Orchids',
+            'filter-lightning': 'Lightning',
+            'filter-side': 'Side tables',
+            'filter-coffe': 'Coffe tables',
+            'filter-mirrors': 'Mirrors',
+            'filter-console': 'Console Table',
+            'filter-center': 'Mesinhas de Centro'
+        },
+        en: {
+            // Navigation
+            'nav-catalogo': 'Catalog',
+            'nav-como': 'How to Order',
+            'nav-sobre': 'The Brand',
+            'nav-contacto': 'Contact',
+            
+            // Hero
+            'hero-tag': 'Exclusive Furniture & Decor',
+            'hero-title': 'Elevate Your Space with High-End Pieces',
+            'hero-desc': 'Custom furniture, premium artificial plants, upholstery and decorative accessories carefully selected with rigor and sophistication for your environment.',
+            'hero-btn1': 'Explore Catalog',
+            'hero-btn2': 'How to Order',
+            'hero-badge': 'Exclusive Design',
+            
+            // Features
+            'feat1-t': 'Custom Made',
+            'feat1-d': 'Total customization of dimensions and finishes.',
+            'feat2-t': 'Delivery 10-15 Days',
+            'feat2-d': 'Secure shipping to Maputo and provinces.',
+            'feat3-t': '60% Deposit',
+            'feat3-d': 'Payment flexibility: 60% upfront and 40% upon delivery.',
+            'feat4-t': 'Premium Quality',
+            'feat4-d': 'Noble materials and refined design.',
+            
+            // Catalog
+            'cat-sub': 'Selected Collections',
+            'cat-title': 'Our Catalog',
+            'btn-add': 'Add to Cart',
+            
+            // Info / How to Order
+            'info-sub': 'Transparency & Process',
+            'info-title': 'How It Works',
+            'step1-t': '1. Selection & Order',
+            'step1-d': 'Browse our catalog, add furniture or decorative items to your cart and send your order directly via WhatsApp for specification confirmation.',
+            'step2-t': '2. Easy Payment',
+            'step2-d': 'We work with a 60% deposit at the time of reservation or production start, with the remaining 40% paid upon delivery.',
+            
+            // About
+            'about-sub': 'Exclusivity in Mozambique',
+            'about-title': 'About Luxury Parcels',
+            'about-quote': '"We create refined environments combining contemporary aesthetics with absolute comfort."',
+            'about-p1': 'Luxury Parcels specializes in the supply and creation of high-end furniture and custom decorative solutions. We serve residential and corporate projects in Maputo and all provinces of Mozambique.',
+            'about-p2': 'We ensure rigorous follow-up from manufacturing to final assembly, guaranteeing exceptional quality materials and efficient timelines.',
+            'about-vip': 'VIP Service',
+            
+            // Cart
+            'cart-title': 'Your Order',
+            'cart-empty': 'Your cart is empty.',
+            'subtotal': 'Subtotal:',
+            'total': 'Estimated Total:',
+            
+            // Filters
+            'filter-all': 'All',
+            'filter-flowers': 'Artificial Flowers',
+            'filter-vase': 'Vase(planters)',
+            'filter-poltron': 'Poltron',
+            'filter-sofa': 'Sofa',
+            'filter-kitchen': 'Kitchen',
+            'filter-orchids': 'Orchids',
+            'filter-lightning': 'Lightning',
+            'filter-side': 'Side tables',
+            'filter-coffe': 'Coffe tables',
+            'filter-mirrors': 'Mirrors',
+            'filter-console': 'Console Table',
+            'filter-center': 'Center Tables'
         }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    };
 
-    <script>
-        let cart = [];
+    let currentLang = 'pt';
 
-        function translatePage(lang) {
-            const select = document.querySelector('.goog-te-combo');
-            if (select) {
-                select.value = lang;
-                select.dispatchEvent(new Event('change'));
-            }
-
-            document.querySelectorAll('#btn-pt, #m-btn-pt').forEach(btn => {
-                if (lang === 'pt') btn.classList.add('active');
-                else btn.classList.remove('active');
-            });
-
-            document.querySelectorAll('#btn-en, #m-btn-en').forEach(btn => {
-                if (lang === 'en') btn.classList.add('active');
-                else btn.classList.remove('active');
-            });
-        }
-
-        function filterProducts(category, event) {
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            if(event && event.target) {
-                event.target.classList.add('active');
-            }
-
-            const cards = document.querySelectorAll('.product-card');
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'flex';
+    // ============================================
+    // FUNÇÃO DE TRADUÇÃO INSTANTÂNEA
+    // ============================================
+    function translatePage(lang) {
+        currentLang = lang;
+        
+        // Atualiza todos os elementos com data-i18n
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                // Mantém HTML interno se houver (ex: <strong>)
+                if (element.innerHTML.includes('<')) {
+                    // Substitui apenas o texto, mantendo as tags
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = element.innerHTML;
+                    const textNodes = getTextNodes(tempDiv);
+                    textNodes.forEach(node => {
+                        if (node.textContent.trim()) {
+                            // Tenta encontrar a tradução correspondente
+                            const originalText = node.textContent.trim();
+                            // Verifica se é uma das keys
+                            if (translations.pt[key] && translations.pt[key] === originalText) {
+                                node.textContent = translations[lang][key];
+                            }
+                        }
+                    });
+                    element.innerHTML = tempDiv.innerHTML;
                 } else {
-                    card.style.display = 'none';
+                    element.textContent = translations[lang][key];
                 }
-            });
-        }
-
-        function toggleCart() {
-            document.getElementById('cartOverlay').classList.toggle('active');
-            document.getElementById('cartDrawer').classList.toggle('active');
-        }
-
-        function toggleMobileMenu() {
-            document.getElementById('mobileOverlay').classList.toggle('active');
-            document.getElementById('mobileDrawer').classList.toggle('active');
-        }
-
-        function showToast() {
-            const toast = document.getElementById('toast');
-            toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 2500);
-        }
-
-        function addToCart(name, price) {
-            cart.push({ name, price });
-            updateCartUI();
-            showToast();
-        }
-
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCartUI();
-        }
-
-        function updateCartUI() {
-            const cartCount = document.getElementById('cartCount');
-            const cartItems = document.getElementById('cartItems');
-            const subtotalVal = document.getElementById('subtotalVal');
-            const totalVal = document.getElementById('totalVal');
-
-            cartCount.textContent = cart.length;
-
-            if (cart.length === 0) {
-                cartItems.innerHTML = '<div class="cart-empty" data-i18n="cart-empty">Seu carrinho está vazio.</div>';
-                subtotalVal.textContent = '0.00 MZN';
-                totalVal.textContent = '0.00 MZN';
-                return;
             }
+        });
 
-            let html = '';
-            let total = 0;
+        // Atualiza placeholder ou atributos se necessário
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+            const key = element.getAttribute('data-i18n-placeholder');
+            if (translations[lang] && translations[lang][key]) {
+                element.placeholder = translations[lang][key];
+            }
+        });
 
-            cart.forEach((item, index) => {
-                total += item.price;
-                html += `
-                    <div class="cart-item">
-                        <div>
-                            <div class="cart-item-title">${item.name}</div>
-                            <div class="cart-item-price">${item.price.toLocaleString('pt-MZ')} MZN</div>
-                        </div>
-                        <span class="remove-item" onclick="removeFromCart(${index})">&times; Remover</span>
+        // Atualiza botões de idioma
+        document.querySelectorAll('#btn-pt, #m-btn-pt').forEach(btn => {
+            btn.classList.toggle('active', lang === 'pt');
+        });
+        document.querySelectorAll('#btn-en, #m-btn-en').forEach(btn => {
+            btn.classList.toggle('active', lang === 'en');
+        });
+
+        // Atualiza os filtros
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            const text = btn.textContent.trim();
+            // Mapeia textos dos filtros
+            const filterMap = {
+                'Todos': 'filter-all',
+                'Artificial Flowers': 'filter-flowers',
+                'Vase(planters)': 'filter-vase',
+                'Poltron': 'filter-poltron',
+                'Sofa': 'filter-sofa',
+                'Kitchen': 'filter-kitchen',
+                'Orchids': 'filter-orchids',
+                'Lightning': 'filter-lightning',
+                'Side tables': 'filter-side',
+                'Coffe tables': 'filter-coffe',
+                'Mirrors': 'filter-mirrors',
+                'Console Table': 'filter-console',
+                'Mesinhas de Centro': 'filter-center'
+            };
+            const key = filterMap[text];
+            if (key && translations[lang] && translations[lang][key]) {
+                btn.textContent = translations[lang][key];
+            }
+        });
+
+        // Força um pequeno delay para garantir que tudo foi atualizado
+        requestAnimationFrame(() => {
+            document.body.style.opacity = '0.99';
+            requestAnimationFrame(() => {
+                document.body.style.opacity = '1';
+            });
+        });
+    }
+
+    // Função auxiliar para extrair nós de texto
+    function getTextNodes(element) {
+        const nodes = [];
+        const walker = document.createTreeWalker(
+            element,
+            NodeFilter.SHOW_TEXT,
+            null,
+            false
+        );
+        let node;
+        while (node = walker.nextNode()) {
+            nodes.push(node);
+        }
+        return nodes;
+    }
+
+    // ============================================
+    // INICIALIZAÇÃO
+    // ============================================
+    document.addEventListener('DOMContentLoaded', function() {
+        // Define idioma inicial como Português
+        translatePage('pt');
+
+        // Adiciona eventos aos botões de idioma (já existem no HTML)
+        // Os botões já chamam translatePage('pt') e translatePage('en')
+    });
+
+    // ============================================
+    // FUNÇÕES EXISTENTES (CARRINHO, FILTROS, ETC)
+    // ============================================
+    let cart = [];
+
+    function filterProducts(category, event) {
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        if(event && event.target) {
+            event.target.classList.add('active');
+        }
+
+        const cards = document.querySelectorAll('.product-card');
+        cards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    function toggleCart() {
+        document.getElementById('cartOverlay').classList.toggle('active');
+        document.getElementById('cartDrawer').classList.toggle('active');
+    }
+
+    function toggleMobileMenu() {
+        document.getElementById('mobileOverlay').classList.toggle('active');
+        document.getElementById('mobileDrawer').classList.toggle('active');
+    }
+
+    function showToast() {
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2500);
+    }
+
+    function addToCart(name, price) {
+        cart.push({ name, price });
+        updateCartUI();
+        showToast();
+    }
+
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCartUI();
+    }
+
+    function updateCartUI() {
+        const cartCount = document.getElementById('cartCount');
+        const cartItems = document.getElementById('cartItems');
+        const subtotalVal = document.getElementById('subtotalVal');
+        const totalVal = document.getElementById('totalVal');
+
+        cartCount.textContent = cart.length;
+
+        if (cart.length === 0) {
+            const emptyMsg = currentLang === 'pt' ? 'Seu carrinho está vazio.' : 'Your cart is empty.';
+            cartItems.innerHTML = `<div class="cart-empty">${emptyMsg}</div>`;
+            subtotalVal.textContent = '0.00 MZN';
+            totalVal.textContent = '0.00 MZN';
+            return;
+        }
+
+        let html = '';
+        let total = 0;
+
+        cart.forEach((item, index) => {
+            total += item.price;
+            const removeText = currentLang === 'pt' ? 'Remover' : 'Remove';
+            html += `
+                <div class="cart-item">
+                    <div>
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-price">${item.price.toLocaleString('pt-MZ')} MZN</div>
                     </div>
-                `;
-            });
+                    <span class="remove-item" onclick="removeFromCart(${index})">&times; ${removeText}</span>
+                </div>
+            `;
+        });
 
-            cartItems.innerHTML = html;
-            subtotalVal.textContent = total.toLocaleString('pt-MZ') + ' MZN';
-            totalVal.textContent = total.toLocaleString('pt-MZ') + ' MZN';
+        cartItems.innerHTML = html;
+        subtotalVal.textContent = total.toLocaleString('pt-MZ') + ' MZN';
+        totalVal.textContent = total.toLocaleString('pt-MZ') + ' MZN';
+    }
+
+    function checkoutWhatsApp() {
+        if (cart.length === 0) {
+            const msg = currentLang === 'pt' ? 'O seu carrinho está vazio.' : 'Your cart is empty.';
+            alert(msg);
+            return;
         }
 
-        function checkoutWhatsApp() {
-            if (cart.length === 0) {
-                alert('O seu carrinho está vazio.');
-                return;
-            }
+        let message = currentLang === 'pt' 
+            ? 'Olá, gostaria de realizar a encomenda dos seguintes itens na Luxury Parcels:\n\n'
+            : 'Hello, I would like to order the following items from Luxury Parcels:\n\n';
+        
+        let total = 0;
 
-            let message = 'Olá, gostaria de realizar a encomenda dos seguintes itens na Luxury Parcels:\n\n';
-            let total = 0;
+        cart.forEach((item, index) => {
+            message += `${index + 1}. ${item.name} - ${item.price.toLocaleString('pt-MZ')} MZN\n`;
+            total += item.price;
+        });
 
-            cart.forEach((item, index) => {
-                message += `${index + 1}. ${item.name} - ${item.price.toLocaleString('pt-MZ')} MZN\n`;
-                total += item.price;
-            });
+        const totalLabel = currentLang === 'pt' ? 'Total Estimado' : 'Estimated Total';
+        const paymentLabel = currentLang === 'pt' 
+            ? 'Aguardo a confirmação do pagamento do sinal (60%) e detalhes de entrega.'
+            : 'Awaiting confirmation of the deposit payment (60%) and delivery details.';
 
-            message += `\nTotal Estimado: ${total.toLocaleString('pt-MZ')} MZN\n`;
-            message += '\nAguardo a confirmação do pagamento do sinal (60%) e detalhes de entrega.';
+        message += `\n${totalLabel}: ${total.toLocaleString('pt-MZ')} MZN\n`;
+        message += `\n${paymentLabel}`;
 
-            const encodedMessage = encodeURIComponent(message);
-            window.open(`https://wa.me/?text=${encodedMessage}`, '_blank');
-        }
-    </script>
+        const encodedMessage = encodeURIComponent(message);
+        window.open(`https://wa.me/?text=${encodedMessage}`, '_blank');
+    }
+
+    // Remove o Google Translate antigo
+    // (As tags de script do Google Translate podem ser removidas do HTML)
+</script>
 </body>
 </html>
