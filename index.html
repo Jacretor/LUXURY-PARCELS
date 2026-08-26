@@ -899,6 +899,15 @@
             background: var(--bg-surface);
         }
 
+        .shipping-info-note {
+            background: var(--sand-light);
+            border-left: 3px solid var(--gold);
+            padding: 10px 14px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
         .drawer-subtotal {
             display: flex;
             justify-content: space-between;
@@ -916,28 +925,6 @@
         .drawer-subtotal strong {
             font-family: var(--font-serif);
             font-size: 1.15rem;
-            color: var(--text-main);
-        }
-
-        .shipping-selector {
-            margin-bottom: 16px;
-        }
-
-        .shipping-selector label {
-            display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-            margin-bottom: 6px;
-        }
-
-        .shipping-selector select {
-            width: 100%;
-            background: var(--sand-light);
-            border: 1px solid var(--border-color);
-            padding: 10px 12px;
-            font-size: 0.82rem;
             color: var(--text-main);
         }
 
@@ -1108,7 +1095,7 @@
 </head>
 <body>
 
-    <div id="google_translate_element" style="display:none;"></div>
+    <div id="google_translate_element"></div>
 
     <div class="toast" id="toast">Item adicionado ao carrinho</div>
 
@@ -1228,251 +1215,239 @@
                 <h2 class="section-title" data-i18n="cat-title">Nosso Catálogo</h2>
             </div>
 
-            <!-- Filtros -->
+            <!-- Filtros Atualizados -->
             <div class="filter-container">
-                <button class="filter-btn active" onclick="filterProducts('all', event)" data-i18n="f-all">Todos</button>
-                <button class="filter-btn" onclick="filterProducts('furniture', event)" data-i18n="f-furn">Móveis & Estofados</button>
-                <button class="filter-btn" onclick="filterProducts('decor', event)" data-i18n="f-decor">Decoração & Flores</button>
-                <button class="filter-btn" onclick="filterProducts('kitchen', event)" data-i18n="f-kitch">Cozinha</button>
-                <button class="filter-btn" onclick="filterProducts('lighting', event)" data-i18n="f-light">Iluminação & TV</button>
+                <button class="filter-btn active" onclick="filterProducts('all', event)">Todos</button>
+                <button class="filter-btn" onclick="filterProducts('artificial-flowers', event)">Artificial Flowers</button>
+                <button class="filter-btn" onclick="filterProducts('vase-planters', event)">Vase(planters )</button>
+                <button class="filter-btn" onclick="filterProducts('poltron', event)">Poltron</button>
+                <button class="filter-btn" onclick="filterProducts('sofa', event)">Sofa</button>
+                <button class="filter-btn" onclick="filterProducts('kitchen', event)">Kitchen</button>
+                <button class="filter-btn" onclick="filterProducts('orchids', event)">Orchids</button>
+                <button class="filter-btn" onclick="filterProducts('lightning', event)">Lightning</button>
+                <button class="filter-btn" onclick="filterProducts('side-tables', event)">Side tables</button>
+                <button class="filter-btn" onclick="filterProducts('coffe-tables', event)">Coffe tables</button>
+                <button class="filter-btn" onclick="filterProducts('mirrors', event)">Mirrors</button>
+                <button class="filter-btn" onclick="filterProducts('console-table', event)">Console Table</button>
+                <button class="filter-btn" onclick="filterProducts('mesinhas-centro', event)">Mesinhas de Centro</button>
             </div>
 
-            <!-- Grelha de Produtos -->
+            <!-- Grelha de Produtos com Categorias Atualizadas -->
             <div class="product-grid" id="productGrid">
 
-                <!-- NOVAS ORQUÍDEAS (orchids9.jpeg a orchids12.jpeg) -->
-
-                <!-- 10. LUXURY WHITE PHALAENOPSIS IN GOLDEN BOWL -->
-                <div class="product-card" data-category="decor">
+                <!-- ORQUÍDEAS (orchids) -->
+                <div class="product-card" data-category="orchids">
                     <div class="product-thumb">
-                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <span class="product-tag">ORCHIDS</span>
                         <img src="img/orchids/orchidas9.jpeg" alt="LUXURY WHITE PHALAENOPSIS IN GOLDEN BOWL">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: ORC10U1</span>
                         <h3 class="product-name">LUXURY WHITE PHALAENOPSIS IN GOLDEN BOWL</h3>
                         <p class="product-desc">Exquisite multi-stem white phalaenopsis orchid in a luxurious metallic gold bowl.</p>
-                        <div class="product-price">4.900,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('LUXURY WHITE PHALAENOPSIS IN GOLDEN BOWL (ORC10U1)', 4900)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">3.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('LUXURY WHITE PHALAENOPSIS IN GOLDEN BOWL (ORC10U1)', 3800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- 11. ELEGANT WHITE ORCHID ARRANGEMENT -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="orchids">
                     <div class="product-thumb">
-                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <span class="product-tag">ORCHIDS</span>
                         <img src="img/orchids/orchidas10.jpeg" alt="ELEGANT WHITE ORCHID ARRANGEMENT">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: ORC11U1</span>
                         <h3 class="product-name">ELEGANT WHITE ORCHID ARRANGEMENT</h3>
                         <p class="product-desc">Sophisticated white artificial orchid arrangement designed for high-end decor.</p>
-                        <div class="product-price">4.400,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('ELEGANT WHITE ORCHID ARRANGEMENT (ORC11U1)', 4400)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">12.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ELEGANT WHITE ORCHID ARRANGEMENT (ORC11U1)', 12500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- 12. ROYAL PURPLE ORCHID IN BLACK POT -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="orchids">
                     <div class="product-thumb">
-                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <span class="product-tag">ORCHIDS</span>
                         <img src="img/orchids/orchidas11.jpeg" alt="ROYAL PURPLE ORCHID IN BLACK POT">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: ORC12U1</span>
                         <h3 class="product-name">ROYAL PURPLE ORCHID IN BLACK POT</h3>
                         <p class="product-desc">Deep magenta and royal purple artificial orchid set in a minimalist black pot.</p>
-                        <div class="product-price">4.150,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('ROYAL PURPLE ORCHID IN BLACK POT (ORC12U1)', 4150)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">10.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ROYAL PURPLE ORCHID IN BLACK POT (ORC12U1)', 10800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- 13. GRAND WHITE ORCHID DISPLAY -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="orchids">
                     <div class="product-thumb">
-                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <span class="product-tag">ORCHIDS</span>
                         <img src="img/orchids/orchidas12.jpeg" alt="GRAND WHITE ORCHID DISPLAY">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: ORC13U1</span>
                         <h3 class="product-name">GRAND WHITE ORCHID DISPLAY</h3>
                         <p class="product-desc">Magnificent multi-branch white orchid arrangement crafted with premium real-touch materials.</p>
-                        <div class="product-price">5.100,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('GRAND WHITE ORCHID DISPLAY (ORC13U1)', 5100)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">9.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GRAND WHITE ORCHID DISPLAY (ORC13U1)', 9800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- NOVAS ORQUÍDEAS ADICIONADAS ANTERIORMENTE -->
-
-                <!-- 1. ORCHID ARRANGEMENT IN CERAMIC POT -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="orchids">
                     <div class="product-thumb">
-                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <span class="product-tag">ORCHIDS</span>
                         <img src="img/orchids/orchidas.jpeg" alt="ORCHID ARRANGEMENT IN CERAMIC POT">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: ORC01U1</span>
                         <h3 class="product-name">ORCHID ARRANGEMENT IN CERAMIC POT</h3>
                         <p class="product-desc">Premium artificial orchid arrangement in elegance ceramic pot.</p>
-                        <div class="product-price">3.800,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('ORCHID ARRANGEMENT IN CERAMIC POT (ORC01U1)', 3800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">2.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ORCHID ARRANGEMENT IN CERAMIC POT (ORC01U1)', 2800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- 2. WHITE ORCHID WITH GOLD POT -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="orchids">
                     <div class="product-thumb">
-                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <span class="product-tag">ORCHIDS</span>
                         <img src="img/orchids/orchidas1.jpeg" alt="WHITE ORCHID WITH GOLD POT">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: ORC02U1</span>
                         <h3 class="product-name">WHITE ORCHID WITH GOLD POT</h3>
                         <p class="product-desc">Elegant white artificial orchid set in a luxury gold pot.</p>
-                        <div class="product-price">4.200,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('WHITE ORCHID WITH GOLD POT (ORC02U1)', 4200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">11.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('WHITE ORCHID WITH GOLD POT (ORC02U1)', 11500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- 3. PURPLE PHALAENOPSIS ORCHID -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="orchids">
                     <div class="product-thumb">
-                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <span class="product-tag">ORCHIDS</span>
                         <img src="img/orchids/orchidas2.jpeg" alt="PURPLE PHALAENOPSIS ORCHID">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: ORC03U1</span>
                         <h3 class="product-name">PURPLE PHALAENOPSIS ORCHID</h3>
                         <p class="product-desc">Vibrant purple phalaenopsis orchid in a modern planter.</p>
-                        <div class="product-price">3.950,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('PURPLE PHALAENOPSIS ORCHID (ORC03U1)', 3950)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">6.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('PURPLE PHALAENOPSIS ORCHID (ORC03U1)', 6500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- 4. DUAL STEM WHITE ORCHID -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="orchids">
                     <div class="product-thumb">
-                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <span class="product-tag">ORCHIDS</span>
                         <img src="img/orchids/orchidas3.jpeg" alt="DUAL STEM WHITE ORCHID">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: ORC04U1</span>
                         <h3 class="product-name">DUAL STEM WHITE ORCHID</h3>
                         <p class="product-desc">Refined dual stem white orchid in decorative base.</p>
-                        <div class="product-price">4.100,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('DUAL STEM WHITE ORCHID (ORC04U1)', 4100)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">11.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('DUAL STEM WHITE ORCHID (ORC04U1)', 11500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- 5. PINK BLOOM ORCHID SET -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="orchids">
                     <div class="product-thumb">
-                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <span class="product-tag">ORCHIDS</span>
                         <img src="img/orchids/orchidas4.jpeg" alt="PINK BLOOM ORCHID SET">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: ORC05U1</span>
                         <h3 class="product-name">PINK BLOOM ORCHID SET</h3>
                         <p class="product-desc">Soft pink blooming orchid arrangement for home decoration.</p>
-                        <div class="product-price">3.750,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('PINK BLOOM ORCHID SET (ORC05U1)', 3750)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">3.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('PINK BLOOM ORCHID SET (ORC05U1)', 3800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- 6. LUXURY TALL ORCHID PLANTER -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="orchids">
                     <div class="product-thumb">
-                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <span class="product-tag">ORCHIDS</span>
                         <img src="img/orchids/orchidas5.jpeg" alt="LUXURY TALL ORCHID PLANTER">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: ORC06U1</span>
                         <h3 class="product-name">LUXURY TALL ORCHID PLANTER</h3>
                         <p class="product-desc">Tall luxury orchid display suited for modern living spaces.</p>
-                        <div class="product-price">4.800,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('LUXURY TALL ORCHID PLANTER (ORC06U1)', 4800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">10.400,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('LUXURY TALL ORCHID PLANTER (ORC06U1)', 10.400)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- 7. CLASSIC BOTANICAL ORCHID -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="orchids">
                     <div class="product-thumb">
-                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <span class="product-tag">ORCHIDS</span>
                         <img src="img/orchids/orchidas6.jpeg" alt="CLASSIC BOTANICAL ORCHID">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: ORC07U1</span>
                         <h3 class="product-name">CLASSIC BOTANICAL ORCHID</h3>
                         <p class="product-desc">Classic artificial orchid arrangement with natural texture.</p>
-                        <div class="product-price">3.600,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('CLASSIC BOTANICAL ORCHID (ORC07U1)', 3600)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">6.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CLASSIC BOTANICAL ORCHID (ORC07U1)', 6500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- 8. GOLD BASE REAL-TOUCH ORCHID -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="orchids">
                     <div class="product-thumb">
-                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <span class="product-tag">ORCHIDS</span>
                         <img src="img/orchids/orchidas7.jpeg" alt="GOLD BASE REAL-TOUCH ORCHID">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: ORC08U1</span>
                         <h3 class="product-name">GOLD BASE REAL-TOUCH ORCHID</h3>
                         <p class="product-desc">Real-touch artificial orchid seated on a golden base.</p>
-                        <div class="product-price">4.500,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('GOLD BASE REAL-TOUCH ORCHID (ORC08U1)', 4500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">6.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GOLD BASE REAL-TOUCH ORCHID (ORC08U1)', 6500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- 9. MULTI-FLOWER ORCHID POT -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="orchids">
                     <div class="product-thumb">
-                        <span class="product-tag">ARTIFICIAL FLOWERS</span>
+                        <span class="product-tag">ORCHIDS</span>
                         <img src="img/orchids/orchidas8.jpeg" alt="MULTI-FLOWER ORCHID POT">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: ORC09U1</span>
                         <h3 class="product-name">MULTI-FLOWER ORCHID POT</h3>
                         <p class="product-desc">Dense multi-flower orchid arrangement in table planter.</p>
-                        <div class="product-price">4.300,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('MULTI-FLOWER ORCHID POT (ORC09U1)', 4300)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">13.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MULTI-FLOWER ORCHID POT (ORC09U1)', 13500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- PRODUTOS ADICIONADOS ANTERIORMENTE -->
-
-                <!-- 1. TRI BLACK POT STAND 31X18CM -->
-                <div class="product-card" data-category="decor">
+                <!-- VASE (PLANTERS) -->
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <span class="product-tag">PLANTERS</span>
                         <img src="img/Vazos/TRIBLACKPOTSTAND_31X18CM.jpeg" alt="TRI BLACK POT STAND 31X18CM">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: NZ788U1</span>
                         <h3 class="product-name">TRI BLACK POT STAND 31X18CM</h3>
                         <p class="product-desc">PLANTERS & BUCKETS</p>
-                        <div class="product-price">4.800,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('TRI BLACK POT STAND 31X18CM (NZ788U1)', 4800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">3.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('TRI BLACK POT STAND 31X18CM (NZ788U1)', 3000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- 2. JUXTON PLANT STAND 50CM -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <span class="product-tag">PLANTERS</span>
                         <img src="img/Vazos/JUXTONPLANTSTAND_50CM.jpeg" alt="JUXTON PLANT STAND 50CM">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: NZ821U1</span>
                         <h3 class="product-name">JUXTON PLANT STAND 50CM</h3>
                         <p class="product-desc">PLANTERS & BUCKETS</p>
-                        <div class="product-price">5.600,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('JUXTON PLANT STAND 50CM (NZ821U1)', 5600)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">3.900,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('JUXTON PLANT STAND 50CM (NZ821U1)', 3900)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- CHAD BLACK PLANT STAND SET/3 -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">SET OF 3</span>
                         <img src="img/Vazos/PLANTERBUCKETS_CHADBLACKPLANTSTANT_SET3.jpeg" alt="CHAD BLACK PLANT STAND SET/3">
@@ -1481,13 +1456,12 @@
                         <span class="product-code">CODE: NX182U1</span>
                         <h3 class="product-name">CHAD BLACK PLANT STAND SET/3</h3>
                         <p class="product-desc">PLANTERS & BUCKETS</p>
-                        <div class="product-price">8.500,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('CHAD BLACK PLANT STAND SET/3 (NX182U1)', 8500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">6.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CHAD BLACK PLANT STAND SET/3 (NX182U1)', 6800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- CHAD WHITE PLANT STAND SET/3 -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">out of stock</span>
                         <img src="img/Vazos/CHADWHITE_PLANT_STANT-SET3.jpeg" alt="CHAD WHITE PLANT STAND SET/3">
@@ -1496,13 +1470,12 @@
                         <span class="product-code">CODE: NX181U1</span>
                         <h3 class="product-name">CHAD WHITE PLANT STAND SET/3</h3>
                         <p class="product-desc">PLANTERS & BUCKETS</p>
-                        <div class="product-price">8.500,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('CHAD WHITE PLANT STAND SET/3 (NX181U1)', 8500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">6.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CHAD WHITE PLANT STAND SET/3 (NX181U1)', 6800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- PLANT STAND BLACK 50CM -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">Sale!</span>
                         <img src="img/Vazos/PLANTSTANDBLACK_50CM.jpeg" alt="PLANT STAND BLACK 50CM">
@@ -1511,58 +1484,54 @@
                         <span class="product-code">CODE: NZ659U1</span>
                         <h3 class="product-name">PLANT STAND BLACK 50CM</h3>
                         <p class="product-desc">PLANTERS & BUCKETS</p>
-                        <div class="product-price">5.200,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('PLANT STAND BLACK 50CM (NZ659U1)', 5200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">4.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('PLANT STAND BLACK 50CM (NZ659U1)', 4500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- PLANT STAND BLACK 60CM -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <span class="product-tag">PLANTERS</span>
                         <img src="img/Vazos/PLANTSTANDBLACK_60CM.jpeg" alt="PLANT STAND BLACK 60CM">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: NZ658U1</span>
                         <h3 class="product-name">PLANT STAND BLACK 60CM</h3>
                         <p class="product-desc">PLANTERS & BUCKETS</p>
-                        <div class="product-price">5.800,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('PLANT STAND BLACK 60CM (NZ658U1)', 5800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">4.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('PLANT STAND BLACK 60CM (NZ658U1)', 4800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- HANDLED POT STAND SMALL 61CM -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <span class="product-tag">PLANTERS</span>
                         <img src="img/Vazos/Plantersbuckets_HANDLEDPOTSTANDMEDIUM_61CM.jpeg" alt="HANDLED POT STAND SMALL 61CM">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: FMG18U1</span>
                         <h3 class="product-name">HANDLED POT STAND SMALL 61CM</h3>
                         <p class="product-desc">PLANTERS & BUCKETS</p>
-                        <div class="product-price">6.200,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('HANDLED POT STAND SMALL 61CM (FMG18U1)', 6200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">12.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('HANDLED POT STAND SMALL 61CM (FMG18U1)', 12000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- HANDLED POT STAND MEDIUM 68CM -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <span class="product-tag">PLANTERS</span>
                         <img src="img/Vazos/Plantersbuckets_HANDLEDPOTSTANDMEDIUM_68CM.jpeg" alt="HANDLED POT STAND MEDIUM 68CM">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: FMG17U1</span>
                         <h3 class="product-name">HANDLED POT STAND MEDIUM 68CM</h3>
                         <p class="product-desc">PLANTERS & BUCKETS</p>
-                        <div class="product-price">7.500,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('HANDLED POT STAND MEDIUM 68CM (FMG17U1)', 7500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">13.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('HANDLED POT STAND MEDIUM 68CM (FMG17U1)', 13500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- HANDLED POT STAND LARGE 74CM -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">out of stock</span>
                         <img src="img/Vazos/Plantersbuckets_HANDLEDPOTSTANDMEDIUM_74CM.jpeg" alt="HANDLED POT STAND LARGE 74CM">
@@ -1571,73 +1540,68 @@
                         <span class="product-code">CODE: FMG16U1</span>
                         <h3 class="product-name">HANDLED POT STAND LARGE 74CM</h3>
                         <p class="product-desc">PLANTERS & BUCKETS</p>
-                        <div class="product-price">8.800,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('HANDLED POT STAND LARGE 74CM (FMG16U1)', 8800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">14.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('HANDLED POT STAND LARGE 74CM (FMG16U1)', 14000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- FANTASY METAL POT TRI LEG 69CM -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <span class="product-tag">PLANTERS</span>
                         <img src="img/Vazos/PlantersBuckets_Fantasy_Metal_PotTRILEG_69CM.jpeg" alt="FANTASY METAL POT TRI LEG 69CM">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: FMR41U1</span>
                         <h3 class="product-name">FANTASY METAL POT TRI LEG 69CM</h3>
                         <p class="product-desc">PLANTERS & BUCKETS</p>
-                        <div class="product-price">7.900,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('FANTASY METAL POT TRI LEG 69CM (FMR41U1)', 7900)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">7.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('FANTASY METAL POT TRI LEG 69CM (FMR41U1)', 7800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- ANTEGO MEDIUM PLANTER 37CM -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <span class="product-tag">PLANTERS</span>
                         <img src="img/Vazos/Planterbucket_ANEGO_MEDIUM_PLANTER_37CM.jpeg" alt="ANTEGO MEDIUM PLANTER 37CM">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: FMG94U1</span>
                         <h3 class="product-name">ANTEGO MEDIUM PLANTER 37CM</h3>
                         <p class="product-desc">PLANTERS & BUCKETS</p>
-                        <div class="product-price">6.800,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('ANTEGO MEDIUM PLANTER 37CM (FMG94U1)', 6800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">7.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ANTEGO MEDIUM PLANTER 37CM (FMG94U1)', 7500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- ANTEGO LARGE PLANTER 44CM -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <span class="product-tag">PLANTERS</span>
                         <img src="img/Vazos/Planterbucket_ANEGO_MEDIUM_PLANTER_44CM.jpeg" alt="ANTEGO LARGE PLANTER 44CM">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: FMG93U1</span>
                         <h3 class="product-name">ANTEGO LARGE PLANTER 44CM</h3>
-                        <p class="product-desc">Home / DECOR / PLANTERS & BUCKETS / ANTEGO LARGE PLANTER 44CM</p>
-                        <div class="product-price">8.200,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('ANTEGO LARGE PLANTER 44CM (FMG93U1)', 8200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <p class="product-desc">PLANTERS & BUCKETS</p>
+                        <div class="product-price">8.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ANTEGO LARGE PLANTER 44CM (FMG93U1)', 8000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- MAYA BLACK FLOWER POT 20X25CM -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <span class="product-tag">PLANTERS</span>
                         <img src="img/Vazos/MAYA_BLACK_FLOWER_OT_20X25CM.png" alt="MAYA BLACK FLOWER POT 20X25CM">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: NX786U1</span>
                         <h3 class="product-name">MAYA BLACK FLOWER POT 20X25CM</h3>
-                        <p class="product-desc">Home / DECOR / PLANTERS & BUCKETS / MAYA BLACK FLOWER POT 20X25CM</p>
-                        <div class="product-price">4.500,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('MAYA BLACK FLOWER POT 20X25CM (NX786U1)', 4500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <p class="product-desc">PLANTERS & BUCKETS</p>
+                        <div class="product-price">8.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MAYA BLACK FLOWER POT 20X25CM (NX786U1)', 8500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- GOLD SPEKANI POT 39HX36D -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">out of stock</span>
                         <img src="img/Vazos/Planterbuckets_Gold_Spekani_Pot_39HX36D.jpeg" alt="GOLD SPEKANI POT 39HX36D">
@@ -1646,13 +1610,12 @@
                         <span class="product-code">CODE: FMG37U1</span>
                         <h3 class="product-name">GOLD SPEKANI POT 39HX36D</h3>
                         <p class="product-desc">PLANTERS & BUCKETS</p>
-                        <div class="product-price">7.200,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('GOLD SPEKANI POT 39HX36D (FMG37U1)', 7200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">7.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GOLD SPEKANI POT 39HX36D (FMG37U1)', 7000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- GOLD SPEKANI POT 48HX47D -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">out of stock</span>
                         <img src="img/Vazos/Planterbuckets_Gold_Spekani_Pot_48HX47D.jpeg" alt="GOLD SPEKANI POT 48HX47D">
@@ -1661,28 +1624,27 @@
                         <span class="product-code">CODE: FMG36U1</span>
                         <h3 class="product-name">GOLD SPEKANI POT 48HX47D</h3>
                         <p class="product-desc">PLANTERS & BUCKETS</p>
-                        <div class="product-price">8.900,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('GOLD SPEKANI POT 48HX47D (FMG36U1)', 8900)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">8.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GOLD SPEKANI POT 48HX47D (FMG36U1)', 8000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- GOLD SPEKANI POT 58HX60D -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">PLANTERS & BUCKETS</span>
+                        <span class="product-tag">PLANTERS</span>
                         <img src="img/Vazos/Planterbuckets_Gold_Spekani_Pot_58HX60D.jpeg" alt="GOLD SPEKANI POT 58HX60D">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: FMG35U1</span>
                         <h3 class="product-name">GOLD SPEKANI POT 58HX60D</h3>
                         <p class="product-desc">PLANTERS & BUCKETS</p>
-                        <div class="product-price">10.500,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('GOLD SPEKANI POT 58HX60D (FMG35U1)', 10500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">9.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GOLD SPEKANI POT 58HX60D (FMG35U1)', 9000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- LAS VEGAS COFFEE TABLE -->
-                <div class="product-card" data-category="furniture">
+                <!-- COFFE TABLES (coffe-tables) -->
+                <div class="product-card" data-category="coffe-tables">
                     <div class="product-thumb">
                         <span class="product-tag">17 in stock</span>
                         <img src="img/metalsidetables/Lasvigas_Coffe_Table_40H61D.jpg" alt="LAS VEGAS COFFEE TABLE 40H61D">
@@ -1691,43 +1653,12 @@
                         <span class="product-code">CODE: TFI47U1</span>
                         <h3 class="product-name">LAS VEGAS COFFEE TABLE 40H61D</h3>
                         <p class="product-desc">COFFEE TABLES</p>
-                        <div class="product-price">12.500,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('LAS VEGAS COFFEE TABLE 40H61D (TFI47U1)', 12500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">13.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('LAS VEGAS COFFEE TABLE 40H61D (TFI47U1)', 13500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- HOBNAIL FOLDED TABLE -->
-                <div class="product-card" data-category="furniture">
-                    <div class="product-thumb">
-                        <span class="product-tag">36 in stock</span>
-                        <img src="img/metalsidetables/Sidetables_HobNail_56cm.jpg" alt="HOBNAIL FOLDED TABLE 56X56CM">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-code">CODE: FMG97U1</span>
-                        <h3 class="product-name">HOBNAIL FOLDED TABLE 56X56CM</h3>
-                        <p class="product-desc">SIDE TABLES</p>
-                        <div class="product-price">8.900,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('HOBNAIL FOLDED TABLE 56X56CM (FMG97U1)', 8900)" data-i18n="btn-add">Adicionar ao Carrinho</button>
-                    </div>
-                </div>
-
-                <!-- SUNRAY FOLDED TABLE -->
-                <div class="product-card" data-category="furniture">
-                    <div class="product-thumb">
-                        <span class="product-tag">24 in stock</span>
-                        <img src="img/metalsidetables/sideable_sunray_62cm.jpg" alt="SUNRAY FOLDED TABLE 62X61CM">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-code">CODE: FMG95U1</span>
-                        <h3 class="product-name">SUNRAY FOLDED TABLE 62X61CM</h3>
-                        <p class="product-desc">SIDE TABLES</p>
-                        <div class="product-price">9.200,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('SUNRAY FOLDED TABLE 62X61CM (FMG95U1)', 9200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
-                    </div>
-                </div>
-
-                <!-- MELO TABLE WITH MIRROR TOP 46X61C -->
-                <div class="product-card" data-category="furniture">
+                <div class="product-card" data-category="coffe-tables">
                     <div class="product-thumb">
                         <span class="product-tag">21 in stock</span>
                         <img src="img/metalsidetables/coffetable_Melo_46Cmx61.jpg" alt="MELO TABLE WITH MIRROR TOP 46X61C">
@@ -1736,13 +1667,12 @@
                         <span class="product-code">CODE: FMG79U1</span>
                         <h3 class="product-name">MELO TABLE WITH MIRROR TOP 46X61C</h3>
                         <p class="product-desc">COFFEE TABLES</p>
-                        <div class="product-price">11.800,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('MELO TABLE WITH MIRROR TOP 46X61C (FMG79U1)', 11800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">10.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MELO TABLE WITH MIRROR TOP 46X61C (FMG79U1)', 10500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- MELO TABLE WITH MIRROR TOP 41X51C -->
-                <div class="product-card" data-category="furniture">
+                <div class="product-card" data-category="coffe-tables">
                     <div class="product-thumb">
                         <span class="product-tag">21 in stock</span>
                         <img src="img/metalsidetables/coffetable_Melo_41Cmx51cm.jpg" alt="MELO TABLE WITH MIRROR TOP 41X51C">
@@ -1751,13 +1681,41 @@
                         <span class="product-code">CODE: FMG80U1</span>
                         <h3 class="product-name">MELO TABLE WITH MIRROR TOP 41X51C</h3>
                         <p class="product-desc">COFFEE TABLES</p>
-                        <div class="product-price">10.500,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('MELO TABLE WITH MIRROR TOP 41X51C (FMG80U1)', 10500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">12.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MELO TABLE WITH MIRROR TOP 41X51C (FMG80U1)', 12500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- SILHOUETTE TABLE -->
-                <div class="product-card" data-category="furniture">
+                <!-- SIDE TABLES (side-tables) -->
+                <div class="product-card" data-category="side-tables">
+                    <div class="product-thumb">
+                        <span class="product-tag">36 in stock</span>
+                        <img src="img/metalsidetables/Sidetables_HobNail_56cm.jpg" alt="HOBNAIL FOLDED TABLE 56X56CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMG97U1</span>
+                        <h3 class="product-name">HOBNAIL FOLDED TABLE 56X56CM</h3>
+                        <p class="product-desc">SIDE TABLES</p>
+                        <div class="product-price">11.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('HOBNAIL FOLDED TABLE 56X56CM (FMG97U1)', 11500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="side-tables">
+                    <div class="product-thumb">
+                        <span class="product-tag">24 in stock</span>
+                        <img src="img/metalsidetables/sideable_sunray_62cm.jpg" alt="SUNRAY FOLDED TABLE 62X61CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMG95U1</span>
+                        <h3 class="product-name">SUNRAY FOLDED TABLE 62X61CM</h3>
+                        <p class="product-desc">SIDE TABLES</p>
+                        <div class="product-price">12.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SUNRAY FOLDED TABLE 62X61CM (FMG95U1)', 12500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="side-tables">
                     <div class="product-thumb">
                         <span class="product-tag">out of stock</span>
                         <img src="img/metalsidetables/Furniture_SilhoutteTable_44x45cm.jpg" alt="SILHOUETTE TABLE 44X45CM">
@@ -1765,14 +1723,13 @@
                     <div class="product-info">
                         <span class="product-code">CODE: AHM91U1</span>
                         <h3 class="product-name">SILHOUETTE TABLE 44X45CM</h3>
-                        <p class="product-desc">FURNITURE</p>
-                        <div class="product-price">14.000,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('SILHOUETTE TABLE 44X45CM (AHM91U1)', 14000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <p class="product-desc">SIDE TABLES</p>
+                        <div class="product-price">16.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SILHOUETTE TABLE 44X45CM (AHM91U1)', 16800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- ALU OCCASIONAL TABLE -->
-                <div class="product-card" data-category="furniture">
+                <div class="product-card" data-category="side-tables">
                     <div class="product-thumb">
                         <span class="product-tag">3 in stock</span>
                         <img src="img/metalsidetables/sidetables_ALUOC_53X38CM.jpg" alt="ALU OCCASIONAL TABLE 53X38cm">
@@ -1781,13 +1738,12 @@
                         <span class="product-code">CODE: MAR17U1</span>
                         <h3 class="product-name">ALU OCCASIONAL TABLE 53X38cm</h3>
                         <p class="product-desc">SIDE TABLES</p>
-                        <div class="product-price">7.800,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('ALU OCCASIONAL TABLE 53X38cm (MAR17U1)', 7800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">14.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ALU OCCASIONAL TABLE 53X38cm (MAR17U1)', 14800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- EKZOTA TABLE 45CM GOLD -->
-                <div class="product-card" data-category="furniture">
+                <div class="product-card" data-category="side-tables">
                     <div class="product-thumb">
                         <span class="product-tag">85 in stock</span>
                         <img src="img/metalsidetables/SIDETABLE_EKZOTA_45CM.jpg" alt="EKZOTA TABLE 45CM GOLD">
@@ -1796,13 +1752,12 @@
                         <span class="product-code">CODE: FMB41U1</span>
                         <h3 class="product-name">EKZOTA TABLE 45CM GOLD</h3>
                         <p class="product-desc">SIDE TABLES</p>
-                        <div class="product-price">9.500,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('EKZOTA TABLE 45CM GOLD (FMB41U1)', 9500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">7.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('EKZOTA TABLE 45CM GOLD (FMB41U1)', 7800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- EKZOTA TABLE 50CM GOLD -->
-                <div class="product-card" data-category="furniture">
+                <div class="product-card" data-category="side-tables">
                     <div class="product-thumb">
                         <span class="product-tag">43 in stock</span>
                         <img src="img/metalsidetables/SIDETABLE_EKZOTA_50CM.jpg" alt="EKZOTA TABLE 50CM GOLD">
@@ -1811,13 +1766,12 @@
                         <span class="product-code">CODE: FMB40U1</span>
                         <h3 class="product-name">EKZOTA TABLE 50CM GOLD</h3>
                         <p class="product-desc">SIDE TABLES</p>
-                        <div class="product-price">10.800,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('EKZOTA TABLE 50CM GOLD (FMB40U1)', 10800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">8.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('EKZOTA TABLE 50CM GOLD (FMB40U1)', 8500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- COOPER SIDE TABLE 52X44X44CM -->
-                <div class="product-card" data-category="furniture">
+                <div class="product-card" data-category="side-tables">
                     <div class="product-thumb">
                         <span class="product-tag">3 in stock</span>
                         <img src="img/metalsidetables/SIDETABLE_CopperSideTable52x44x44cm.jpg" alt="COOPER SIDE TABLE 52X44X44CM">
@@ -1826,13 +1780,12 @@
                         <span class="product-code">CODE: FMD21U1</span>
                         <h3 class="product-name">COOPER SIDE TABLE 52X44X44CM</h3>
                         <p class="product-desc">SIDE TABLES</p>
-                        <div class="product-price">11.200,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('COOPER SIDE TABLE 52X44X44CM (FMD21U1)', 11200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">8.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('COOPER SIDE TABLE 52X44X44CM (FMD21U1)', 8500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- COOPER SIDE TABLE 43X37X37CM -->
-                <div class="product-card" data-category="furniture">
+                <div class="product-card" data-category="side-tables">
                     <div class="product-thumb">
                         <span class="product-tag">out of stock</span>
                         <img src="img/metalsidetables/SIDETABLE_CopperSideTable43x37x37cm.jpg" alt="COOPER SIDE TABLE 43X37X37CM">
@@ -1841,13 +1794,13 @@
                         <span class="product-code">CODE: FMD22U1</span>
                         <h3 class="product-name">COOPER SIDE TABLE 43X37X37CM</h3>
                         <p class="product-desc">SIDE TABLES</p>
-                        <div class="product-price">9.800,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('COOPER SIDE TABLE 43X37X37CM (FMD22U1)', 9800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">9.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('COOPER SIDE TABLE 43X37X37CM (FMD22U1)', 9500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
                 
-                <!-- METAL DECOR BASKET -->
-                <div class="product-card" data-category="decor">
+                <!-- VASE (PLANTERS) & METAL DECOR -->
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">63 in stock</span>
                         <img src="img/DecMeta/MetalDecorBasket_25x11x26cm.jpg" alt="METAL DECOR BASKET 25X11X26CM">
@@ -1856,13 +1809,12 @@
                         <span class="product-code">CODE: FMG09U1</span>
                         <h3 class="product-name">METAL DECOR BASKET 25X11X26CM</h3>
                         <p class="product-desc">DECORATIVE METAL</p>
-                        <div class="product-price">4.500,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('METAL DECOR BASKET 25X11X26CM (FMG09U1)', 4500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">3.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('METAL DECOR BASKET 25X11X26CM (FMG09U1)', 3800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- TULIPA CANDLE HOLDER -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">21 in stock</span>
                         <img src="img/DecMeta/TULIPACANDLEHOLDER_21X39X36CM.jpg" alt="TULIPA CANDLE HOLDER 21X39X36CM">
@@ -1871,13 +1823,12 @@
                         <span class="product-code">CODE: FMB98U1</span>
                         <h3 class="product-name">TULIPA CANDLE HOLDER 21X39X36CM</h3>
                         <p class="product-desc">DECORATIVE METAL</p>
-                        <div class="product-price">4.200,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('TULIPA CANDLE HOLDER 21X39X36CM (FMB98U1)', 4200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">5.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('TULIPA CANDLE HOLDER 21X39X36CM (FMB98U1)', 5500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- FOLHA FTD VASE 38CM -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">out of stock</span>
                         <img src="img/DecMeta/FOLHA_FTD_VASE_38CM.jpg" alt="FOLHA FTD VASE 38CM">
@@ -1886,13 +1837,12 @@
                         <span class="product-code">CODE: FMB93U1</span>
                         <h3 class="product-name">FOLHA FTD VASE 38CM</h3>
                         <p class="product-desc">DECORATIVE METAL</p>
-                        <div class="product-price">4.800,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('FOLHA FTD VASE 38CM (FMB93U1)', 4800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">7.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('FOLHA FTD VASE 38CM (FMB93U1)', 7000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- FOLHA FTD VASE 49CM -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">29 in stock</span>
                         <img src="img/DecMeta/FOLHA_FTD_VASE_49CM.jpg" alt="FOLHA FTD VASE 49CM">
@@ -1901,13 +1851,12 @@
                         <span class="product-code">CODE: FMB92U1</span>
                         <h3 class="product-name">FOLHA FTD VASE 49CM</h3>
                         <p class="product-desc">DECORATIVE METAL</p>
-                        <div class="product-price">5.500,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('FOLHA FTD VASE 49CM (FMB92U1)', 5500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">7.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('FOLHA FTD VASE 49CM (FMB92U1)', 7500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- MEIA-LUHA VASE -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">6 in stock</span>
                         <img src="img/DecMeta/MEIA_LUHA_VASE_36X30X12CM.jpg" alt="MEIA-LUHA VASE 36X30X12CM">
@@ -1916,13 +1865,12 @@
                         <span class="product-code">CODE: FMB91U1</span>
                         <h3 class="product-name">MEIA-LUHA VASE 36X30X12CM</h3>
                         <p class="product-desc">DECORATIVE METAL</p>
-                        <div class="product-price">3.900,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('MEIA-LUHA VASE 36X30X12CM (FMB91U1)', 3900)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">6.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MEIA-LUHA VASE 36X30X12CM (FMB91U1)', 6000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- FOLHA GIANT VASE -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">16 in stock</span>
                         <img src="img/DecMeta/FOLHA_GIANT_VASE_101CM.jpg" alt="FOLHA GIANT VASE 101CM">
@@ -1931,13 +1879,12 @@
                         <span class="product-code">CODE: FMB89U1</span>
                         <h3 class="product-name">FOLHA GIANT VASE 101CM</h3>
                         <p class="product-desc">DECORATIVE METAL</p>
-                        <div class="product-price">7.500,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('FOLHA GIANT VASE 101CM (FMB89U1)', 7500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">14.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('FOLHA GIANT VASE 101CM (FMB89U1)', 14000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- SABI FTD BOWL GOLD -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">56 in stock</span>
                         <img src="img/DecMeta/SABI_FTD_BWL_19X40CM_GOLD.jpg" alt="SABI FTD BOWL 19X40CM GOLD">
@@ -1946,28 +1893,12 @@
                         <span class="product-code">CODE: MED06U1</span>
                         <h3 class="product-name">SABI FTD BOWL 19X40CM GOLD</h3>
                         <p class="product-desc">DECORATIVE METAL</p>
-                        <div class="product-price">4.600,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('SABI FTD BOWL 19X40CM GOLD (MED06U1)', 4600)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">7.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SABI FTD BOWL 19X40CM GOLD (MED06U1)', 7000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- SABI FTD SPARKLE BOWL -->
-                <div class="product-card" data-category="decor">
-                    <div class="product-thumb">
-                        <span class="product-tag">64 in stock</span>
-                        <img src="img/DecMeta/SABI_FTD_BWL_19X40CM_GOLD.jpg" alt="SABI FTD SPARKLE BOWL 18X33CM">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-code">CODE: MED05U1</span>
-                        <h3 class="product-name">SABI FTD SPARKLE BOWL 18X33CM</h3>
-                        <p class="product-desc">DECORATIVE METAL</p>
-                        <div class="product-price">4.100,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('SABI FTD SPARKLE BOWL 18X33CM (MED05U1)', 4100)" data-i18n="btn-add">Adicionar ao Carrinho</button>
-                    </div>
-                </div>
-
-                <!-- BOLAE VASE WHITE -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">9 in stock</span>
                         <img src="img/DecMeta/BOLAE_VASE_WHITE_36X22CM.jpg" alt="BOLAE VASE WHITE 36X22CM">
@@ -1976,13 +1907,12 @@
                         <span class="product-code">CODE: FMG33U1</span>
                         <h3 class="product-name">BOLAE VASE WHITE 36X22CM</h3>
                         <p class="product-desc">DECORATIVE METAL</p>
-                        <div class="product-price">4.300,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('BOLAE VASE WHITE 36X22CM (FMG33U1)', 4300)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">6.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('BOLAE VASE WHITE 36X22CM (FMG33U1)', 6800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- TULIP GOLD POT -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">out of stock</span>
                         <img src="img/DecMeta/TULIPACANDLEHOLDER_21X39X36CM.jpg" alt="TULIP GOLD POT 31X15CM">
@@ -1991,13 +1921,12 @@
                         <span class="product-code">CODE: FMG32U1</span>
                         <h3 class="product-name">TULIP GOLD POT 31X15CM</h3>
                         <p class="product-desc">DECORATIVE METAL</p>
-                        <div class="product-price">3.500,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('TULIP GOLD POT 31X15CM (FMG32U1)', 3500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">5.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('TULIP GOLD POT 31X15CM (FMG32U1)', 5500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- HONEY BOWL ROUGH GOLD -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">3 in stock</span>
                         <img src="img/DecMeta/HONEY_BOWL_ROUGH_GOLD_42X42X11CM.jpg" alt="HONEY BOWL ROUGH GOLD 42X42X11CM">
@@ -2006,13 +1935,12 @@
                         <span class="product-code">CODE: DEC32U1</span>
                         <h3 class="product-name">HONEY BOWL ROUGH GOLD 42X42X11CM</h3>
                         <p class="product-desc">DECORATIVE METAL</p>
-                        <div class="product-price">5.000,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('HONEY BOWL ROUGH GOLD 42X42X11CM (DEC32U1)', 5000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">5.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('HONEY BOWL ROUGH GOLD 42X42X11CM (DEC32U1)', 5500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- SPARKLE OVAL WIDE VASE -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">11 in stock</span>
                         <img src="img/DecMeta/SPARKLE_OVAL_WIDE_VASE_30X53X15.jpg" alt="SPARKLE OVAL WIDE VASE 30X53X15">
@@ -2021,13 +1949,12 @@
                         <span class="product-code">CODE: MED27U1</span>
                         <h3 class="product-name">SPARKLE OVAL WIDE VASE 30X53X15</h3>
                         <p class="product-desc">DECORATIVE METAL</p>
-                        <div class="product-price">5.200,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('SPARKLE OVAL WIDE VASE 30X53X15 (MED27U1)', 5200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">7.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SPARKLE OVAL WIDE VASE 30X53X15 (MED27U1)', 7000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- ALU SPARKLE FLARED FTD VASE -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">out of stock</span>
                         <img src="img/DecMeta/ALU_SPARKLE_FLARED_FTD_VASE_43CM.jpg" alt="ALU SPARKLE FLARED FTD VASE 43CM">
@@ -2036,13 +1963,12 @@
                         <span class="product-code">CODE: MSE97U1</span>
                         <h3 class="product-name">ALU SPARKLE FLARED FTD VASE 43CM</h3>
                         <p class="product-desc">DECORATIVE METAL</p>
-                        <div class="product-price">4.800,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('ALU SPARKLE FLARED FTD VASE 43CM (MSE97U1)', 4800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">9.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ALU SPARKLE FLARED FTD VASE 43CM (MSE97U1)', 9500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- ALU SPARKLE SQUAT VASE -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">out of stock</span>
                         <img src="img/DecMeta/ALU_SPARKLE_SQUA_VASE_31X31X20CM.jpg" alt="ALU SPARKLE SQUAT VASE 31X31X20CM">
@@ -2051,13 +1977,12 @@
                         <span class="product-code">CODE: MSE95U1</span>
                         <h3 class="product-name">ALU SPARKLE SQUAT VASE 31X31X20CM</h3>
                         <p class="product-desc">DECORATIVE METAL</p>
-                        <div class="product-price">4.000,00 MZN</div>
+                        <div class="product-price">7.500,00 MZN</div>
                         <button class="btn-add-cart" onclick="addToCart('ALU SPARKLE SQUAT VASE 31X31X20CM (MSE95U1)', 4000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- ALU SPARKLE JAR VASE -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">out of stock</span>
                         <img src="img/DecMeta/ALU_SPARKLE_JAR_VASE_39CM.jpg" alt="ALU SPARKLE JAR VASE 39CM">
@@ -2066,13 +1991,12 @@
                         <span class="product-code">CODE: MSE94U1</span>
                         <h3 class="product-name">ALU SPARKLE JAR VASE 39CM</h3>
                         <p class="product-desc">DECORATIVE METAL</p>
-                        <div class="product-price">4.400,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('ALU SPARKLE JAR VASE 39CM (MSE94U1)', 4400)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">8.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ALU SPARKLE JAR VASE 39CM (MSE94U1)', 8500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- HONEY VASE GOLD -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">5 in stock</span>
                         <img src="img/DecMeta/HONEY_VASE_GOLD_30CM.jpg" alt="HONEY VASE GOLD 30CM">
@@ -2081,13 +2005,12 @@
                         <span class="product-code">CODE: DEC31U1</span>
                         <h3 class="product-name">HONEY VASE GOLD 30CM</h3>
                         <p class="product-desc">DECORATIVE METAL</p>
-                        <div class="product-price">4.200,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('HONEY VASE GOLD 30CM (DEC31U1)', 4200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">10.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('HONEY VASE GOLD 30CM (DEC31U1)', 10800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- SCULPTURE SWIRL ROUGH NICKEL -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
                         <span class="product-tag">41 in stock</span>
                         <img src="img/DecMeta/SCULPTURE_SWIRL_ROUGH_NICKEL52X30.jpg" alt="SCULPTURE SWIRL ROUGH NICKEL 52X30">
@@ -2096,165 +2019,156 @@
                         <span class="product-code">CODE: DPC32U1</span>
                         <h3 class="product-name">SCULPTURE SWIRL ROUGH NICKEL 52X30</h3>
                         <p class="product-desc">DECORATIVE METAL</p>
-                        <div class="product-price">5.800,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('SCULPTURE SWIRL ROUGH NICKEL 52X30 (DPC32U1)', 5800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">8.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SCULPTURE SWIRL ROUGH NICKEL 52X30 (DPC32U1)', 8000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- Planta 1 -->
-                <div class="product-card" data-category="decor">
+                <!-- ARTIFICIAL FLOWERS (artificial-flowers) -->
+                <div class="product-card" data-category="artificial-flowers">
                     <div class="product-thumb">
-                        <span class="product-tag">Botânica</span>
+                        <span class="product-tag">Artificial Flowers</span>
                         <img src="img/plantas/planta.jpeg" alt="Lemon Tree 1.2M">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CÓD: NX287U1</span>
                         <h3 class="product-name">Lemon Tree 1.2M</h3>
                         <p class="product-desc">Videira de limão artificial decorativa com vaso preto. Altura de 1.2 metros.</p>
-                        <div class="product-price">4.500,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('Lemon Tree 1.2M (NX287U1)', 4500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">6.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Lemon Tree 1.2M (NX287U1)', 6200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- Planta 2 -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="artificial-flowers">
                     <div class="product-thumb">
-                        <span class="product-tag">Botânica</span>
+                        <span class="product-tag">Artificial Flowers</span>
                         <img src="img/plantas/planta1.jpeg" alt="Palm In Pot 150CM">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CÓD: BEC65U1</span>
                         <h3 class="product-name">Palm In Pot 150CM</h3>
                         <p class="product-desc">Palmeira decorativa em vaso com folhagem densa. Altura de 150 cm.</p>
-                        <div class="product-price">5.200,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('Palm In Pot 150CM (BEC65U1)', 5200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">6.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Palm In Pot 150CM (BEC65U1)', 6800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- Planta 3 -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="artificial-flowers">
                     <div class="product-thumb">
-                        <span class="product-tag">Botânica</span>
+                        <span class="product-tag">Artificial Flowers</span>
                         <img src="img/plantas/planta2.jpeg" alt="Bamboo Tree In Pot 1.2M">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CÓD: BEC52U1</span>
                         <h3 class="product-name">Bamboo Tree In Pot 1.2M</h3>
                         <p class="product-desc">Bambu artificial elegante em vaso preto. Altura de 1.2 metros.</p>
-                        <div class="product-price">4.800,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('Bamboo Tree In Pot 1.2M (BEC52U1)', 4800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">5.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Bamboo Tree In Pot 1.2M (BEC52U1)', 5500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- Planta 4 -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="artificial-flowers">
                     <div class="product-thumb">
-                        <span class="product-tag">Botânica</span>
+                        <span class="product-tag">Artificial Flowers</span>
                         <img src="img/plantas/planta3.jpeg" alt="Olive Tree 109CM">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CÓD: YIG37U1</span>
                         <h3 class="product-name">Olive Tree 109CM</h3>
                         <p class="product-desc">Oliveira decorativa com vaso em estilo cimento. Altura de 109 cm.</p>
-                        <div class="product-price">4.200,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('Olive Tree 109CM (YIG37U1)', 4200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">7.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Olive Tree 109CM (YIG37U1)', 7000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- Planta 5 -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="artificial-flowers">
                     <div class="product-thumb">
-                        <span class="product-tag">Botânica</span>
+                        <span class="product-tag">Artificial Flowers</span>
                         <img src="img/plantas/planta4.jpeg" alt="Dracaena With Plastic Pot 114CM">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CÓD: BEC60U1</span>
                         <h3 class="product-name">Dracaena With Plastic Pot 114CM</h3>
                         <p class="product-desc">Planta Dracena com detalhes vibrantes e vaso plástico. Altura de 114 cm.</p>
-                        <div class="product-price">4.600,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('Dracaena With Plastic Pot 114CM (BEC60U1)', 4600)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">5.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Dracaena With Plastic Pot 114CM (BEC60U1)', 5500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- Planta 6 -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="artificial-flowers">
                     <div class="product-thumb">
-                        <span class="product-tag">Botânica</span>
+                        <span class="product-tag">Artificial Flowers</span>
                         <img src="img/plantas/planta5.jpeg" alt="Banana Leaf Plant In Pot 1.5M">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CÓD: NZ667U1</span>
                         <h3 class="product-name">Banana Leaf Plant In Pot 1.5M</h3>
                         <p class="product-desc">Planta de folhas de bananeira em vaso preto. Altura de 1.5 metros.</p>
-                        <div class="product-price">5.500,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('Banana Leaf Plant In Pot 1.5M (NZ667U1)', 5500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">7.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Banana Leaf Plant In Pot 1.5M (NZ667U1)', 7800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- Planta 7 -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="artificial-flowers">
                     <div class="product-thumb">
-                        <span class="product-tag">Botânica</span>
+                        <span class="product-tag">Artificial Flowers</span>
                         <img src="img/plantas/planta6.jpeg" alt="Banana Leaf Plant In Pot 1.3M">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CÓD: NX928U1</span>
                         <h3 class="product-name">Banana Leaf Plant In Pot 1.3M</h3>
                         <p class="product-desc">Planta de bananeira tropical com folhas largas e volumosas. Altura de 1.3 metros.</p>
-                        <div class="product-price">4.900,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('Banana Leaf Plant In Pot 1.3M (NX928U1)', 4900)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">5.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Banana Leaf Plant In Pot 1.3M (NX928U1)', 5500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- Planta 8 -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="artificial-flowers">
                     <div class="product-thumb">
-                        <span class="product-tag">Botânica</span>
+                        <span class="product-tag">Artificial Flowers</span>
                         <img src="img/plantas/planta7.jpeg" alt="Cycas In Pot 95CM">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CÓD: BEC64U1</span>
                         <h3 class="product-name">Cycas In Pot 95CM</h3>
                         <p class="product-desc">Palmeira Cycas de tronco duplo em vaso preto. Altura de 95 cm.</p>
-                        <div class="product-price">3.900,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('Cycas In Pot 95CM (BEC64U1)', 3900)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">8.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Cycas In Pot 95CM (BEC64U1)', 8000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- Planta 8 (Banana Leaf Plant 1.9M) -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="artificial-flowers">
                     <div class="product-thumb">
-                        <span class="product-tag">Botânica</span>
+                        <span class="product-tag">Artificial Flowers</span>
                         <img src="img/plantas/planta8.jpeg" alt="Banana Leaf Plant 1.9M">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CÓD: NX755U1</span>
                         <h3 class="product-name">Banana Leaf Plant 1.9M</h3>
                         <p class="product-desc">Planta de folhas de bananeira de grande porte em vaso preto. Altura de 1.9 metros.</p>
-                        <div class="product-price">6.200,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('Banana Leaf Plant 1.9M (NX755U1)', 6200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">5.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Banana Leaf Plant 1.9M (NX755U1)', 5500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- Planta 9 (Fiddle Fig Leaf Tree In Pot 120CM) -->
-                <div class="product-card" data-category="decor">
+                <div class="product-card" data-category="artificial-flowers">
                     <div class="product-thumb">
-                        <span class="product-tag">Botânica</span>
+                        <span class="product-tag">Artificial Flowers</span>
                         <img src="img/plantas/planta9.jpeg" alt="Fiddle Fig Leaf Tree In Pot 120CM">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CÓD: YIG73U1</span>
                         <h3 class="product-name">Fiddle Fig Leaf Tree In Pot 120CM</h3>
                         <p class="product-desc">Árvore de figueira-lira artificial elegante em vaso preto. Altura de 120 cm.</p>
-                        <div class="product-price">4.700,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('Fiddle Fig Leaf Tree In Pot 120CM (YIG73U1)', 4700)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">6.900,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Fiddle Fig Leaf Tree In Pot 120CM (YIG73U1)', 6900)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <!-- Outros Produtos Exemplo -->
-                <div class="product-card" data-category="furniture">
+                <!-- POLTRON & SOFA -->
+                <div class="product-card" data-category="poltron">
                     <div class="product-thumb">
-                        <span class="product-tag">Móveis</span>
+                        <span class="product-tag">Poltron</span>
                         <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80" alt="Poltrona Velvet">
                     </div>
                     <div class="product-info">
@@ -2266,9 +2180,9 @@
                     </div>
                 </div>
 
-                <div class="product-card" data-category="furniture">
+                <div class="product-card" data-category="sofa">
                     <div class="product-thumb">
-                        <span class="product-tag">Móveis</span>
+                        <span class="product-tag">Sofa</span>
                         <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80" alt="Sofá Modular">
                     </div>
                     <div class="product-info">
@@ -2277,6 +2191,1271 @@
                         <p class="product-desc">Sofá de 3 lugares com espuma de alta densidade e tecido premium.</p>
                         <div class="product-price">28.000,00 MZN</div>
                         <button class="btn-add-cart" onclick="addToCart('Sofá Modular Executive', 28000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <!-- MIRRORS (mirrors) -->
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/espelhos/CONTESSA_MIRROR_82X90CM.jpg" alt="CONTESSA MIRROR 82X90CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMB42U1</span>
+                        <h3 class="product-name">CONTESSA MIRROR 82X90CM</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">10.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONTESSA MIRROR 82X90CM (FMB42U1)', 10800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sale!</span>
+                        <img src="img/espelhos/SUNKIST_MIRROR_89CM.jpg" alt="SUNKIST MIRROR 89CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMB39U1</span>
+                        <h3 class="product-name">SUNKIST MIRROR 89CM</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">12.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SUNKIST MIRROR 89CM (FMB39U1)', 12000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">49 in stock</span>
+                        <img src="img/espelhos/SPEAR_TABLE_MIRROR_37CM.jpg" alt="SPEAR TABLE MIRROR 37X58CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMB22U1</span>
+                        <h3 class="product-name">SPEAR TABLE MIRROR 37X58CM</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">13.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SPEAR TABLE MIRROR 37X58CM (FMB22U1)', 13800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">31 in stock</span>
+                        <img src="img/espelhos/ROUND_BLACK_RIM_MIRROR_80CM.jpg" alt="ROUND BLACK RIM MIRROR 80cm">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: YOU60U1</span>
+                        <h3 class="product-name">ROUND BLACK RIM MIRROR 80cm</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">9.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ROUND BLACK RIM MIRROR 80cm (YOU60U1)', 9200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/espelhos/VOLCANIC_MEAL_MIRROR_80CM.jpg" alt="VOLCANIC METAL MIRROR 80CM ANT.SI">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMB61U1</span>
+                        <h3 class="product-name">VOLCANIC METAL MIRROR 80CM ANT.SI</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">10.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('VOLCANIC METAL MIRROR 80CM ANT.SI (FMB61U1)', 10500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">11 in stock</span>
+                        <img src="img/espelhos/TANAY_WALL_ART_MIRROR_110X60CM.jpg" alt="TANAY WALL ART MIRROR 110X60CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMB48U1</span>
+                        <h3 class="product-name">TANAY WALL ART MIRROR 110X60CM</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">14.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('TANAY WALL ART MIRROR 110X60CM (FMB48U1)', 14000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+              
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">23 in stock</span>
+                        <img src="img/espelhos/GOLD_CHEVEL_MIRROR_170X50CM.jpg" alt="GOLD CHEVEL MIRROR 170X50CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: YOU66U1</span>
+                        <h3 class="product-name">GOLD CHEVEL MIRROR 170X50CM</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">13.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GOLD CHEVEL MIRROR 170X50CM (YOU66U1)', 13800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/espelhos/ARCO_MIRROR_98X61X4CM.jpg" alt="ARCO MIRROR 98X61X4CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMG12U1</span>
+                        <h3 class="product-name">ARCO MIRROR 98X61X4CM</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">13.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ARCO MIRROR 98X61X4CM (FMG12U1)', 13800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">17 in stock</span>
+                        <img src="img/espelhos/CARRE_ANTWHIE_WALL_ART_61X61CM.jpg" alt="CARRE ANT.WHITE WALL ART 61X61CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMG02U1</span>
+                        <h3 class="product-name">CARRE ANT.WHITE WALL ART 61X61CM</h3>
+                        <p class="product-desc">WALL ART</p>
+                        <div class="product-price">7.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CARRE ANT.WHITE WALL ART 61X61CM (FMG02U1)', 7000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">18 in stock</span>
+                        <img src="img/espelh1m2m/1.jpeg" alt="ESPELHO 1M 2M">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ESP01U1</span>
+                        <h3 class="product-name">ESPELHO 1M 2M</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ESPELHO 1M 2M (ESP01U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/espelh1m2m/2.jpeg" alt="ESPELHO 1M 2M">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ESP02U1</span>
+                        <h3 class="product-name">ESPELHO 1M 2M</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">18.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ESPELHO 1M 2M (ESP02U1)', 18000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">39 in stock</span>
+                        <img src="img/espelh1m2m/3.jpeg" alt="ESPELHO 1M 2M">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ESP03U1</span>
+                        <h3 class="product-name">ESPELHO 1M 2M</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">18.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ESPELHO 1M 2M (ESP03U1)', 18000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/espelh1m2m/4.jpeg" alt="ESPELHO 1M 2M">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ESP04U1</span>
+                        <h3 class="product-name">ESPELHO 1M 2M</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ESPELHO 1M 2M (ESP04U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">43 in stock</span>
+                        <img src="img/espelh1m2m/5.jpeg" alt="ESPELHO 1M 2M">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ESP05U1</span>
+                        <h3 class="product-name">ESPELHO 1M 2M</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">28.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ESPELHO 1M 2M (ESP05U1)', 28500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">6 in stock</span>
+                        <img src="img/espelh1m2m/6.jpeg" alt="ESPELHO 1M 2M">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ESP06U1</span>
+                        <h3 class="product-name">ESPELHO 1M 2M</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">18.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ESPELHO 1M 2M (ESP06U1)', 18000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">28 in stock</span>
+                        <img src="img/espelh1m2m/7.jpeg" alt="ESPELHO 1M 2M">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ESP07U1</span>
+                        <h3 class="product-name">ESPELHO 1M 2M</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">28.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ESPELHO 1M 2M (ESP07U1)', 28500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/espelh1m2m/8.jpeg" alt="ESPELHO 1M 2M">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ESP08U1</span>
+                        <h3 class="product-name">ESPELHO 1M 2M</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">28.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ESPELHO 1M 2M (ESP08U1)', 28500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">38 in stock</span>
+                        <img src="img/espelh1m2m/9.jpeg" alt="ESPELHO 1M 2M">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ESP09U1</span>
+                        <h3 class="product-name">ESPELHO 1M 2M</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">28.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ESPELHO 1M 2M (ESP09U1)', 28500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">21 in stock</span>
+                        <img src="img/espelh1m2m/10.jpeg" alt="ESPELHO 1M 2M">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ESP10U1</span>
+                        <h3 class="product-name">ESPELHO 1M 2M</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">28.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ESPELHO 1M 2M (ESP10U1)', 28500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">37 in stock</span>
+                        <img src="img/espelh1m2m/11.jpeg" alt="ESPELHO 1M 2M">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ESP11U1</span>
+                        <h3 class="product-name">ESPELHO 1M 2M</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">28.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ESPELHO 1M 2M (ESP11U1)', 28500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mirrors">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/espelh1m2m/12.jpeg" alt="ESPELHO 1M 2M">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: ESP12U1</span>
+                        <h3 class="product-name">ESPELHO 1M 2M</h3>
+                        <p class="product-desc">MIRRORS</p>
+                        <div class="product-price">28.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('ESPELHO 1M 2M (ESP12U1)', 28500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <!-- CONSOLE TABLE (console-table) -->
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">19 in stock</span>
+                        <img src="img/console/1.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST01U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">12.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST01U1)', 12000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">32 in stock</span>
+                        <img src="img/console/2.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST02U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST02U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">27 in stock</span>
+                        <img src="img/console/3.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST03U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">26.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST03U1)', 26000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/console/4.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST04U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">23.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST04U1)', 23000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">26 in stock</span>
+                        <img src="img/console/5.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST05U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">20.600,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST05U1)', 20600)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">7 in stock</span>
+                        <img src="img/console/6.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST06U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST06U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/console/7.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST07U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">21.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST07U1)', 21000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">21 in stock</span>
+                        <img src="img/console/8.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST08U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">21.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST08U1)', 21000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">17 in stock</span>
+                        <img src="img/console/9.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST09U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">22.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST09U1)', 22000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">27 in stock</span>
+                        <img src="img/console/10.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST10U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST10U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">26 in stock</span>
+                        <img src="img/console/11.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST11U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">23.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST11U1)', 23500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">25 in stock</span>
+                        <img src="img/console/12.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST12U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">26.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST12U1)', 26000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">20 in stock</span>
+                        <img src="img/console/13.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST13U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST13U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">7 in stock</span>
+                        <img src="img/console/14.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST14U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST14U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">13 in stock</span>
+                        <img src="img/console/15.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST15U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST15U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">18 in stock</span>
+                        <img src="img/console/16.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST16U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST16U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">27 in stock</span>
+                        <img src="img/console/17.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST17U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">26.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST17U1)', 26000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">38 in stock</span>
+                        <img src="img/console/18.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST18U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">26.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST18U1)', 26000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">23 in stock</span>
+                        <img src="img/console/19.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST19U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">26.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST19U1)', 26000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">6 in stock</span>
+                        <img src="img/console/20.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST20U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST20U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">5 in stock</span>
+                        <img src="img/console/21.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST21U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST21U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">28 in stock</span>
+                        <img src="img/console/22.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST22U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST22U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">16 in stock</span>
+                        <img src="img/console/23.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST23U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST23U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">39 in stock</span>
+                        <img src="img/console/24.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST24U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST24U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">23 in stock</span>
+                        <img src="img/console/25.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST25U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST25U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">34 in stock</span>
+                        <img src="img/console/26.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST26U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST26U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">32 in stock</span>
+                        <img src="img/console/27.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST27U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST27U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/console/28.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST28U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST28U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/console/29.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST29U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST29U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">37 in stock</span>
+                        <img src="img/console/30.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST30U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST30U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">40 in stock</span>
+                        <img src="img/console/31.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST31U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST31U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">40 in stock</span>
+                        <img src="img/console/32.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST32U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST32U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <span class="product-tag">17 in stock</span>
+                        <img src="img/console/33.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST33U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST33U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+
+                <!-- MESINHAS DE CENTRO (mesinhas-centro) -->
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">11 in stock</span>
+                        <img src="img/mesinhasdecentro/1.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC01U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">26.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC01U1)', 26000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/mesinhasdecentro/2.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC02U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">23.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC02U1)', 23000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">38 in stock</span>
+                        <img src="img/mesinhasdecentro/3.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC03U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">28.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC03U1)', 28500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">3 in stock</span>
+                        <img src="img/mesinhasdecentro/4.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC04U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC04U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">33 in stock</span>
+                        <img src="img/mesinhasdecentro/6.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC05U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">26.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC05U1)', 26000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">36 in stock</span>
+                        <img src="img/mesinhasdecentro/7.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC06U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">28.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC06U1)', 28000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">35 in stock</span>
+                        <img src="img/mesinhasdecentro/8.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC07U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC07U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">30 in stock</span>
+                        <img src="img/mesinhasdecentro/9.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC08U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC08U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">14 in stock</span>
+                        <img src="img/mesinhasdecentro/10.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC09U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC09U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">18 in stock</span>
+                        <img src="img/mesinhasdecentro/11.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC10U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">28.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC10U1)', 28000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/mesinhasdecentro/12.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC11U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">30.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC11U1)', 30000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">31 in stock</span>
+                        <img src="img/mesinhasdecentro/13.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC12U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">30.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC12U1)', 30000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/mesinhasdecentro/14.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC13U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC13U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">19 in stock</span>
+                        <img src="img/mesinhasdecentro/15.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC14U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC14U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">33 in stock</span>
+                        <img src="img/mesinhasdecentro/16.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC15U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">23.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC15U1)', 23000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">28 in stock</span>
+                        <img src="img/mesinhasdecentro/17.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC16U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC16U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">13 in stock</span>
+                        <img src="img/mesinhasdecentro/18.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC17U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC17U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">22 in stock</span>
+                        <img src="img/mesinhasdecentro/19.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC18U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">28.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC18U1)', 28000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">5 in stock</span>
+                        <img src="img/mesinhasdecentro/20.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC19U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">28.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC19U1)', 28000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/mesinhasdecentro/21.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC20U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">28.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC20U1)', 28000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">29 in stock</span>
+                        <img src="img/mesinhasdecentro/22.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC21U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC21U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/mesinhasdecentro/23.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC22U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC22U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/mesinhasdecentro/24.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC23U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC23U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">14 in stock</span>
+                        <img src="img/mesinhasdecentro/25.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC25U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC25U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">20 in stock</span>
+                        <img src="img/mesinhasdecentro/26.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC26U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC26U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/mesinhasdecentro/27.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC27U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC27U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">out of stock</span>
+                        <img src="img/mesinhasdecentro/28.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC28U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC28U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">32 in stock</span>
+                        <img src="img/mesinhasdecentro/29.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC29U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC29U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">15 in stock</span>
+                        <img src="img/mesinhasdecentro/30.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC30U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC30U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">46 in stock</span>
+                        <img src="img/mesinhasdecentro/31.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC31U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC31U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">30 in stock</span>
+                        <img src="img/mesinhasdecentro/32.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC32U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC32U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">43 in stock</span>
+                        <img src="img/mesinhasdecentro/33.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC33U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC33U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">27 in stock</span>
+                        <img src="img/mesinhasdecentro/34.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC34U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC34U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">21 in stock</span>
+                        <img src="img/mesinhasdecentro/35.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC35U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">24.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC35U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">5 in stock</span>
+                        <img src="img/mesinhasdecentro/36.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC36U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">22.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC36U1)', 22000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <span class="product-tag">40 in stock</span>
+                        <img src="img/mesinhasdecentro/37.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MDC37U1</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">22.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC37U1)', 22000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
@@ -2326,6 +3505,37 @@
         </div>
     </section>
 
+    <!-- Rodapé -->
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="footer-logo">Luxury <span>Parcels</span></a>
+                    <p class="footer-desc">Mobiliário sob medida e artigos decorativos exclusivos em Moçambique. Qualidade, rigor e elegância para transformar o seu espaço.</p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Navegação</h4>
+                    <ul class="footer-list">
+                        <li><a href="#catalogo">Catálogo</a></li>
+                        <li><a href="#como-encomendar">Como Encomendar</a></li>
+                        <li><a href="#sobre">A Marca</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Contactos</h4>
+                    <ul class="footer-list">
+                        <li>Maputo, Moçambique</li>
+                        <li>Atendimento via WhatsApp</li>
+                        <li>Entregas em todo o país</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Luxury Parcels. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- Carrinho Drawer -->
     <div class="drawer-overlay" id="cartOverlay" onclick="toggleCart()"></div>
     <div class="cart-drawer" id="cartDrawer">
@@ -2339,30 +3549,13 @@
         </div>
 
         <div class="drawer-footer">
-            <div class="shipping-selector">
-                <label for="shippingProvince" data-i18n="ship-label">Província de Entrega:</label>
-                <select id="shippingProvince" onchange="renderCart()">
-                    <option value="Maputo Cidade" data-cost="500">Maputo Cidade (500 MZN)</option>
-                    <option value="Maputo Província" data-cost="800">Maputo Província (800 MZN)</option>
-                    <option value="Gaza" data-cost="1500">Gaza (1.500 MZN)</option>
-                    <option value="Inhambane" data-cost="2000">Inhambane (2.000 MZN)</option>
-                    <option value="Sofala (Beira)" data-cost="2500">Sofala - Beira (2.500 MZN)</option>
-                    <option value="Manica" data-cost="2500">Manica (2.500 MZN)</option>
-                    <option value="Tete" data-cost="3000">Tete (3.000 MZN)</option>
-                    <option value="Zambézia" data-cost="3000">Zambézia (3.000 MZN)</option>
-                    <option value="Nampula" data-cost="3500">Nampula (3.500 MZN)</option>
-                    <option value="Cabo Delgado" data-cost="4000">Cabo Delgado (4.000 MZN)</option>
-                    <option value="Niassa" data-cost="4000">Niassa (4.000 MZN)</option>
-                </select>
+            <div class="shipping-info-note">
+                <strong>Informação de Entrega:</strong> Para entregas haverá custos adicionais sob consulta.
             </div>
             
             <div class="drawer-subtotal">
                 <span data-i18n="subtotal">Subtotal:</span>
                 <strong id="subtotalVal">0.00 MZN</strong>
-            </div>
-            <div class="drawer-subtotal">
-                <span data-i18n="shipping">Envio:</span>
-                <strong id="shippingVal">0.00 MZN</strong>
             </div>
             <div class="drawer-subtotal" style="margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border-color);">
                 <span data-i18n="total">Total Estimado:</span>
@@ -2371,46 +3564,14 @@
 
             <button class="btn-whatsapp" onclick="checkoutWhatsApp()">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 5.452 4.435 9.888 9.889 9.888 1.868 0 3.616-.523 5.111-1.455l.366-.226 3.791.994-1.012-3.693.238-.379c1.035-1.646 1.582-3.558 1.58-5.523 0-5.45-4.434-9.884-9.884-9.884z"/>
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.866-2.031-.966-.272-.101-.47-.149-.669.149-.198.297-.768.966-.941 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                 </svg>
-                <span data-i18n="btn-checkout">Finalizar Encomenda</span>
+                Finalizar no WhatsApp
             </button>
         </div>
     </div>
 
-    <!-- Rodapé -->
-    <footer class="footer" id="contacto">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <div class="footer-logo">Luxury <span>Parcels</span></div>
-                    <p class="footer-desc" data-i18n="foot-desc">Móveis e peças decorativas de luxo para transformar o seu espaço. Atendimento e envios para todo o território nacional.</p>
-                </div>
-                <div>
-                    <h4 class="footer-heading" data-i18n="foot-links">Links Rápidos</h4>
-                    <ul class="footer-list">
-                        <li><a href="#catalogo" data-i18n="nav-catalogo">Catálogo</a></li>
-                        <li><a href="#como-encomendar" data-i18n="nav-como">Como Encomendar</a></li>
-                        <li><a href="#sobre" data-i18n="nav-sobre">A Marca</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="footer-heading" data-i18n="foot-contact">Contacto</h4>
-                    <ul class="footer-list">
-                        <li>Moçambique</li>
-                        <li>WhatsApp: +258 84 000 0000</li>
-                        <li>Email: info@luxuryparcels.co.mz</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Luxury Parcels Mozambique. Todos os direitos reservados.</p>
-                <p>Design & Elegância</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Google Translate JS -->
+    <!-- Scripts da Funcionalidade da Página e Tradução Automática -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -2422,273 +3583,128 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- Script da Loja & Tradução Híbrida (Offline + Google Translate Online) -->
     <script>
-        // Sistema de Carrinho
         let cart = [];
 
-        function toggleCart() {
-            document.getElementById('cartDrawer').classList.toggle('active');
-            document.getElementById('cartOverlay').classList.toggle('active');
-        }
-
-        function toggleMobileMenu() {
-            document.getElementById('mobileDrawer').classList.toggle('active');
-            document.getElementById('mobileOverlay').classList.toggle('active');
-        }
-
-        function addToCart(name, price) {
-            const existing = cart.find(item => item.name === name);
-            if (existing) {
-                existing.qty += 1;
-            } else {
-                cart.push({ name, price, qty: 1 });
-            }
-            renderCart();
-            showToast();
-        }
-
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            renderCart();
-        }
-
-        function renderCart() {
-            const cartContainer = document.getElementById('cartItems');
-            const cartCount = document.getElementById('cartCount');
-            const subtotalVal = document.getElementById('subtotalVal');
-            const shippingVal = document.getElementById('shippingVal');
-            const totalVal = document.getElementById('totalVal');
-            const selectProvince = document.getElementById('shippingProvince');
-
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-            cartCount.textContent = totalQty;
-
-            if (cart.length === 0) {
-                const emptyMsg = currentLang === 'en' ? 'Your cart is empty.' : 'Seu carrinho está vazio.';
-                cartContainer.innerHTML = `<div class="cart-empty">${emptyMsg}</div>`;
-                subtotalVal.textContent = '0.00 MZN';
-                shippingVal.textContent = '0.00 MZN';
-                totalVal.textContent = '0.00 MZN';
-                return;
+        function translatePage(lang) {
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = lang;
+                select.dispatchEvent(new Event('change'));
             }
 
-            let subtotal = 0;
-            cartContainer.innerHTML = '';
-
-            cart.forEach((item, index) => {
-                subtotal += item.price * item.qty;
-                const div = document.createElement('div');
-                div.className = 'cart-item';
-                div.innerHTML = `
-                    <div>
-                        <div class="cart-item-title">${item.name} (${item.qty}x)</div>
-                        <div class="cart-item-price">${(item.price * item.qty).toLocaleString('pt-MZ')},00 MZN</div>
-                    </div>
-                    <span class="remove-item" onclick="removeFromCart(${index})">&times;</span>
-                `;
-                cartContainer.appendChild(div);
+            document.querySelectorAll('#btn-pt, #m-btn-pt').forEach(btn => {
+                if (lang === 'pt') btn.classList.add('active');
+                else btn.classList.remove('active');
             });
 
-            const shippingCost = parseFloat(selectProvince.options[selectProvince.selectedIndex].dataset.cost) || 0;
-            const total = subtotal + shippingCost;
-
-            subtotalVal.textContent = `${subtotal.toLocaleString('pt-MZ')},00 MZN`;
-            shippingVal.textContent = `${shippingCost.toLocaleString('pt-MZ')},00 MZN`;
-            totalVal.textContent = `${total.toLocaleString('pt-MZ')},00 MZN`;
-        }
-
-        function showToast() {
-            const toast = document.getElementById('toast');
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 2000);
+            document.querySelectorAll('#btn-en, #m-btn-en').forEach(btn => {
+                if (lang === 'en') btn.classList.add('active');
+                else btn.classList.remove('active');
+            });
         }
 
         function filterProducts(category, event) {
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if(event && event.target) {
+                event.target.classList.add('active');
+            }
 
-            const products = document.querySelectorAll('.product-card');
-            products.forEach(product => {
-                if (category === 'all' || product.dataset.category === category) {
-                    product.style.display = 'flex';
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
                 } else {
-                    product.style.display = 'none';
+                    card.style.display = 'none';
                 }
             });
+        }
+
+        function toggleCart() {
+            document.getElementById('cartOverlay').classList.toggle('active');
+            document.getElementById('cartDrawer').classList.toggle('active');
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileOverlay').classList.toggle('active');
+            document.getElementById('mobileDrawer').classList.toggle('active');
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCartUI();
+            showToast();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const subtotalVal = document.getElementById('subtotalVal');
+            const totalVal = document.getElementById('totalVal');
+
+            cartCount.textContent = cart.length;
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<div class="cart-empty" data-i18n="cart-empty">Seu carrinho está vazio.</div>';
+                subtotalVal.textContent = '0.00 MZN';
+                totalVal.textContent = '0.00 MZN';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                total += item.price;
+                html += `
+                    <div class="cart-item">
+                        <div>
+                            <div class="cart-item-title">${item.name}</div>
+                            <div class="cart-item-price">${item.price.toLocaleString('pt-MZ')} MZN</div>
+                        </div>
+                        <span class="remove-item" onclick="removeFromCart(${index})">&times; Remover</span>
+                    </div>
+                `;
+            });
+
+            cartItems.innerHTML = html;
+            subtotalVal.textContent = total.toLocaleString('pt-MZ') + ' MZN';
+            totalVal.textContent = total.toLocaleString('pt-MZ') + ' MZN';
         }
 
         function checkoutWhatsApp() {
             if (cart.length === 0) {
-                alert(currentLang === 'en' ? 'Your cart is empty!' : 'O seu carrinho está vazio!');
+                alert('O seu carrinho está vazio.');
                 return;
             }
 
-            const province = document.getElementById('shippingProvince').value;
-            const total = document.getElementById('totalVal').textContent;
+            let message = 'Olá, gostaria de realizar a encomenda dos seguintes itens na Luxury Parcels:\n\n';
+            let total = 0;
 
-            let msg = `*NOVA ENCOMENDA - LUXURY PARCELS*\n\n`;
-            msg += `*Itens:*\n`;
-            cart.forEach(item => {
-                msg += `- ${item.name} | Qtd: ${item.qty} | Price: ${(item.price * item.qty).toLocaleString('pt-MZ')} MZN\n`;
+            cart.forEach((item, index) => {
+                message += `${index + 1}. ${item.name} - ${item.price.toLocaleString('pt-MZ')} MZN\n`;
+                total += item.price;
             });
 
-            msg += `\n*Província de Entrega:* ${province}`;
-            msg += `\n*Total Estimado:* ${total}\n\n`;
-            msg += `Gostaria de confirmar a encomenda e proceder ao pagamento de 60%.`;
+            message += `\nTotal Estimado: ${total.toLocaleString('pt-MZ')} MZN\n`;
+            message += '\nAguardo a confirmação do pagamento do sinal (60%) e detalhes de entrega.';
 
-            const phone = "258840000000";
-            const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-            window.open(url, '_blank');
-        }
-
-        // ==========================================
-        // Dicionário Offline (Carregamento Ultrarrápido)
-        // ==========================================
-        const translations = {
-            pt: {
-                "nav-catalogo": "Catálogo",
-                "nav-como": "Como Encomendar",
-                "nav-sobre": "A Marca",
-                "nav-contacto": "Contacto",
-                "hero-tag": "Móveis Exclusivos & Decoração",
-                "hero-title": "Eleve o Seu Espaço com Peças de Alto Padrão",
-                "hero-desc": "Mobiliário sob medida, plantas artificiais premium, estofados e acessórios decorativos selecionados com rigor e sofisticação para o seu ambiente.",
-                "hero-btn1": "Explorar Catálogo",
-                "hero-btn2": "Como Encomendar",
-                "hero-badge": "Design Exclusivo",
-                "feat1-t": "Sob Medida",
-                "feat1-d": "Personalização total de dimensões e acabamentos.",
-                "feat2-t": "Entrega 10-15 Dias",
-                "feat2-d": "Envio seguro para Maputo e províncias.",
-                "feat3-t": "Depósito de 60%",
-                "feat3-d": "Facilidade de pagamento: 60% inicial e 40% na entrega.",
-                "feat4-t": "Qualidade Premium",
-                "feat4-d": "Materiais nobres e design refinado.",
-                "cat-sub": "Coleções Selecionadas",
-                "cat-title": "Nosso Catálogo",
-                "f-all": "Todos",
-                "f-furn": "Móveis & Estofados",
-                "f-decor": "Decoração & Flores",
-                "f-kitch": "Cozinha",
-                "f-light": "Iluminação & TV",
-                "btn-add": "Adicionar ao Carrinho",
-                "info-sub": "Transparência & Processo",
-                "info-title": "Como Funciona",
-                "step1-t": "1. Seleção & Encomenda",
-                "step1-d": "Navegue pelo nosso catálogo, adicione os móveis ou artigos decorativos ao carrinho e envie a sua encomenda diretamente via WhatsApp para confirmação de especificações.",
-                "step2-t": "2. Pagamento Facilitado",
-                "step2-d": "Trabalhamos com o regime de 60% de sinal de depósito no momento da reserva ou início de produção, sendo os restantes 40% liquidados no ato da entrega.",
-                "about-sub": "Exclusividade em Moçambique",
-                "about-title": "Sobre a Luxury Parcels",
-                "about-quote": "\"Criamos ambientes requintados unindo a estética contemporânea ao conforto absoluto.\"",
-                "about-p1": "A Luxury Parcels é especializada no fornecimento e criação de mobiliário de alto padrão e soluções decorativas sob medida. Atendemos projetos residenciais e corporativos em Maputo e em todas as províncias de Moçambique.",
-                "about-p2": "Garantimos um acompanhamento rigoroso desde o fabrico até à montagem final, assegurando materiais de qualidade ímpar e prazos eficientes.",
-                "about-vip": "Atendimento VIP",
-                "cart-title": "Sua Encomenda",
-                "cart-empty": "Seu carrinho está vazio.",
-                "ship-label": "Província de Entrega:",
-                "subtotal": "Subtotal:",
-                "shipping": "Envio:",
-                "total": "Total Estimado:",
-                "btn-checkout": "Finalizar Encomenda",
-                "toast": "Item adicionado ao carrinho",
-                "foot-desc": "Móveis e peças decorativas de luxo para transformar o seu espaço. Atendimento e envios para todo o território nacional.",
-                "foot-links": "Links Rápidos",
-                "foot-contact": "Contacto"
-            },
-            en: {
-                "nav-catalogo": "Catalog",
-                "nav-como": "How to Order",
-                "nav-sobre": "The Brand",
-                "nav-contacto": "Contact",
-                "hero-tag": "Exclusive Furniture & Decor",
-                "hero-title": "Elevate Your Space with High-End Pieces",
-                "hero-desc": "Custom furniture, premium artificial plants, upholstery, and decorative accessories crafted with sophistication for your home or office.",
-                "hero-btn1": "Explore Catalog",
-                "hero-btn2": "How to Order",
-                "hero-badge": "Exclusive Design",
-                "feat1-t": "Custom Made",
-                "feat1-d": "Full customization of dimensions and finishes.",
-                "feat2-t": "10-15 Days Delivery",
-                "feat2-d": "Safe delivery to Maputo and all provinces.",
-                "feat3-t": "60% Deposit",
-                "feat3-d": "Easy payment: 60% deposit and 40% upon delivery.",
-                "feat4-t": "Premium Quality",
-                "feat4-d": "Refined materials and top craftsmanship.",
-                "cat-sub": "Selected Collections",
-                "cat-title": "Our Catalog",
-                "f-all": "All",
-                "f-furn": "Furniture & Upholstery",
-                "f-decor": "Decor & Flowers",
-                "f-kitch": "Kitchen",
-                "f-light": "Lighting & TV",
-                "btn-add": "Add to Cart",
-                "info-sub": "Transparency & Process",
-                "info-title": "How It Works",
-                "step1-t": "1. Selection & Order",
-                "step1-d": "Browse our catalog, add items to your cart, and send your order directly via WhatsApp for final specification confirmation.",
-                "step2-t": "2. Easy Payment",
-                "step2-d": "We operate with a 60% deposit required at reservation or start of production, with the remaining 40% paid upon delivery.",
-                "about-sub": "Exclusivity in Mozambique",
-                "about-title": "About Luxury Parcels",
-                "about-quote": "\"We create exquisite environments blending contemporary aesthetics with ultimate comfort.\"",
-                "about-p1": "Luxury Parcels specializes in supplying high-end furniture and custom decorative solutions. We serve residential and corporate projects in Maputo and across all provinces in Mozambique.",
-                "about-p2": "We ensure strict quality control from manufacturing to final installation, guaranteeing exceptional materials and fast turnaround times.",
-                "about-vip": "VIP Support",
-                "cart-title": "Your Order",
-                "cart-empty": "Your cart is empty.",
-                "ship-label": "Delivery Province:",
-                "subtotal": "Subtotal:",
-                "shipping": "Shipping:",
-                "total": "Estimated Total:",
-                "btn-checkout": "Complete Order",
-                "toast": "Item added to cart",
-                "foot-desc": "Luxury furniture and decor pieces to transform your space. Delivery across the entire national territory.",
-                "foot-links": "Quick Links",
-                "foot-contact": "Contact"
-            }
-        };
-
-        let currentLang = 'pt';
-
-        // Sistema de Tradução Híbrido (Instantâneo Offline + Google Translate Online de Backup)
-        function translatePage(lang) {
-            currentLang = lang;
-
-            // 1. Atualização UI dos Botões
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            if (lang === 'pt') {
-                document.getElementById('btn-pt')?.classList.add('active');
-                document.getElementById('m-btn-pt')?.classList.add('active');
-            } else {
-                document.getElementById('btn-en')?.classList.add('active');
-                document.getElementById('m-btn-en')?.classList.add('active');
-            }
-
-            // 2. Aplicação Instantânea da Tradução Offline (Zero Latência)
-            const dictionary = translations[lang];
-            if (dictionary) {
-                document.querySelectorAll('[data-i18n]').forEach(elem => {
-                    const key = elem.getAttribute('data-i18n');
-                    if (dictionary[key]) {
-                        elem.textContent = dictionary[key];
-                    }
-                });
-            }
-
-            // 3. Acionamento do Google Translate (Online Backup / Dinâmico)
-            if (navigator.onLine) {
-                const selectElement = document.querySelector('.goog-te-combo');
-                if (selectElement) {
-                    selectElement.value = lang;
-                    selectElement.dispatchEvent(new Event('change'));
-                }
-            }
-
-            // Re-renderiza o carrinho para atualizar os textos internos
-            renderCart();
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/?text=${encodedMessage}`, '_blank');
         }
     </script>
 </body>
