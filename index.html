@@ -610,6 +610,43 @@
             transform: scale(1.05);
         }
 
+        /* ============================================
+           MARCA D'ÁGUA E PROTEÇÃO DE IMAGENS
+           ============================================ */
+        .product-thumb img,
+        .hero-image-card img {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+            pointer-events: none;
+        }
+
+        .product-thumb::after,
+        .hero-image-card::after {
+            content: "LUXURY PARCELS";
+            position: absolute;
+            right: 10px;
+            bottom: 8px;
+            font-family: var(--font-serif);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(197, 160, 89, 0.75);
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+            pointer-events: none;
+            user-select: none;
+            z-index: 5;
+        }
+
+        .hero-image-card::after {
+            right: 16px;
+            bottom: 14px;
+            font-size: 0.8rem;
+        }
+
         .product-tag {
             position: absolute;
             top: 14px;
@@ -2171,10 +2208,10 @@
                 <div class="product-card" data-category="poltron">
                     <div class="product-thumb">
                         <span class="product-tag">Poltron</span>
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80" alt="Poltrona Velvet">
+                        <img src="img/soja2.jpeg" alt="Poltrona Velvet">
                     </div>
                     <div class="product-info">
-                        <span class="product-code">CÓD: LP-PV01</span>
+                        <span class="product-code">CÓD: LP-PV10</span>
                         <h3 class="product-name">Poltrona Velvet Royale</h3>
                         <p class="product-desc">Ergonomia avançada com veludo toque suave e base dourada.</p>
                         <div class="product-price">12.500,00 MZN</div>
@@ -2182,17 +2219,199 @@
                     </div>
                 </div>
 
+                <div class="product-card" data-category="poltron">
+                    <div class="product-thumb">
+                        <span class="product-tag">Poltron</span>
+                        <img src="img/potron.jpeg" alt="Poltrona Velvet">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-PV01</span>
+                        <h3 class="product-name">Poltrona</h3>
+                        <p class="product-desc">Ergonomia avançada com veludo toque suave e base dourada.</p>
+                        <div class="product-price">28.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Poltrona Velvet Royale', 28000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="poltron">
+                    <div class="product-thumb">
+                        <span class="product-tag">Poltron</span>
+                        <img src="img/poltron/poltron.jpeg" alt="Poltrona Velvet">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-PV09</span>
+                        <h3 class="product-name">Poltrona</h3>
+                        <p class="product-desc">Ergonomia avançada com veludo toque suave e base dourada.</p>
+                        <div class="product-price">28.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Poltrona Velvet Royale', 28000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="poltron">
+                    <div class="product-thumb">
+                        <span class="product-tag">Poltron</span>
+                        <img src="img/poltron/poltron1.jpeg" alt="Poltrona Velvet">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-PV08</span>
+                        <h3 class="product-name">Poltrona</h3>
+                        <p class="product-desc">Ergonomia avançada com veludo toque suave e base dourada.</p>
+                        <div class="product-price">28.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Poltrona Velvet Royale', 28000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="poltron">
+                    <div class="product-thumb">
+                        <span class="product-tag">Poltron</span>
+                        <img src="img/poltron/poltron3.jpeg" alt="Poltrona Velvet">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-PV07</span>
+                        <h3 class="product-name">Poltrona</h3>
+                        <p class="product-desc">Ergonomia avançada com veludo toque suave e base dourada.</p>
+                        <div class="product-price">28.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Poltrona Velvet Royale', 28000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="poltron">
+                    <div class="product-thumb">
+                        <span class="product-tag">Poltron</span>
+                        <img src="img/poltron/poltron2.jpeg" alt="Poltrona Velvet">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-PV06</span>
+                        <h3 class="product-name">Poltrona</h3>
+                        <p class="product-desc">Ergonomia avançada com veludo toque suave e base dourada.</p>
+                        <div class="product-price">58.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Poltrona Velvet Royale', 58000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="poltron">
+                    <div class="product-thumb">
+                        <span class="product-tag">Poltron</span>
+                        <img src="img/poltron/poltron4.jpeg" alt="Poltrona Velvet">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-PV05</span>
+                        <h3 class="product-name">Poltrona</h3>
+                        <p class="product-desc">Ergonomia avançada com veludo toque suave e base dourada.</p>
+                        <div class="product-price">60.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Poltrona Velvet Royale', 60000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="poltron">
+                    <div class="product-thumb">
+                        <span class="product-tag">Poltron</span>
+                        <img src="img/poltron/poltron6.jpeg" alt="Poltrona Velvet">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-PV04</span>
+                        <h3 class="product-name">Poltrona</h3>
+                        <p class="product-desc">Ergonomia avançada com veludo toque suave e base dourada.</p>
+                        <div class="product-price">58.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Poltrona Velvet Royale', 58000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="poltron">
+                    <div class="product-thumb">
+                        <span class="product-tag">Poltron</span>
+                        <img src="img/poltron/poltron7.jpeg" alt="Poltrona Velvet">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-PV03</span>
+                        <h3 class="product-name">Poltrona</h3>
+                        <p class="product-desc">Ergonomia avançada com veludo toque suave e base dourada.</p>
+                        <div class="product-price">27.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Poltrona Velvet Royale', 27000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="poltron">
+                    <div class="product-thumb">
+                        <span class="product-tag">Poltron</span>
+                        <img src="img/poltron/poltron8.jpeg" alt="Poltrona Velvet">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-PV02</span>
+                        <h3 class="product-name">Poltrona</h3>
+                        <p class="product-desc">Ergonomia avançada com veludo toque suave e base dourada.</p>
+                        <div class="product-price">55.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Poltrona Velvet Royale', 55000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="poltron">
+                    <div class="product-thumb">
+                        <span class="product-tag">Poltron</span>
+                        <img src="img/poltron/poltron9.jpeg" alt="Poltrona Velvet">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-PV11</span>
+                        <h3 class="product-name">Poltrona</h3>
+                        <p class="product-desc">Ergonomia avançada com veludo toque suave e base dourada.</p>
+                        <div class="product-price">28.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Poltrona Velvet Royale', 28000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="poltron">
+                    <div class="product-thumb">
+                        <span class="product-tag">Poltron</span>
+                        <img src="img/poltron/poltron10.jpeg" alt="Poltrona Velvet">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-PV12</span>
+                        <h3 class="product-name">Poltrona (2 pcs)</h3>
+                        <p class="product-desc">Ergonomia avançada com veludo toque suave e base dourada.</p>
+                        <div class="product-price">28.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Poltrona Velvet Royale', 28000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="poltron">
+                    <div class="product-thumb">
+                        <span class="product-tag">Poltron</span>
+                        <img src="img/poltron/poltron11.jpeg" alt="Poltrona Velvet">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-PV13</span>
+                        <h3 class="product-name">Poltrona</h3>
+                        <p class="product-desc">Ergonomia avançada com veludo toque suave e base dourada.</p>
+                        <div class="product-price">28.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Poltrona Velvet Royale', 28000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="poltron">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sofa</span>
+                        <img src="img/sofa/sofa.jpeg" alt="Sofá Modular">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-SF14</span>
+                        <h3 class="product-name">Poltrona</h3>
+                        <p class="product-desc">Poltrona com espuma de alta densidade e tecido premium.</p>
+                        <div class="product-price">70.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Sofá Modular Executive', 70000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
                 <div class="product-card" data-category="sofa">
                     <div class="product-thumb">
                         <span class="product-tag">Sofa</span>
-                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80" alt="Sofá Modular">
+                        <img src="img/sofa/sofa1.jpeg" alt="Sofá Modular">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CÓD: LP-SF02</span>
                         <h3 class="product-name">Sofá Modular Executive</h3>
                         <p class="product-desc">Sofá de 3 lugares com espuma de alta densidade e tecido premium.</p>
-                        <div class="product-price">28.000,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('Sofá Modular Executive', 28000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">70.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Sofá Modular Executive', 70000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
@@ -4024,6 +4243,30 @@
 
         // Adiciona eventos aos botões de idioma (já existem no HTML)
         // Os botões já chamam translatePage('pt') e translatePage('en')
+
+        // ============================================
+        // PROTEÇÃO DAS FOTOS (evita download/cópia fácil)
+        // ============================================
+        const protectedZones = document.querySelectorAll('.product-thumb, .hero-image-card');
+
+        protectedZones.forEach(zone => {
+            // Bloqueia o menu de clique direito (Salvar imagem como...)
+            zone.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+        });
+
+        document.querySelectorAll('.product-thumb img, .hero-image-card img').forEach(img => {
+            // Impede arrastar a imagem para a área de trabalho
+            img.setAttribute('draggable', 'false');
+            img.addEventListener('dragstart', function(e) {
+                e.preventDefault();
+            });
+            // Impede o menu de contexto diretamente na imagem também
+            img.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+        });
     });
 
     // ============================================
