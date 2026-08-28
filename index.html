@@ -946,6 +946,44 @@
             margin-bottom: 16px;
         }
 
+        .payment-info-note {
+            background: var(--sand-light);
+            border-left: 3px solid var(--gold);
+            padding: 10px 14px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .payment-info-note strong {
+            display: block;
+            color: var(--text-main);
+            margin-bottom: 6px;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .payment-info-note ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .payment-info-note li {
+            margin-bottom: 4px;
+            line-height: 1.5;
+        }
+
+        .payment-info-note li:last-child {
+            margin-bottom: 0;
+        }
+
+        .payment-info-note b {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
         .drawer-subtotal {
             display: flex;
             justify-content: space-between;
@@ -995,9 +1033,43 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-columns: 1.8fr 1fr 1fr 1.3fr;
             gap: 48px;
             margin-bottom: 64px;
+        }
+
+        .footer-contact-link {
+            color: #A09E99;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-contact-link:hover {
+            color: var(--gold);
+        }
+
+        .footer-payment-block {
+            margin-bottom: 16px;
+        }
+
+        .footer-payment-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer-payment-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .footer-payment-value {
+            font-size: 0.85rem;
+            color: #A09E99;
+            font-weight: 300;
+            line-height: 1.6;
         }
 
         .footer-logo {
@@ -1099,8 +1171,14 @@
             }
 
             .footer-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
                 gap: 36px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -4602,8 +4680,8 @@
                         <span class="product-code">CODE: MCM79U1</span>
                         <h3 class="product-name">SILVER LISTENING MAN 36CM</h3>
                         <p class="product-desc">HUMAN FIGURINES</p>
-                        <div class="product-price">3.800,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('SILVER LISTENING MAN 36CM (MCM79U1)', 9800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">10.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SILVER LISTENING MAN 36CM (MCM79U1)', 10500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
@@ -4616,8 +4694,8 @@
                         <span class="product-code">CODE: MCM79U1</span>
                         <h3 class="product-name">SILVER LISTENING MAN 36CM</h3>
                         <p class="product-desc">HUMAN FIGURINES</p>
-                        <div class="product-price">3.800,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('SILVER LISTENING MAN 36CM (MCM79U1)', 9800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">10.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SILVER LISTENING MAN 36CM (MCM79U1)', 10500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
@@ -5247,8 +5325,8 @@
                         <span class="product-code">CODE: OUT16U1</span>
                         <h3 class="product-name">BULLGOD BLACK GOLD</h3>
                         <p class="product-desc">ANIMAL FIGURE</p>
-                        <div class="product-price">10.000,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('BULLDOG BALCK GOLD', 10000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">6.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('BULLDOG BALCK GOLD', 6500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
@@ -5259,9 +5337,23 @@
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: OUT16U1</span>
-                        <h3 class="product-name">GOLD RINO</h3>
+                        <h3 class="product-name">GOLD RHINO (10X33 CM)</h3>
                         <p class="product-desc">ANIMAL FIGURE</p>
-                        <div class="product-price">10.000,00 MZN</div>
+                        <div class="product-price">4.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GOLD RINO', 4200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="animal-figure">
+                    <div class="product-thumb">
+                        <span class="product-tag">ANIMAL FIGURE</span>
+                        <img src="img/animalfigure/3.jpeg" alt="GOLD RINO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT16U1</span>
+                        <h3 class="product-name">GOLD RHINO (28X59)</h3>
+                        <p class="product-desc">ANIMAL FIGURE</p>
+                        <div class="product-price">5.500,00 MZN</div>
                         <button class="btn-add-cart" onclick="addToCart('GOLD RINO', 5500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
@@ -5373,8 +5465,8 @@
                         <span class="product-code">CODE: OUT16U1</span>
                         <h3 class="product-name">GOLD LION</h3>
                         <p class="product-desc">ANIMAL FIGURE</p>
-                        <div class="product-price">10.000,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('RELAXING CHAIR', 10000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">19.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('RELAXING CHAIR', 19500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
@@ -5576,9 +5668,25 @@
                     <h4 class="footer-heading">Contactos</h4>
                     <ul class="footer-list">
                         <li>Maputo, Moçambique</li>
-                        <li>Atendimento via WhatsApp</li>
+                        <li><a href="tel:+258840353058" class="footer-contact-link">+258 84 035 3058</a></li>
+                        <li><a href="https://wa.me/258840353058" target="_blank" rel="noopener" class="footer-contact-link">WhatsApp: +258 84 035 3058</a></li>
                         <li>Entregas em todo o país</li>
                     </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Métodos de Pagamento</h4>
+                    <div class="footer-payment-block">
+                        <div class="footer-payment-label">M-Pesa</div>
+                        <div class="footer-payment-value">840 353 058<br>Glynese Macou</div>
+                    </div>
+                    <div class="footer-payment-block">
+                        <div class="footer-payment-label">Conta Móvel</div>
+                        <div class="footer-payment-value">840 353 058</div>
+                    </div>
+                    <div class="footer-payment-block">
+                        <div class="footer-payment-label">BCI</div>
+                        <div class="footer-payment-value">NIB: 00 0800007968874101 13<br>Conta: 20796887410001</div>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -5602,6 +5710,16 @@
         <div class="drawer-footer">
             <div class="shipping-info-note">
                 <strong>Informação de Entrega:</strong> Para entregas haverá custos adicionais sob consulta.
+            </div>
+
+            <div class="payment-info-note">
+                <strong>Métodos de Pagamento (sinal de 60%)</strong>
+                <ul>
+                    <li><b>M-Pesa:</b> 840 353 058 (Glynese Macou)</li>
+                    <li><b>Conta Móvel:</b> 840 353 058</li>
+                    <li><b>BCI NIB:</b> 00 0800007968874101 13</li>
+                    <li><b>BCI Conta:</b> 20796887410001</li>
+                </ul>
             </div>
             
             <div class="drawer-subtotal">
@@ -6043,11 +6161,19 @@
             ? 'Aguardo a confirmação do pagamento do sinal (60%) e detalhes de entrega.'
             : 'Awaiting confirmation of the deposit payment (60%) and delivery details.';
 
+        const paymentMethodsLabel = currentLang === 'pt'
+            ? 'Métodos de Pagamento'
+            : 'Payment Methods';
+        const paymentMethodsDetails = currentLang === 'pt'
+            ? `M-Pesa: 840 353 058 (Glynese Macou)\nConta Móvel: 840 353 058\nBCI NIB: 00 0800007968874101 13\nBCI Conta: 20796887410001`
+            : `M-Pesa: 840 353 058 (Glynese Macou)\nMobile Account: 840 353 058\nBCI NIB: 00 0800007968874101 13\nBCI Account: 20796887410001`;
+
         message += `\n${totalLabel}: ${total.toLocaleString('pt-MZ')} MZN\n`;
         message += `\n${paymentLabel}`;
+        message += `\n\n${paymentMethodsLabel}:\n${paymentMethodsDetails}`;
 
         const encodedMessage = encodeURIComponent(message);
-        window.open(`https://wa.me/?text=${encodedMessage}`, '_blank');
+        window.open(`https://wa.me/258840353058?text=${encodedMessage}`, '_blank');
     }
 
     // ============================================
@@ -6133,7 +6259,7 @@
             waMessage += currentLang === 'pt' ? `\nComentário: ${comment}` : `\nComment: ${comment}`;
         }
         const encodedWaMessage = encodeURIComponent(waMessage);
-        window.open(`https://wa.me/?text=${encodedWaMessage}`, '_blank');
+        window.open(`https://wa.me/258840353058?text=${encodedWaMessage}`, '_blank');
 
         // Reset do formulário
         selectedStars = 0;
