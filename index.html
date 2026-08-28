@@ -1245,6 +1245,255 @@
                 gap: 16px;
             }
         }
+        /* ============================================
+           AVALIAÇÃO DOS SERVIÇOS (RATE OUR SERVICES)
+           ============================================ */
+        .rating-section {
+            padding: 100px 0;
+            background: var(--bg-surface);
+        }
+
+        .rating-summary {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            max-width: 420px;
+            margin: 0 auto 48px;
+            text-align: center;
+            padding: 32px 24px;
+            background: var(--sand-light);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .rating-average {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--text-main);
+            line-height: 1;
+        }
+
+        .rating-stars-display {
+            color: #D9D2C2;
+            font-size: 1.4rem;
+            letter-spacing: 3px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .rating-stars-display .rating-stars-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            color: var(--gold);
+        }
+
+        .rating-count {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 6px;
+        }
+
+        .rating-form-card {
+            max-width: 560px;
+            margin: 0 auto 56px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-left: 3px solid var(--gold);
+            padding: 36px 32px;
+        }
+
+        .rating-form-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .star-rating-input {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            font-size: 2.2rem;
+            margin-bottom: 24px;
+            line-height: 1;
+        }
+
+        .star-rating-input .star-input {
+            color: #D9D2C2;
+            cursor: pointer;
+            transition: var(--transition);
+            user-select: none;
+        }
+
+        .star-rating-input .star-input.selected,
+        .star-rating-input .star-input.hovered {
+            color: var(--gold);
+            transform: scale(1.1);
+        }
+
+        .rating-input-field,
+        .rating-textarea-field {
+            width: 100%;
+            border: 1px solid var(--border-color);
+            background: var(--sand-light);
+            padding: 12px 14px;
+            font-size: 0.85rem;
+            font-family: var(--font-sans);
+            color: var(--text-main);
+            margin-bottom: 14px;
+            border-radius: 2px;
+        }
+
+        .rating-textarea-field {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .rating-input-field:focus,
+        .rating-textarea-field:focus {
+            outline: 2px solid var(--gold);
+            outline-offset: -1px;
+        }
+
+        .btn-submit-rating {
+            width: 100%;
+            padding: 14px 18px;
+            background: var(--bg-dark);
+            color: #FFFFFF;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn-submit-rating:hover {
+            background: var(--gold);
+        }
+
+        .rating-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .rating-item {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            padding: 20px 22px;
+        }
+
+        .rating-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .rating-item-name {
+            font-family: var(--font-serif);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .rating-item-stars {
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        .rating-item-comment {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .rating-item-date {
+            font-size: 0.7rem;
+            color: #A09E99;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .rating-empty {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            padding: 24px 0;
+            grid-column: 1 / -1;
+        }
+
+        /* Distribuição de estrelas (estilo Play Store) */
+        .rating-breakdown {
+            max-width: 420px;
+            margin: 20px auto 48px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .rating-breakdown-row {
+            display: grid;
+            grid-template-columns: 46px 1fr 34px;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .rating-breakdown-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .rating-breakdown-bar-track {
+            width: 100%;
+            height: 8px;
+            background: var(--sand);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .rating-breakdown-bar-fill {
+            height: 100%;
+            background: var(--gold);
+            border-radius: 4px;
+            transition: width 0.4s ease;
+        }
+
+        .rating-breakdown-count {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-align: left;
+        }
+
+        .rating-list-note {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .star-rating-input {
+                font-size: 1.8rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -5227,6 +5476,44 @@
         <img class="feedback-lightbox-img" id="feedbackLightboxImg" src="" alt="Feedback ampliado">
     </div>
 
+    <!-- Avaliação dos Serviços (Rate Our Services) -->
+    <section class="rating-section" id="avaliacoes">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-subtitle" id="ratingSectionSub">A Sua Opinião</span>
+                <h2 class="section-title" id="ratingSectionTitle">Avalie os Nossos Serviços</h2>
+            </div>
+
+            <div class="rating-summary">
+                <div class="rating-average" id="ratingAverageValue">0.0</div>
+                <div class="rating-stars-display" id="ratingStarsDisplay">
+                    ★★★★★
+                    <div class="rating-stars-fill" id="ratingStarsFill">★★★★★</div>
+                </div>
+                <div class="rating-count" id="ratingCountText">0 avaliações</div>
+            </div>
+
+            <div class="rating-breakdown" id="ratingBreakdown"></div>
+
+            <div class="rating-form-card">
+                <p class="rating-form-label" id="ratingFormLabel">A sua classificação</p>
+                <div class="star-rating-input" id="starRatingInput">
+                    <span class="star-input" data-value="1">★</span>
+                    <span class="star-input" data-value="2">★</span>
+                    <span class="star-input" data-value="3">★</span>
+                    <span class="star-input" data-value="4">★</span>
+                    <span class="star-input" data-value="5">★</span>
+                </div>
+                <input type="text" id="ratingNameInput" class="rating-input-field" placeholder="O seu nome (opcional)">
+                <textarea id="ratingCommentInput" class="rating-textarea-field" placeholder="Deixe o seu comentário (opcional)"></textarea>
+                <button class="btn-submit-rating" id="ratingSubmitBtn" onclick="submitRating()">Enviar Avaliação</button>
+            </div>
+
+            <div class="rating-list" id="ratingList"></div>
+            <p class="rating-list-note" id="ratingListNote"></p>
+        </div>
+    </section>
+
     <!-- Como Encomendar -->
     <section class="info-section" id="como-encomendar">
         <div class="container">
@@ -5761,6 +6048,208 @@
 
         const encodedMessage = encodeURIComponent(message);
         window.open(`https://wa.me/?text=${encodedMessage}`, '_blank');
+    }
+
+    // ============================================
+    // AVALIAÇÃO DOS SERVIÇOS (RATE OUR SERVICES)
+    // ============================================
+    const RATINGS_STORAGE_KEY = 'luxuryParcelsRatings';
+    const RATING_DISPLAY_LIMIT = 3; // Mostra apenas as primeiras 3 avaliações no site (máx. 4)
+    let selectedStars = 0;
+
+    function getRatings() {
+        try {
+            const raw = localStorage.getItem(RATINGS_STORAGE_KEY);
+            return raw ? JSON.parse(raw) : [];
+        } catch (e) {
+            return [];
+        }
+    }
+
+    function saveRatings(ratings) {
+        try {
+            localStorage.setItem(RATINGS_STORAGE_KEY, JSON.stringify(ratings));
+        } catch (e) {
+            // localStorage indisponível — ignora silenciosamente
+        }
+    }
+
+    function initStarRatingInput() {
+        const stars = document.querySelectorAll('#starRatingInput .star-input');
+        stars.forEach(star => {
+            star.addEventListener('mouseenter', () => {
+                const val = parseInt(star.getAttribute('data-value'), 10);
+                highlightStars(val, true);
+            });
+            star.addEventListener('mouseleave', () => {
+                highlightStars(selectedStars, false);
+            });
+            star.addEventListener('click', () => {
+                selectedStars = parseInt(star.getAttribute('data-value'), 10);
+                highlightStars(selectedStars, false);
+            });
+        });
+    }
+
+    function highlightStars(value, isHover) {
+        const stars = document.querySelectorAll('#starRatingInput .star-input');
+        stars.forEach(star => {
+            const starVal = parseInt(star.getAttribute('data-value'), 10);
+            star.classList.remove('selected', 'hovered');
+            if (starVal <= value) {
+                star.classList.add(isHover ? 'hovered' : 'selected');
+            }
+        });
+    }
+
+    function submitRating() {
+        if (selectedStars === 0) {
+            const msg = currentLang === 'pt'
+                ? 'Por favor selecione uma classificação em estrelas.'
+                : 'Please select a star rating.';
+            alert(msg);
+            return;
+        }
+
+        const nameInput = document.getElementById('ratingNameInput');
+        const commentInput = document.getElementById('ratingCommentInput');
+        const name = nameInput.value.trim() || (currentLang === 'pt' ? 'Cliente Anónimo' : 'Anonymous Customer');
+        const comment = commentInput.value.trim();
+
+        const ratings = getRatings();
+        ratings.unshift({
+            name,
+            stars: selectedStars,
+            comment,
+            date: new Date().toISOString()
+        });
+        saveRatings(ratings);
+
+        // Envia a avaliação para a Luxury Parcels via WhatsApp
+        let waMessage = currentLang === 'pt'
+            ? `Olá, gostaria de deixar uma avaliação sobre os serviços da Luxury Parcels:\n\nClassificação: ${selectedStars}/5 estrelas\nNome: ${name}`
+            : `Hello, I would like to leave a review about Luxury Parcels services:\n\nRating: ${selectedStars}/5 stars\nName: ${name}`;
+        if (comment) {
+            waMessage += currentLang === 'pt' ? `\nComentário: ${comment}` : `\nComment: ${comment}`;
+        }
+        const encodedWaMessage = encodeURIComponent(waMessage);
+        window.open(`https://wa.me/?text=${encodedWaMessage}`, '_blank');
+
+        // Reset do formulário
+        selectedStars = 0;
+        highlightStars(0, false);
+        nameInput.value = '';
+        commentInput.value = '';
+
+        renderRatings();
+        showToast();
+    }
+
+    function renderRatings() {
+        const ratings = getRatings();
+        const listEl = document.getElementById('ratingList');
+        const averageEl = document.getElementById('ratingAverageValue');
+        const countEl = document.getElementById('ratingCountText');
+        const fillEl = document.getElementById('ratingStarsFill');
+        const breakdownEl = document.getElementById('ratingBreakdown');
+        const noteEl = document.getElementById('ratingListNote');
+
+        const count = ratings.length;
+        const average = count > 0
+            ? (ratings.reduce((sum, r) => sum + r.stars, 0) / count)
+            : 0;
+
+        averageEl.textContent = average.toFixed(1);
+        fillEl.style.width = `${(average / 5) * 100}%`;
+
+        const countLabel = currentLang === 'pt'
+            ? `${count} ${count === 1 ? 'avaliação' : 'avaliações'}`
+            : `${count} ${count === 1 ? 'review' : 'reviews'}`;
+        countEl.textContent = countLabel;
+
+        // Distribuição de estrelas (contabilização estilo Play Store)
+        let breakdownHtml = '';
+        for (let star = 5; star >= 1; star--) {
+            const starCount = ratings.filter(r => r.stars === star).length;
+            const pct = count > 0 ? Math.round((starCount / count) * 100) : 0;
+            breakdownHtml += `
+                <div class="rating-breakdown-row">
+                    <span class="rating-breakdown-label">${star} ★</span>
+                    <span class="rating-breakdown-bar-track">
+                        <span class="rating-breakdown-bar-fill" style="width:${pct}%;"></span>
+                    </span>
+                    <span class="rating-breakdown-count">${starCount}</span>
+                </div>
+            `;
+        }
+        breakdownEl.innerHTML = breakdownHtml;
+
+        if (count === 0) {
+            const emptyMsg = currentLang === 'pt'
+                ? 'Seja o primeiro a avaliar os nossos serviços.'
+                : 'Be the first to rate our services.';
+            listEl.innerHTML = `<div class="rating-empty">${emptyMsg}</div>`;
+            noteEl.textContent = '';
+            return;
+        }
+
+        // No site mostram-se apenas as primeiras avaliações (máximo definido em RATING_DISPLAY_LIMIT)
+        const visibleRatings = ratings.slice(0, RATING_DISPLAY_LIMIT);
+
+        let html = '';
+        visibleRatings.forEach(r => {
+            const starsStr = '★'.repeat(r.stars) + '☆'.repeat(5 - r.stars);
+            const dateStr = new Date(r.date).toLocaleDateString(currentLang === 'pt' ? 'pt-PT' : 'en-US', {
+                day: '2-digit', month: 'short', year: 'numeric'
+            });
+            const escapedComment = (r.comment || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            const escapedName = (r.name || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            html += `
+                <div class="rating-item">
+                    <div class="rating-item-header">
+                        <span class="rating-item-name">${escapedName}</span>
+                        <span class="rating-item-stars">${starsStr}</span>
+                    </div>
+                    ${escapedComment ? `<p class="rating-item-comment">${escapedComment}</p>` : ''}
+                    <span class="rating-item-date">${dateStr}</span>
+                </div>
+            `;
+        });
+        listEl.innerHTML = html;
+
+        if (count > RATING_DISPLAY_LIMIT) {
+            const remaining = count - RATING_DISPLAY_LIMIT;
+            noteEl.textContent = currentLang === 'pt'
+                ? `+ ${remaining} ${remaining === 1 ? 'avaliação' : 'avaliações'} recebidas`
+                : `+ ${remaining} more ${remaining === 1 ? 'review' : 'reviews'} received`;
+        } else {
+            noteEl.textContent = '';
+        }
+    }
+
+    function updateRatingSectionLanguage() {
+        const isPt = currentLang === 'pt';
+        document.getElementById('ratingSectionSub').textContent = isPt ? 'A Sua Opinião' : 'Your Feedback';
+        document.getElementById('ratingSectionTitle').textContent = isPt ? 'Avalie os Nossos Serviços' : 'Rate Our Services';
+        document.getElementById('ratingFormLabel').textContent = isPt ? 'A sua classificação' : 'Your rating';
+        document.getElementById('ratingNameInput').placeholder = isPt ? 'O seu nome (opcional)' : 'Your name (optional)';
+        document.getElementById('ratingCommentInput').placeholder = isPt ? 'Deixe o seu comentário (opcional)' : 'Leave your comment (optional)';
+        document.getElementById('ratingSubmitBtn').textContent = isPt ? 'Enviar Avaliação' : 'Submit Review';
+        renderRatings();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        initStarRatingInput();
+        renderRatings();
+    });
+
+    // Liga a secção de avaliações ao seletor de idioma existente, sem alterar a função original
+    if (typeof translatePage === 'function') {
+        const _originalTranslatePage = translatePage;
+        translatePage = function(lang) {
+            _originalTranslatePage(lang);
+            updateRatingSectionLanguage();
+        };
     }
 
     // Remove o Google Translate antigo
