@@ -1129,6 +1129,122 @@
                 display: none;
             }
         }
+
+        /* ============================================
+           FEEDBACK DOS CLIENTES
+           ============================================ */
+        .feedback-section {
+            padding: 100px 0;
+            background: var(--sand-light);
+        }
+
+        .feedback-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .feedback-card {
+            position: relative;
+            aspect-ratio: 9/16;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            cursor: zoom-in;
+            transition: var(--transition);
+        }
+
+        .feedback-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-sm);
+            border-color: var(--gold);
+        }
+
+        .feedback-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+            pointer-events: none;
+        }
+
+        .feedback-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .feedback-card::after {
+            content: "\1F50D";
+            position: absolute;
+            right: 10px;
+            bottom: 8px;
+            font-size: 0.9rem;
+            background: rgba(18, 18, 18, 0.6);
+            color: #FFFFFF;
+            padding: 4px 8px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Lightbox de zoom (sem permitir download) */
+        .feedback-lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(18, 18, 18, 0.94);
+            z-index: 400;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .feedback-lightbox.active {
+            display: flex;
+        }
+
+        .feedback-lightbox-img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            box-shadow: var(--shadow-lg);
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+            pointer-events: none;
+        }
+
+        .feedback-lightbox-close {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            color: #FFFFFF;
+            font-size: 2.2rem;
+            line-height: 1;
+            cursor: pointer;
+            font-weight: 300;
+            transition: var(--transition);
+        }
+
+        .feedback-lightbox-close:hover {
+            color: var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            .feedback-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 16px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1264,11 +1380,13 @@
                 <button class="filter-btn" onclick="filterProducts('lightning', event)">Lightning</button>
                 <button class="filter-btn" onclick="filterProducts('side-tables', event)">Side tables</button>
                 <button class="filter-btn" onclick="filterProducts('mirrors', event)">Mirrors</button>
+                <button class="filter-btn" onclick="filterProducts('outdoor', event)">Outdoor</button>
                 <button class="filter-btn" onclick="filterProducts('console-table', event)">Console Table</button>
                 <button class="filter-btn" onclick="filterProducts('mesinhas-centro', event)">Mesinhas de Centro</button>
                 <button class="filter-btn" onclick="filterProducts('decorative-metal', event)">Decorative Metal</button>
                 <button class="filter-btn" onclick="filterProducts('human-figurines', event)">Human Figurines</button>
                 <button class="filter-btn" onclick="filterProducts('sculpture-objects', event)">Sculpture/Objects</button>
+                <button class="filter-btn" onclick="filterProducts('animal-figure', event)">Animal Figure</button>
             </div>
 
             <!-- Grelha de Produtos com Categorias Atualizadas -->
@@ -1502,7 +1620,6 @@
 
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/Vazos/CHADWHITE_PLANT_STANT-SET3.jpeg" alt="CHAD WHITE PLANT STAND SET/3">
                     </div>
                     <div class="product-info">
@@ -1572,7 +1689,6 @@
 
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/Vazos/Plantersbuckets_HANDLEDPOTSTANDMEDIUM_74CM.jpeg" alt="HANDLED POT STAND LARGE 74CM">
                     </div>
                     <div class="product-info">
@@ -1642,7 +1758,6 @@
 
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/Vazos/Planterbuckets_Gold_Spekani_Pot_39HX36D.jpeg" alt="GOLD SPEKANI POT 39HX36D">
                     </div>
                     <div class="product-info">
@@ -1656,7 +1771,6 @@
 
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/Vazos/Planterbuckets_Gold_Spekani_Pot_48HX47D.jpeg" alt="GOLD SPEKANI POT 48HX47D">
                     </div>
                     <div class="product-info">
@@ -1685,7 +1799,6 @@
                 <!-- COFFE TABLES (coffe-tables) -->
                 <div class="product-card" data-category="side-tables">
                     <div class="product-thumb">
-                        <span class="product-tag">17 in stock</span>
                         <img src="img/metalsidetables/Lasvigas_Coffe_Table_40H61D.jpg" alt="LAS VEGAS COFFEE TABLE 40H61D">
                     </div>
                     <div class="product-info">
@@ -1699,7 +1812,6 @@
 
                 <div class="product-card" data-category="side-tables">
                     <div class="product-thumb">
-                        <span class="product-tag">21 in stock</span>
                         <img src="img/metalsidetables/coffetable_Melo_46Cmx61.jpg" alt="MELO TABLE WITH MIRROR TOP 46X61C">
                     </div>
                     <div class="product-info">
@@ -1713,7 +1825,6 @@
 
                 <div class="product-card" data-category="side-tables">
                     <div class="product-thumb">
-                        <span class="product-tag">21 in stock</span>
                         <img src="img/metalsidetables/coffetable_Melo_41Cmx51cm.jpg" alt="MELO TABLE WITH MIRROR TOP 41X51C">
                     </div>
                     <div class="product-info">
@@ -1728,7 +1839,6 @@
                 <!-- SIDE TABLES (side-tables) -->
                 <div class="product-card" data-category="side-tables">
                     <div class="product-thumb">
-                        <span class="product-tag">36 in stock</span>
                         <img src="img/metalsidetables/Sidetables_HobNail_56cm.jpg" alt="HOBNAIL FOLDED TABLE 56X56CM">
                     </div>
                     <div class="product-info">
@@ -1742,7 +1852,6 @@
 
                 <div class="product-card" data-category="side-tables">
                     <div class="product-thumb">
-                        <span class="product-tag">24 in stock</span>
                         <img src="img/metalsidetables/sideable_sunray_62cm.jpg" alt="SUNRAY FOLDED TABLE 62X61CM">
                     </div>
                     <div class="product-info">
@@ -1756,7 +1865,6 @@
 
                 <div class="product-card" data-category="side-tables">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/metalsidetables/Furniture_SilhoutteTable_44x45cm.jpg" alt="SILHOUETTE TABLE 44X45CM">
                     </div>
                     <div class="product-info">
@@ -1770,7 +1878,6 @@
 
                 <div class="product-card" data-category="side-tables">
                     <div class="product-thumb">
-                        <span class="product-tag">3 in stock</span>
                         <img src="img/metalsidetables/sidetables_ALUOC_53X38CM.jpg" alt="ALU OCCASIONAL TABLE 53X38cm">
                     </div>
                     <div class="product-info">
@@ -1784,7 +1891,6 @@
 
                 <div class="product-card" data-category="side-tables">
                     <div class="product-thumb">
-                        <span class="product-tag">85 in stock</span>
                         <img src="img/metalsidetables/SIDETABLE_EKZOTA_45CM.jpg" alt="EKZOTA TABLE 45CM GOLD">
                     </div>
                     <div class="product-info">
@@ -1798,7 +1904,6 @@
 
                 <div class="product-card" data-category="side-tables">
                     <div class="product-thumb">
-                        <span class="product-tag">43 in stock</span>
                         <img src="img/metalsidetables/SIDETABLE_EKZOTA_50CM.jpg" alt="EKZOTA TABLE 50CM GOLD">
                     </div>
                     <div class="product-info">
@@ -1812,7 +1917,6 @@
 
                 <div class="product-card" data-category="side-tables">
                     <div class="product-thumb">
-                        <span class="product-tag">3 in stock</span>
                         <img src="img/metalsidetables/SIDETABLE_CopperSideTable52x44x44cm.jpg" alt="COOPER SIDE TABLE 52X44X44CM">
                     </div>
                     <div class="product-info">
@@ -1826,7 +1930,6 @@
 
                 <div class="product-card" data-category="side-tables">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/metalsidetables/SIDETABLE_CopperSideTable43x37x37cm.jpg" alt="COOPER SIDE TABLE 43X37X37CM">
                     </div>
                     <div class="product-info">
@@ -1837,11 +1940,101 @@
                         <button class="btn-add-cart" onclick="addToCart('COOPER SIDE TABLE 43X37X37CM (FMD22U1)', 9500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
+
+                <div class="product-card" data-category="side-tables">
+                    <div class="product-thumb">
+                        <img src="img/MESA/1.jpeg" alt="COOPER SIDE TABLE 43X37X37CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMD22U1</span>
+                        <h3 class="product-name">SIDE TABLE</h3>
+                        <p class="product-desc">SIDE TABLES</p>
+                        <div class="product-price">14.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SIDE TABLE (FMD22U1)', 14900)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="side-tables">
+                    <div class="product-thumb">
+                        <img src="img/MESA/2.jpeg" alt="COOPER SIDE TABLE 43X37X37CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMD22U1</span>
+                        <h3 class="product-name">SIDE TABLE</h3>
+                        <p class="product-desc">SIDE TABLES</p>
+                        <div class="product-price">14.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SIDE TABLE (FMD22U1)', 14000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="side-tables">
+                    <div class="product-thumb">
+                        <img src="img/MESA/3.jpeg" alt="COOPER SIDE TABLE 43X37X37CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMD22U1</span>
+                        <h3 class="product-name">SIDE TABLE</h3>
+                        <p class="product-desc">SIDE TABLES</p>
+                        <div class="product-price">14.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SIDE TABLE (FMD22U1)', 14000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="side-tables">
+                    <div class="product-thumb">
+                        <img src="img/MESA/4.jpeg" alt="COOPER SIDE TABLE 43X37X37CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMD22U1</span>
+                        <h3 class="product-name">SIDE TABLE</h3>
+                        <p class="product-desc">SIDE TABLES</p>
+                        <div class="product-price">13.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SIDE TABLE (FMD22U1)', 13800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="side-tables">
+                    <div class="product-thumb">
+                        <img src="img/MESA/5.jpeg" alt="COOPER SIDE TABLE 43X37X37CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMD22U1</span>
+                        <h3 class="product-name">SIDE TABLE</h3>
+                        <p class="product-desc">SIDE TABLES</p>
+                        <div class="product-price">13.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SIDE TABLE (FMD22U1)', 13500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="side-tables">
+                    <div class="product-thumb">
+                        <img src="img/MESA/6.jpeg" alt="COOPER SIDE TABLE 43X37X37CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMD22U1</span>
+                        <h3 class="product-name">SIDE TABLE</h3>
+                        <p class="product-desc">SIDE TABLES</p>
+                        <div class="product-price">13.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SIDE TABLE (FMD22U1)', 13500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="side-tables">
+                    <div class="product-thumb">
+                        <img src="img/MESA/7.jpeg" alt="COOPER SIDE TABLE 43X37X37CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: FMD22U1</span>
+                        <h3 class="product-name">SIDE TABLE</h3>
+                        <p class="product-desc">SIDE TABLES</p>
+                        <div class="product-price">13.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SIDE TABLE (FMD22U1)', 13500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
                 
                 <!-- VASE (PLANTERS) & METAL DECOR -->
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">63 in stock</span>
                         <img src="img/DecMeta/MetalDecorBasket_25x11x26cm.jpg" alt="METAL DECOR BASKET 25X11X26CM">
                     </div>
                     <div class="product-info">
@@ -1855,7 +2048,6 @@
 
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">21 in stock</span>
                         <img src="img/DecMeta/TULIPACANDLEHOLDER_21X39X36CM.jpg" alt="TULIPA CANDLE HOLDER 21X39X36CM">
                     </div>
                     <div class="product-info">
@@ -1869,7 +2061,6 @@
 
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/DecMeta/FOLHA_FTD_VASE_38CM.jpg" alt="FOLHA FTD VASE 38CM">
                     </div>
                     <div class="product-info">
@@ -1883,7 +2074,6 @@
 
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">29 in stock</span>
                         <img src="img/DecMeta/FOLHA_FTD_VASE_49CM.jpg" alt="FOLHA FTD VASE 49CM">
                     </div>
                     <div class="product-info">
@@ -1897,7 +2087,6 @@
 
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">6 in stock</span>
                         <img src="img/DecMeta/MEIA_LUHA_VASE_36X30X12CM.jpg" alt="MEIA-LUHA VASE 36X30X12CM">
                     </div>
                     <div class="product-info">
@@ -1911,7 +2100,6 @@
 
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">16 in stock</span>
                         <img src="img/DecMeta/FOLHA_GIANT_VASE_101CM.jpg" alt="FOLHA GIANT VASE 101CM">
                     </div>
                     <div class="product-info">
@@ -1925,7 +2113,6 @@
 
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">56 in stock</span>
                         <img src="img/DecMeta/SABI_FTD_BWL_19X40CM_GOLD.jpg" alt="SABI FTD BOWL 19X40CM GOLD">
                     </div>
                     <div class="product-info">
@@ -1939,7 +2126,6 @@
 
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">9 in stock</span>
                         <img src="img/DecMeta/BOLAE_VASE_WHITE_36X22CM.jpg" alt="BOLAE VASE WHITE 36X22CM">
                     </div>
                     <div class="product-info">
@@ -1953,7 +2139,6 @@
 
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/DecMeta/TULIPACANDLEHOLDER_21X39X36CM.jpg" alt="TULIP GOLD POT 31X15CM">
                     </div>
                     <div class="product-info">
@@ -1967,7 +2152,6 @@
 
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">3 in stock</span>
                         <img src="img/DecMeta/HONEY_BOWL_ROUGH_GOLD_42X42X11CM.jpg" alt="HONEY BOWL ROUGH GOLD 42X42X11CM">
                     </div>
                     <div class="product-info">
@@ -1981,7 +2165,6 @@
 
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">11 in stock</span>
                         <img src="img/DecMeta/SPARKLE_OVAL_WIDE_VASE_30X53X15.jpg" alt="SPARKLE OVAL WIDE VASE 30X53X15">
                     </div>
                     <div class="product-info">
@@ -1995,7 +2178,6 @@
 
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/DecMeta/ALU_SPARKLE_FLARED_FTD_VASE_43CM.jpg" alt="ALU SPARKLE FLARED FTD VASE 43CM">
                     </div>
                     <div class="product-info">
@@ -2009,7 +2191,6 @@
 
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/DecMeta/ALU_SPARKLE_SQUA_VASE_31X31X20CM.jpg" alt="ALU SPARKLE SQUAT VASE 31X31X20CM">
                     </div>
                     <div class="product-info">
@@ -2023,7 +2204,6 @@
 
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/DecMeta/ALU_SPARKLE_JAR_VASE_39CM.jpg" alt="ALU SPARKLE JAR VASE 39CM">
                     </div>
                     <div class="product-info">
@@ -2037,7 +2217,6 @@
 
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">5 in stock</span>
                         <img src="img/DecMeta/HONEY_VASE_GOLD_30CM.jpg" alt="HONEY VASE GOLD 30CM">
                     </div>
                     <div class="product-info">
@@ -2051,7 +2230,6 @@
 
                 <div class="product-card" data-category="vase-planters">
                     <div class="product-thumb">
-                        <span class="product-tag">41 in stock</span>
                         <img src="img/DecMeta/SCULPTURE_SWIRL_ROUGH_NICKEL52X30.jpg" alt="SCULPTURE SWIRL ROUGH NICKEL 52X30">
                     </div>
                     <div class="product-info">
@@ -2456,10 +2634,135 @@
                     </div>
                 </div>
 
+                <div class="product-card" data-category="sofa">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sofa</span>
+                        <img src="img/sofa/SOFA2.jpeg" alt="Sofá Modular">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-SF02</span>
+                        <h3 class="product-name">Sofá Modular Executive</h3>
+                        <p class="product-desc">Sofá com espuma de alta densidade e tecido premium.</p>
+                        <div class="product-price">60.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('LUXURY PARCELS SET', 60000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sofa">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sofa</span>
+                        <img src="img/sofa/sofa7.jpeg" alt="Sofá Modular">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-SF02</span>
+                        <h3 class="product-name">Sofa</h3>
+                        <p class="product-desc">Sofá com espuma de alta densidade e tecido premium.</p>
+                        <div class="product-price">70.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Sofa', 70000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sofa">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sofa</span>
+                        <img src="img/sofa/sofa8.jpeg" alt="Sofá Modular">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-SF02</span>
+                        <h3 class="product-name">Sofa</h3>
+                        <p class="product-desc">Sofá com espuma de alta densidade e tecido premium.</p>
+                        <div class="product-price">70.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Sofa', 70000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sofa">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sofa</span>
+                        <img src="img/sofa/sofa9.jpeg" alt="Sofá Modular">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-SF02</span>
+                        <h3 class="product-name">Sofa</h3>
+                        <p class="product-desc">Sofá com espuma de alta densidade e tecido premium.</p>
+                        <div class="product-price">70.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Sofa', 70000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sofa">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sofa</span>
+                        <img src="img/sofa/sofa10.jpeg" alt="Sofá Modular">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-SF02</span>
+                        <h3 class="product-name">Sofa</h3>
+                        <p class="product-desc">Sofá com espuma de alta densidade e tecido premium.</p>
+                        <div class="product-price">70.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Sofa', 70000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="sofa">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sofa</span>
+                        <img src="img/sofa/sofa11.jpeg" alt="Sofá Modular">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-SF02</span>
+                        <h3 class="product-name">Sofa</h3>
+                        <p class="product-desc">Sofá com espuma de alta densidade e tecido premium.</p>
+                        <div class="product-price">70.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Sofa', 70000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sofa">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sofa</span>
+                        <img src="img/sofa/sofa12.jpeg" alt="Sofá Modular">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-SF02</span>
+                        <h3 class="product-name">Sofa</h3>
+                        <p class="product-desc">Sofá com espuma de alta densidade e tecido premium.</p>
+                        <div class="product-price">70.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Sofa', 70000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sofa">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sofa</span>
+                        <img src="img/sofa/sofa13.jpeg" alt="Sofá Modular">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-SF02</span>
+                        <h3 class="product-name">Sofa</h3>
+                        <p class="product-desc">Sofá com espuma de alta densidade e tecido premium.</p>
+                        <div class="product-price">70.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Sofa', 70000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sofa">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sofa</span>
+                        <img src="img/sofa/sofa14.jpeg" alt="Sofá Modular">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CÓD: LP-SF02</span>
+                        <h3 class="product-name">Sofa</h3>
+                        <p class="product-desc">Sofá com espuma de alta densidade e tecido premium.</p>
+                        <div class="product-price">70.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Sofa', 70000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
                 <!-- MIRRORS (mirrors) -->
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/espelhos/CONTESSA_MIRROR_82X90CM.jpg" alt="CONTESSA MIRROR 82X90CM">
                     </div>
                     <div class="product-info">
@@ -2487,7 +2790,6 @@
 
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">49 in stock</span>
                         <img src="img/espelhos/SPEAR_TABLE_MIRROR_37CM.jpg" alt="SPEAR TABLE MIRROR 37X58CM">
                     </div>
                     <div class="product-info">
@@ -2501,7 +2803,6 @@
 
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">31 in stock</span>
                         <img src="img/espelhos/ROUND_BLACK_RIM_MIRROR_80CM.jpg" alt="ROUND BLACK RIM MIRROR 80cm">
                     </div>
                     <div class="product-info">
@@ -2516,7 +2817,6 @@
 
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/espelhos/VOLCANIC_MEAL_MIRROR_80CM.jpg" alt="VOLCANIC METAL MIRROR 80CM ANT.SI">
                     </div>
                     <div class="product-info">
@@ -2530,7 +2830,6 @@
 
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">11 in stock</span>
                         <img src="img/espelhos/TANAY_WALL_ART_MIRROR_110X60CM.jpg" alt="TANAY WALL ART MIRROR 110X60CM">
                     </div>
                     <div class="product-info">
@@ -2544,7 +2843,6 @@
               
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">23 in stock</span>
                         <img src="img/espelhos/GOLD_CHEVEL_MIRROR_170X50CM.jpg" alt="GOLD CHEVEL MIRROR 170X50CM">
                     </div>
                     <div class="product-info">
@@ -2558,7 +2856,6 @@
 
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/espelhos/ARCO_MIRROR_98X61X4CM.jpg" alt="ARCO MIRROR 98X61X4CM">
                     </div>
                     <div class="product-info">
@@ -2572,7 +2869,6 @@
 
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">17 in stock</span>
                         <img src="img/espelhos/CARRE_ANTWHIE_WALL_ART_61X61CM.jpg" alt="CARRE ANT.WHITE WALL ART 61X61CM">
                     </div>
                     <div class="product-info">
@@ -2586,7 +2882,6 @@
 
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">18 in stock</span>
                         <img src="img/espelh1m2m/1.jpeg" alt="ESPELHO 1M 2M">
                     </div>
                     <div class="product-info">
@@ -2600,7 +2895,6 @@
 
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/espelh1m2m/2.jpeg" alt="ESPELHO 1M 2M">
                     </div>
                     <div class="product-info">
@@ -2614,7 +2908,6 @@
 
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">39 in stock</span>
                         <img src="img/espelh1m2m/3.jpeg" alt="ESPELHO 1M 2M">
                     </div>
                     <div class="product-info">
@@ -2628,7 +2921,6 @@
 
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/espelh1m2m/4.jpeg" alt="ESPELHO 1M 2M">
                     </div>
                     <div class="product-info">
@@ -2642,7 +2934,6 @@
 
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">43 in stock</span>
                         <img src="img/espelh1m2m/5.jpeg" alt="ESPELHO 1M 2M">
                     </div>
                     <div class="product-info">
@@ -2656,7 +2947,6 @@
 
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">6 in stock</span>
                         <img src="img/espelh1m2m/6.jpeg" alt="ESPELHO 1M 2M">
                     </div>
                     <div class="product-info">
@@ -2670,7 +2960,6 @@
 
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">28 in stock</span>
                         <img src="img/espelh1m2m/7.jpeg" alt="ESPELHO 1M 2M">
                     </div>
                     <div class="product-info">
@@ -2684,7 +2973,6 @@
 
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/espelh1m2m/8.jpeg" alt="ESPELHO 1M 2M">
                     </div>
                     <div class="product-info">
@@ -2698,7 +2986,6 @@
 
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">38 in stock</span>
                         <img src="img/espelh1m2m/9.jpeg" alt="ESPELHO 1M 2M">
                     </div>
                     <div class="product-info">
@@ -2712,7 +2999,6 @@
 
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">21 in stock</span>
                         <img src="img/espelh1m2m/10.jpeg" alt="ESPELHO 1M 2M">
                     </div>
                     <div class="product-info">
@@ -2726,7 +3012,6 @@
 
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">37 in stock</span>
                         <img src="img/espelh1m2m/11.jpeg" alt="ESPELHO 1M 2M">
                     </div>
                     <div class="product-info">
@@ -2740,7 +3025,6 @@
 
                 <div class="product-card" data-category="mirrors">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/espelh1m2m/12.jpeg" alt="ESPELHO 1M 2M">
                     </div>
                     <div class="product-info">
@@ -2755,7 +3039,6 @@
                 <!-- CONSOLE TABLE (console-table) -->
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">19 in stock</span>
                         <img src="img/console/1.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -2769,7 +3052,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">32 in stock</span>
                         <img src="img/console/2.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -2783,7 +3065,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">27 in stock</span>
                         <img src="img/console/3.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -2797,7 +3078,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/console/4.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -2811,7 +3091,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">26 in stock</span>
                         <img src="img/console/5.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -2825,7 +3104,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">7 in stock</span>
                         <img src="img/console/6.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -2839,7 +3117,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/console/7.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -2853,7 +3130,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">21 in stock</span>
                         <img src="img/console/8.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -2867,7 +3143,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">17 in stock</span>
                         <img src="img/console/9.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -2881,7 +3156,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">27 in stock</span>
                         <img src="img/console/10.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -2895,7 +3169,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">26 in stock</span>
                         <img src="img/console/11.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -2909,7 +3182,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">25 in stock</span>
                         <img src="img/console/12.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -2923,7 +3195,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">20 in stock</span>
                         <img src="img/console/13.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -2937,7 +3208,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">7 in stock</span>
                         <img src="img/console/14.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -2951,7 +3221,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">13 in stock</span>
                         <img src="img/console/15.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -2965,7 +3234,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">18 in stock</span>
                         <img src="img/console/16.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -2979,7 +3247,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">27 in stock</span>
                         <img src="img/console/17.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -2993,7 +3260,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">38 in stock</span>
                         <img src="img/console/18.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -3007,7 +3273,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">23 in stock</span>
                         <img src="img/console/19.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -3021,7 +3286,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">6 in stock</span>
                         <img src="img/console/20.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -3035,7 +3299,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">5 in stock</span>
                         <img src="img/console/21.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -3049,7 +3312,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">28 in stock</span>
                         <img src="img/console/22.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -3063,21 +3325,19 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">16 in stock</span>
                         <img src="img/console/23.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: CST23U1</span>
-                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM (2 pcs)</h3>
                         <p class="product-desc">CONSOLE TABLE</p>
-                        <div class="product-price">32.000,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST23U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">38.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST23U1)', 38000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">39 in stock</span>
                         <img src="img/console/24.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -3091,7 +3351,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">23 in stock</span>
                         <img src="img/console/25.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -3105,7 +3364,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">34 in stock</span>
                         <img src="img/console/26.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -3119,7 +3377,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">32 in stock</span>
                         <img src="img/console/27.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -3133,7 +3390,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/console/28.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -3147,7 +3403,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/console/29.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -3161,21 +3416,110 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">37 in stock</span>
+                        <img src="img/console1/17.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST29U1</span>
+                        <h3 class="product-name">CONSOLE TABLE Hx6024</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">34.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST29U1)', 34500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <img src="img/console1/18.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST29U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST29U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <img src="img/console1/19.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST29U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST29U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <img src="img/console1/20.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST29U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">16.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST29U1)', 16500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <img src="img/console1/21.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST29U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">16.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST29U1)', 16500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <img src="img/console1/22.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST29U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">28.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST29U1)', 28000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
+                        <img src="img/console1/24.jpeg" alt="CONSOLE TABLE 140X40X80CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: CST29U1</span>
+                        <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
+                        <p class="product-desc">CONSOLE TABLE</p>
+                        <div class="product-price">28.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST29U1)', 28000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="console-table">
+                    <div class="product-thumb">
                         <img src="img/console/30.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
                         <span class="product-code">CODE: CST30U1</span>
                         <h3 class="product-name">CONSOLE TABLE 140X40X80CM</h3>
                         <p class="product-desc">CONSOLE TABLE</p>
-                        <div class="product-price">24.000,00 MZN</div>
-                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST30U1)', 24000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('CONSOLE TABLE 140X40X80CM (CST30U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">40 in stock</span>
                         <img src="img/console/31.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -3189,7 +3533,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">40 in stock</span>
                         <img src="img/console/32.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -3203,7 +3546,6 @@
 
                 <div class="product-card" data-category="console-table">
                     <div class="product-thumb">
-                        <span class="product-tag">17 in stock</span>
                         <img src="img/console/33.jpeg" alt="CONSOLE TABLE 140X40X80CM">
                     </div>
                     <div class="product-info">
@@ -3219,7 +3561,6 @@
                 <!-- MESINHAS DE CENTRO (mesinhas-centro) -->
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">11 in stock</span>
                         <img src="img/mesinhasdecentro/1.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3233,7 +3574,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/mesinhasdecentro/2.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3247,7 +3587,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">38 in stock</span>
                         <img src="img/mesinhasdecentro/3.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3261,7 +3600,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">3 in stock</span>
                         <img src="img/mesinhasdecentro/4.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3275,7 +3613,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">33 in stock</span>
                         <img src="img/mesinhasdecentro/6.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3289,7 +3626,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">36 in stock</span>
                         <img src="img/mesinhasdecentro/7.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3303,7 +3639,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">35 in stock</span>
                         <img src="img/mesinhasdecentro/8.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3317,7 +3652,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">30 in stock</span>
                         <img src="img/mesinhasdecentro/9.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3331,7 +3665,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">14 in stock</span>
                         <img src="img/mesinhasdecentro/10.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3345,7 +3678,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">18 in stock</span>
                         <img src="img/mesinhasdecentro/11.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3359,7 +3691,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/mesinhasdecentro/12.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3373,7 +3704,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">31 in stock</span>
                         <img src="img/mesinhasdecentro/13.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3387,7 +3717,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/mesinhasdecentro/14.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3401,7 +3730,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">19 in stock</span>
                         <img src="img/mesinhasdecentro/15.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3415,7 +3743,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">33 in stock</span>
                         <img src="img/mesinhasdecentro/16.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3429,7 +3756,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">28 in stock</span>
                         <img src="img/mesinhasdecentro/17.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3443,7 +3769,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">13 in stock</span>
                         <img src="img/mesinhasdecentro/18.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3457,7 +3782,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">22 in stock</span>
                         <img src="img/mesinhasdecentro/19.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3471,7 +3795,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">5 in stock</span>
                         <img src="img/mesinhasdecentro/20.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3485,7 +3808,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/mesinhasdecentro/21.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3499,7 +3821,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">29 in stock</span>
                         <img src="img/mesinhasdecentro/22.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3513,7 +3834,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/mesinhasdecentro/23.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3527,7 +3847,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/mesinhasdecentro/24.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3541,7 +3860,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">14 in stock</span>
                         <img src="img/mesinhasdecentro/25.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3555,7 +3873,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">20 in stock</span>
                         <img src="img/mesinhasdecentro/26.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3569,7 +3886,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/mesinhasdecentro/28.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3583,7 +3899,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">32 in stock</span>
                         <img src="img/mesinhasdecentro/29.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3597,7 +3912,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">15 in stock</span>
                         <img src="img/mesinhasdecentro/30.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3611,7 +3925,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">46 in stock</span>
                         <img src="img/mesinhasdecentro/31.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3625,7 +3938,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">30 in stock</span>
                         <img src="img/mesinhasdecentro/32.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3639,7 +3951,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">27 in stock</span>
                         <img src="img/mesinhasdecentro/34.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3653,7 +3964,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">21 in stock</span>
                         <img src="img/mesinhasdecentro/35.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3667,7 +3977,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">5 in stock</span>
                         <img src="img/mesinhasdecentro/36.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3681,7 +3990,6 @@
 
                 <div class="product-card" data-category="mesinhas-centro">
                     <div class="product-thumb">
-                        <span class="product-tag">40 in stock</span>
                         <img src="img/mesinhasdecentro/37.jpeg" alt="MESINHA DE CENTRO">
                     </div>
                     <div class="product-info">
@@ -3693,11 +4001,180 @@
                     </div>
                 </div>
 
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <img src="img/mesacentro/9.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: 1175</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">37.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC37U1)', 37000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <img src="img/mesacentro/10.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: 1175</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">34.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC37U1)', 34000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <img src="img/mesacentro/11.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: 1175</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">34.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC37U1)', 34000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <img src="img/mesacentro/12.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: 1175</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC37U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <img src="img/mesacentro/13.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: 1175</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC37U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <img src="img/mesacentro/14.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: 1175</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC37U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <img src="img/mesacentro/15.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: 1175</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC37U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <img src="img/mesacentro/16.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: 1175</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">36.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC37U1)', 36000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <img src="img/mesacentro/17.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: 1175</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">21.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC37U1)', 21500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <img src="img/mesacentro/18.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: 1175</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">16.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC37U1)', 16000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <img src="img/mesacentro/19.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: 1175</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">30.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC37U1)', 30000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <img src="img/mesacentro/20.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: 1175</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">32.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC37U1)', 32000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mesinhas-centro">
+                    <div class="product-thumb">
+                        <img src="img/mesacentro/21.jpeg" alt="MESINHA DE CENTRO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: 1175</span>
+                        <h3 class="product-name">MESINHA DE CENTRO</h3>
+                        <p class="product-desc">MESINHAS DE CENTRO</p>
+                        <div class="product-price">30.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MESINHA DE CENTRO (MDC37U1)', 30000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+
                 <!-- DECORATIVE METAL (decorative-metal) -->
 
                 <div class="product-card" data-category="decorative-metal">
                     <div class="product-thumb">
-                        <span class="product-tag">3 in stock</span>
                         <img src="img/DECORAMETA/FTD_SPARKLE_CONVEX_SQUAT_VASE_43C.jpeg" alt="GOLD SCRATCH SQUAT VASE 23X39CM">
                     </div>
                     <div class="product-info">
@@ -3711,7 +4188,6 @@
 
                 <div class="product-card" data-category="decorative-metal">
                     <div class="product-thumb">
-                        <span class="product-tag">33 in stock</span>
                         <img src="img/DECORAMETA/SILVER_STREAKED_BALL_23CM.jpeg" alt="SILVER STREAKED BALL VASE 23CM">
                     </div>
                     <div class="product-info">
@@ -3725,7 +4201,6 @@
 
                 <div class="product-card" data-category="decorative-metal">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/DECORAMETA/GOLD_STREAKED_BALL_VASE_30CM.jpeg" alt="GOLD STREAKED BALL VASE 30CM">
                     </div>
                     <div class="product-info">
@@ -3739,7 +4214,6 @@
 
                 <div class="product-card" data-category="decorative-metal">
                     <div class="product-thumb">
-                        <span class="product-tag">41 in stock</span>
                         <img src="img/DECORAMETA/GOLD_FREEFORM_DECOR_32X24CM.jpeg" alt="GOLD FREEFORM DECOR 32X24CM">
                     </div>
                     <div class="product-info">
@@ -3753,7 +4227,6 @@
 
                 <div class="product-card" data-category="decorative-metal">
                     <div class="product-thumb">
-                        <span class="product-tag">out of stock</span>
                         <img src="img/DECORAMETA/SABI_PLATTER_OVAL_57X16CM.jpeg" alt="SABI PLATTER OVAL 57X16CM">
                     </div>
                     <div class="product-info">
@@ -3767,7 +4240,6 @@
 
                 <div class="product-card" data-category="decorative-metal">
                     <div class="product-thumb">
-                        <span class="product-tag">58 in stock</span>
                         <img src="img/DECORAMETA/FTD_SPARKLE_CONVEX_SQUAT_VASE_43C.jpeg" alt="FTD SPARKLE CONVEX SQUAT VASE 43CM">
                     </div>
                     <div class="product-info">
@@ -3781,7 +4253,6 @@
 
                 <div class="product-card" data-category="decorative-metal">
                     <div class="product-thumb">
-                        <span class="product-tag">43 in stock</span>
                         <img src="img/DECORAMETA/CRATER_TWO_TONE_DISPLAY_30X28X23C.jpeg" alt="CRATER TWO-TONE DISPLAY 30X28X23CM">
                     </div>
                     <div class="product-info">
@@ -3795,7 +4266,6 @@
 
                 <div class="product-card" data-category="decorative-metal">
                     <div class="product-thumb">
-                        <span class="product-tag">55 in stock</span>
                         <img src="img/DECORAMETA/CRATER_WO_TONE_GOLD_DISPLAY32CM.jpeg" alt="CRATER TWO-TONE GOLD DISPLAY 32CM">
                     </div>
                     <div class="product-info">
@@ -3809,7 +4279,6 @@
 
                 <div class="product-card" data-category="decorative-metal">
                     <div class="product-thumb">
-                        <span class="product-tag">23 in stock</span>
                         <img src="img/DECORAMETA/ORGANIC_BASKET_GOLD_31X16CM.jpeg" alt="ORGANIC BASKET GOLD 31X16CM">
                     </div>
                     <div class="product-info">
@@ -3823,7 +4292,6 @@
 
                 <div class="product-card" data-category="decorative-metal">
                     <div class="product-thumb">
-                        <span class="product-tag">17 in stock</span>
                         <img src="img/DECORAMETA/GOLD_WAVY_EYE_BOWL_GREY_MARBLE.jpeg" alt="GOLD WAVY EYE BOWL / GREY MARBLE">
                     </div>
                     <div class="product-info">
@@ -3837,7 +4305,6 @@
 
                 <div class="product-card" data-category="decorative-metal">
                     <div class="product-thumb">
-                        <span class="product-tag">7 in stock</span>
                         <img src="img/DECORAMETA/GOLD_BIRD_BOWL_WITH_GREY.jpeg" alt="GOLD BIRD BOWL WITH GREY MARBLE">
                     </div>
                     <div class="product-info">
@@ -3852,7 +4319,6 @@
                 <!-- HUMAN FIGURINES (human-figurines) -->
                 <div class="product-card" data-category="human-figurines">
                     <div class="product-thumb">
-                        <span class="product-tag">97 in stock</span>
                         <img src="img/HUMANFIGURE/SILVER_WACHING_MAND_33CM.jpeg" alt="SILVER WATCHING MAN 33CM">
                     </div>
                     <div class="product-info">
@@ -3878,6 +4344,147 @@
                     </div>
                 </div>
 
+                <div class="product-card" data-category="human-figurines">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sale!</span>
+                        <img src="img/HUMANFIGURE/1.jpeg" alt="SILVER LISTENING MAN 36CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM79U1</span>
+                        <h3 class="product-name">SILVER LISTENING MAN 36CM</h3>
+                        <p class="product-desc">HUMAN FIGURINES</p>
+                        <div class="product-price">3.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SILVER LISTENING MAN 36CM (MCM79U1)', 9800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="human-figurines">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sale!</span>
+                        <img src="img/HUMANFIGURE/2.jpeg" alt="SILVER LISTENING MAN 36CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM79U1</span>
+                        <h3 class="product-name">SILVER LISTENING MAN 36CM</h3>
+                        <p class="product-desc">HUMAN FIGURINES</p>
+                        <div class="product-price">3.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SILVER LISTENING MAN 36CM (MCM79U1)', 9800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="human-figurines">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sale!</span>
+                        <img src="img/HUMANFIGURE/3.jpeg" alt="SILVER LISTENING MAN 36CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM79U1</span>
+                        <h3 class="product-name">SILVER LISTENING MAN 36CM</h3>
+                        <p class="product-desc">HUMAN FIGURINES</p>
+                        <div class="product-price">3.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SILVER LISTENING MAN 36CM (MCM79U1)', 9800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="human-figurines">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sale!</span>
+                        <img src="img/HUMANFIGURE/4.jpeg" alt="SILVER LISTENING MAN 36CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM79U1</span>
+                        <h3 class="product-name">SILVER LISTENING MAN 36CM</h3>
+                        <p class="product-desc">HUMAN FIGURINES</p>
+                        <div class="product-price">3.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SILVER LISTENING MAN 36CM (MCM79U1)', 9800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="human-figurines">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sale!</span>
+                        <img src="img/HUMANFIGURE/5.jpeg" alt="SILVER LISTENING MAN 36CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM79U1</span>
+                        <h3 class="product-name">SILVER LISTENING MAN 36CM</h3>
+                        <p class="product-desc">HUMAN FIGURINES</p>
+                        <div class="product-price">3.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SILVER LISTENING MAN 36CM (MCM79U1)', 9800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="human-figurines">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sale!</span>
+                        <img src="img/HUMANFIGURE/6.jpeg" alt="SILVER LISTENING MAN 36CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM79U1</span>
+                        <h3 class="product-name">LOVERS HOLDING</h3>
+                        <p class="product-desc">HUMAN FIGURINES</p>
+                        <div class="product-price">3.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('LOVERS HOLDING', 3000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="human-figurines">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sale!</span>
+                        <img src="img/HUMANFIGURE/7.jpeg" alt="SILVER LISTENING MAN 36CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM79U1</span>
+                        <h3 class="product-name">GIRL WITH HAT </h3>
+                        <p class="product-desc">HUMAN FIGURINES</p>
+                        <div class="product-price">3.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GIRL WITH HAT', 3500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="human-figurines">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sale!</span>
+                        <img src="img/HUMANFIGURE/8.jpeg" alt="SILVER LISTENING MAN 36CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM79U1</span>
+                        <h3 class="product-name">LOVERS HOLDING</h3>
+                        <p class="product-desc">HUMAN FIGURINES</p>
+                        <div class="product-price">3.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('LOVERS HOLDING', 3000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="human-figurines">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sale!</span>
+                        <img src="img/HUMANFIGURE/9.jpeg" alt="SILVER LISTENING MAN 36CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM79U1</span>
+                        <h3 class="product-name">FIGURINE RESTING</h3>
+                        <p class="product-desc">HUMAN FIGURINES</p>
+                        <div class="product-price">2.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('FIGURINE RESTING', 2800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="human-figurines">
+                    <div class="product-thumb">
+                        <span class="product-tag">Sale!</span>
+                        <img src="img/HUMANFIGURE/10.jpeg" alt="SILVER LISTENING MAN 36CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM79U1</span>
+                        <h3 class="product-name">LOVING KISSING</h3>
+                        <p class="product-desc">HUMAN FIGURINES</p>
+                        <div class="product-price">2.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('LOVING KISSING', 2800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+
                 <!-- SCULPTURE/OBJECTS (sculpture-objects) -->
                 <div class="product-card" data-category="sculpture-objects">
                     <div class="product-thumb">
@@ -3895,7 +4502,6 @@
 
                 <div class="product-card" data-category="sculpture-objects">
                     <div class="product-thumb">
-                        <span class="product-tag">6 in stock</span>
                         <img src="img/SCULTURE/SCULPTURE_GOLD_BLACK_BASE_30CM.jpeg" alt="SCULPTURE GOLD / BLACK BASE 30CM">
                     </div>
                     <div class="product-info">
@@ -3909,7 +4515,6 @@
 
                 <div class="product-card" data-category="sculpture-objects">
                     <div class="product-thumb">
-                        <span class="product-tag">6 in stock</span>
                         <img src="img/SCULTURE/FIGURINE_COUPLE_GOLD_WHITE_25CM.jpeg" alt="FIGURINE COUPLE GOLD/WHITE 25CM">
                     </div>
                     <div class="product-info">
@@ -3921,10 +4526,152 @@
                     </div>
                 </div>
 
+                 <div class="product-card" data-category="sculpture-objects">
+                    <div class="product-thumb">
+                        <img src="img/SCULTURE/2.jpeg" alt="Silver Sculpture Black base 37 cm">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM59U1</span>
+                        <h3 class="product-name">Silver Sculpture Black base 37 cm</h3>
+                        <p class="product-desc">SCULPTURE/OBJECTS</p>
+                        <div class="product-price">5.700,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Silver Sculpture Black base 37 cm', 5700)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sculpture-objects">
+                    <div class="product-thumb">
+                        <img src="img/SCULTURE/3.jpeg" alt="Gold Sculpture Black base 36 cm">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM59U1</span>
+                        <h3 class="product-name">Gold Sculpture Black base 36 cm</h3>
+                        <p class="product-desc">SCULPTURE/OBJECTS</p>
+                        <div class="product-price">5.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('Gold Sculpture Black base 36 cm', 5500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sculpture-objects">
+                    <div class="product-thumb">
+                        <img src="img/SCULTURE/7.jpeg" alt="MARBLE SCULPTURE TRI ANGLE 38 CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM59U1</span>
+                        <h3 class="product-name">MARBLE SCULPTURE TRI ANGLE 38 CM</h3>
+                        <p class="product-desc">SCULPTURE/OBJECTS</p>
+                        <div class="product-price">5.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MARBLE SCULPTURE TRI ANGLE 38 CM', 5200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sculpture-objects">
+                    <div class="product-thumb">
+                        <img src="img/SCULTURE/6.jpeg" alt="MARBLE SCULPTURE SPIRAL 28 CM">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM59U1</span>
+                        <h3 class="product-name">MARBLE SCULPTURE TRI ANGLE 28 CM</h3>
+                        <p class="product-desc">SCULPTURE/OBJECTS</p>
+                        <div class="product-price">4.300,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MARBLE SCULPTURE TRI ANGLE 28 CM', 4300)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sculpture-objects">
+                    <div class="product-thumb">
+                        <img src="img/SCULTURE/8.jpeg" alt="DECO OBJECT TRIANGLE GOLD">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM59U1</span>
+                        <h3 class="product-name">DECO OBJECT TRIANGLE GOLD</h3>
+                        <p class="product-desc">SCULPTURE/OBJECTS</p>
+                        <div class="product-price">3.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('DECO OBJECT TRIANGLE GOLD', 3000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sculpture-objects">
+                    <div class="product-thumb">
+                        <img src="img/SCULTURE/9.jpeg" alt="MARBLE SCULPTURE ROUND BLACK">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM59U1</span>
+                        <h3 class="product-name">MARBLE SCULPTURE ROUND BLACK</h3>
+                        <p class="product-desc">SCULPTURE/OBJECTS</p>
+                        <div class="product-price">2.600,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MARBLE SCULPTURE ROUND BLACK', 2600)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sculpture-objects">
+                    <div class="product-thumb">
+                        <img src="img/SCULTURE/10.jpeg" alt="MARBLE SCULPTURE ROUND BLACK">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM59U1</span>
+                        <h3 class="product-name">GOLD PINAPPLE</h3>
+                        <p class="product-desc">SCULPTURE/OBJECTS</p>
+                        <div class="product-price">3.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GOLD PINAPPLE', 3800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sculpture-objects">
+                    <div class="product-thumb">
+                        <img src="img/SCULTURE/11.jpeg" alt="MARBLE SCULPTURE ROUND BLACK">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM59U1</span>
+                        <h3 class="product-name">SILVER RINGS</h3>
+                        <p class="product-desc">SCULPTURE/OBJECTS</p>
+                        <div class="product-price">5.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GOLD PINAPPLE', 5500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sculpture-objects">
+                    <div class="product-thumb">
+                        <img src="img/SCULTURE/12.jpeg" alt="MARBLE SCULPTURE ROUND BLACK">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM59U1</span>
+                        <h3 class="product-name">SILVER COUPLE</h3>
+                        <p class="product-desc">SCULPTURE/OBJECTS</p>
+                        <div class="product-price">2.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SCULTURE', 2800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sculpture-objects">
+                    <div class="product-thumb">
+                        <img src="img/SCULTURE/13.jpeg" alt="MARBLE SCULPTURE ROUND BLACK">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM59U1</span>
+                        <h3 class="product-name">SILVER COUPLE</h3>
+                        <p class="product-desc">SCULPTURE/OBJECTS</p>
+                        <div class="product-price">6.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SCULTURE', 6800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sculpture-objects">
+                    <div class="product-thumb">
+                        <img src="img/SCULTURE/14.jpeg" alt="MARBLE SCULPTURE ROUND BLACK">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: MCM59U1</span>
+                        <h3 class="product-name">SWAN SCULTURE</h3>
+                        <p class="product-desc">SCULPTURE/OBJECTS</p>
+                        <div class="product-price">5.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SWAN SCULTURE', 5500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
                 <!-- LIGHTING (table lamps) -->
                 <div class="product-card" data-category="lightning">
                     <div class="product-thumb">
-                        <span class="product-tag">10 in stock</span>
                         <img src="img/lighting/maya-blue-vase-lamp.jpg" alt="MAYA BLUE VASE LAMP/WHITE SHADE 69CM">
                     </div>
                     <div class="product-info">
@@ -3938,7 +4685,6 @@
 
                 <div class="product-card" data-category="lightning">
                     <div class="product-thumb">
-                        <span class="product-tag">9 in stock</span>
                         <img src="img/lighting/green-flower-jar-lamp.jpg" alt="GREEN FLOWER JAR LAMP/WHITE SHADE 69CM">
                     </div>
                     <div class="product-info">
@@ -3952,7 +4698,6 @@
 
                 <div class="product-card" data-category="lightning">
                     <div class="product-thumb">
-                        <span class="product-tag">3 in stock</span>
                         <img src="img/lighting/green-leaf-jar-lamp.jpg" alt="GREEN LEAF JAR LAMP/WHITE SHADE 70CM">
                     </div>
                     <div class="product-info">
@@ -3966,7 +4711,6 @@
 
                 <div class="product-card" data-category="lightning">
                     <div class="product-thumb">
-                        <span class="product-tag">3 in stock</span>
                         <img src="img/lighting/zelena-vase-lamp.jpg" alt="ZELENA VASE LAMP WITH SHADE 75CM">
                     </div>
                     <div class="product-info">
@@ -3980,7 +4724,6 @@
 
                 <div class="product-card" data-category="lightning">
                     <div class="product-thumb">
-                        <span class="product-tag">16 in stock</span>
                         <img src="img/lighting/marsh-vase-lamp.jpg" alt="MARSH VASE LAMP 74CM METAL BASE">
                     </div>
                     <div class="product-info">
@@ -3991,9 +4734,498 @@
                         <button class="btn-add-cart" onclick="addToCart('MARSH VASE LAMP 74CM METAL BASE (MEI15U1)', 16800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
                     </div>
                 </div>
+
+                <!-- OUTDOOR -->
+                <div class="product-card" data-category="outdoor">
+                    <div class="product-thumb">
+                        <span class="product-tag">OUTDOOR</span>
+                        <img src="img/outdoor/1.jpeg" alt="PREMIUM TEAK OUTDOOR DINING TABLE">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT01U1</span>
+                        <h3 class="product-name">PREMIUM TEAK OUTDOOR DINING TABLE</h3>
+                        <p class="product-desc">OUTDOOR</p>
+                        <div class="product-price">63.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('PREMIUM TEAK OUTDOOR DINING TABLE (OUT01U1)', 63000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="outdoor">
+                    <div class="product-thumb">
+                        <span class="product-tag">OUTDOOR</span>
+                        <img src="img/outdoor/2.jpeg" alt="LUXURY RATTAN OUTDOOR DINING SET WITH UMBRELLA">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT02U1</span>
+                        <h3 class="product-name">LUXURY RATTAN OUTDOOR DINING SET WITH UMBRELLA</h3>
+                        <p class="product-desc">OUTDOOR</p>
+                        <div class="product-price">49.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('LUXURY RATTAN OUTDOOR DINING SET WITH UMBRELLA (OUT02U1)', 49500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="outdoor">
+                    <div class="product-thumb">
+                        <span class="product-tag">OUTDOOR</span>
+                        <img src="img/outdoor/3.jpeg" alt="EXTENDABLE TEAK PATIO TABLE">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT03U1</span>
+                        <h3 class="product-name">EXTENDABLE TEAK PATIO TABLE</h3>
+                        <p class="product-desc">OUTDOOR</p>
+                        <div class="product-price">49.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('EXTENDABLE TEAK PATIO TABLE (OUT03U1)', 49500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="outdoor">
+                    <div class="product-thumb">
+                        <span class="product-tag">OUTDOOR</span>
+                        <img src="img/outdoor/4.jpeg" alt="RATTAN OUTDOOR BISTRO SET">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT04U1</span>
+                        <h3 class="product-name">RATTAN OUTDOOR BISTRO SET</h3>
+                        <p class="product-desc">OUTDOOR</p>
+                        <div class="product-price">29.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('RATTAN OUTDOOR BISTRO SET (OUT04U1)', 29500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="outdoor">
+                    <div class="product-thumb">
+                        <span class="product-tag">OUTDOOR</span>
+                        <img src="img/outdoor/5.jpeg" alt="RATTAN OUTDOOR LOUNGE & DINING SET WITH UMBRELLA">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT05U1</span>
+                        <h3 class="product-name">RATTAN OUTDOOR LOUNGE & DINING SET WITH UMBRELLA</h3>
+                        <p class="product-desc">OUTDOOR</p>
+                        <div class="product-price">68.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('RATTAN OUTDOOR LOUNGE & DINING SET WITH UMBRELLA (OUT05U1)', 68000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="outdoor">
+                    <div class="product-thumb">
+                        <span class="product-tag">OUTDOOR</span>
+                        <img src="img/outdoor/6.jpeg" alt="POOLSIDE RATTAN SOFA LOUNGE SET">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT06U1</span>
+                        <h3 class="product-name">POOLSIDE RATTAN SOFA LOUNGE SET</h3>
+                        <p class="product-desc">OUTDOOR</p>
+                        <div class="product-price">68.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('POOLSIDE RATTAN SOFA LOUNGE SET (OUT06U1)', 68000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="outdoor">
+                    <div class="product-thumb">
+                        <span class="product-tag">OUTDOOR</span>
+                        <img src="img/outdoor/7.jpeg" alt="BEIGE RATTAN OUTDOOR SOFA SET WITH GLASS TABLE">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT07U1</span>
+                        <h3 class="product-name">BEIGE RATTAN OUTDOOR SOFA SET WITH GLASS TABLE</h3>
+                        <p class="product-desc">OUTDOOR</p>
+                        <div class="product-price">68.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('BEIGE RATTAN OUTDOOR SOFA SET WITH GLASS TABLE (OUT07U1)', 68000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="outdoor">
+                    <div class="product-thumb">
+                        <span class="product-tag">OUTDOOR</span>
+                        <img src="img/outdoor/8.jpeg" alt="GREY RATTAN OUTDOOR SOFA SET WITH UMBRELLA">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT08U1</span>
+                        <h3 class="product-name">GREY RATTAN OUTDOOR SOFA SET WITH UMBRELLA</h3>
+                        <p class="product-desc">OUTDOOR</p>
+                        <div class="product-price">72.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GREY RATTAN OUTDOOR SOFA SET WITH UMBRELLA (OUT08U1)', 72000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="outdoor">
+                    <div class="product-thumb">
+                        <span class="product-tag">OUTDOOR</span>
+                        <img src="img/outdoor/9.jpeg" alt="TEAL CUSHIONED RATTAN SOFA SET">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT09U1</span>
+                        <h3 class="product-name">TEAL CUSHIONED RATTAN SOFA SET</h3>
+                        <p class="product-desc">OUTDOOR</p>
+                        <div class="product-price">68.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('TEAL CUSHIONED RATTAN SOFA SET (OUT09U1)', 68000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="outdoor">
+                    <div class="product-thumb">
+                        <span class="product-tag">OUTDOOR</span>
+                        <img src="img/outdoor/12.jpeg" alt="DARK WOOD OUTDOOR DINING SET">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT12U1</span>
+                        <h3 class="product-name">DARK WOOD OUTDOOR DINING SET</h3>
+                        <p class="product-desc">OUTDOOR</p>
+                        <div class="product-price">49.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('DARK WOOD OUTDOOR DINING SET (OUT12U1)', 49500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="outdoor">
+                    <div class="product-thumb">
+                        <span class="product-tag">OUTDOOR</span>
+                        <img src="img/outdoor/SOFA3.jpeg" alt="GREY RATTAN SOFA SET WITH MOUNTAIN VIEW TERRACE">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT13U1</span>
+                        <h3 class="product-name">GREY RATTAN SOFA SET WITH MOUNTAIN VIEW TERRACE</h3>
+                        <p class="product-desc">OUTDOOR</p>
+                        <div class="product-price">56.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GREY RATTAN SOFA SET WITH MOUNTAIN VIEW TERRACE (OUT13U1)', 56000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="outdoor">
+                    <div class="product-thumb">
+                        <span class="product-tag">OUTDOOR</span>
+                        <img src="img/outdoor/SOFA4.jpeg" alt="BEIGE RATTAN SOFA SET WITH OCEAN VIEW TERRACE">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT14U1</span>
+                        <h3 class="product-name">BEIGE RATTAN SOFA SET WITH OCEAN VIEW TERRACE</h3>
+                        <p class="product-desc">OUTDOOR</p>
+                        <div class="product-price">56.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('BEIGE RATTAN SOFA SET WITH OCEAN VIEW TERRACE (OUT14U1)', 56000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="outdoor">
+                    <div class="product-thumb">
+                        <span class="product-tag">OUTDOOR</span>
+                        <img src="img/outdoor/sofa5.jpeg" alt="BEIGE POOLSIDE RATTAN SOFA SET">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT15U1</span>
+                        <h3 class="product-name">BEIGE POOLSIDE RATTAN SOFA SET</h3>
+                        <p class="product-desc">OUTDOOR</p>
+                        <div class="product-price">37.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('BEIGE POOLSIDE RATTAN SOFA SET (OUT15U1)', 37500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="outdoor">
+                    <div class="product-thumb">
+                        <span class="product-tag">OUTDOOR</span>
+                        <img src="img/outdoor/sofa6.jpeg" alt="GREY OUTDOOR PATIO SOFA SET">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT16U1</span>
+                        <h3 class="product-name">GREY OUTDOOR PATIO SOFA SET</h3>
+                        <p class="product-desc">OUTDOOR</p>
+                        <div class="product-price">35.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GREY OUTDOOR PATIO SOFA SET (OUT16U1)', 35500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="outdoor">
+                    <div class="product-thumb">
+                        <span class="product-tag">OUTDOOR</span>
+                        <img src="img/outdoor/13.jpeg" alt="RELAXING CHAIR">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT16U1</span>
+                        <h3 class="product-name">RELAXING CHAIR</h3>
+                        <p class="product-desc">OUTDOOR</p>
+                        <div class="product-price">23.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('RELAXING CHAIR', 23000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="outdoor">
+                    <div class="product-thumb">
+                        <span class="product-tag">OUTDOOR</span>
+                        <img src="img/outdoor/14.jpeg" alt="RELAXING CHAIR">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT16U1</span>
+                        <h3 class="product-name">RELAXING CHAIR</h3>
+                        <p class="product-desc">OUTDOOR</p>
+                        <div class="product-price">29.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('RELAXING CHAIR', 23000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="outdoor">
+                    <div class="product-thumb">
+                        <span class="product-tag">OUTDOOR</span>
+                        <img src="img/outdoor/15.jpeg" alt="RELAXING CHAIR">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT16U1</span>
+                        <h3 class="product-name">RELAXING CHAIR</h3>
+                        <p class="product-desc">OUTDOOR</p>
+                        <div class="product-price">14.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('RELAXING CHAIR', 14500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                 <!-- animal figure -->
+                <div class="product-card" data-category="animal-figure">
+                    <div class="product-thumb">
+                        <span class="product-tag">ANIMAL FIGURE</span>
+                        <img src="img/animalfigure/1.jpeg" alt="SILVER LEOPARD">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT16U1</span>
+                        <h3 class="product-name">SILVER LEOPARD</h3>
+                        <p class="product-desc">ANIMAL FIGURE</p>
+                        <div class="product-price">7.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SILVER LEOPARD', 7200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="animal-figure">
+                    <div class="product-thumb">
+                        <span class="product-tag">ANIMAL FIGURE</span>
+                        <img src="img/animalfigure/2.jpeg" alt="BULLDOG BLACK GOLD">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT16U1</span>
+                        <h3 class="product-name">BULLGOD BLACK GOLD</h3>
+                        <p class="product-desc">ANIMAL FIGURE</p>
+                        <div class="product-price">10.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('BULLDOG BALCK GOLD', 10000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="animal-figure">
+                    <div class="product-thumb">
+                        <span class="product-tag">ANIMAL FIGURE</span>
+                        <img src="img/animalfigure/3.jpeg" alt="GOLD RINO">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT16U1</span>
+                        <h3 class="product-name">GOLD RINO</h3>
+                        <p class="product-desc">ANIMAL FIGURE</p>
+                        <div class="product-price">10.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GOLD RINO', 5500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="animal-figure">
+                    <div class="product-thumb">
+                        <span class="product-tag">ANIMAL FIGURE</span>
+                        <img src="img/animalfigure/5.jpeg" alt="BULLDOG BLACK GOLD">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT16U1</span>
+                        <h3 class="product-name">GOLD LEOPARD</h3>
+                        <p class="product-desc">ANIMAL FIGURE</p>
+                        <div class="product-price">8.400,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GOLD LEOPARD', 8400)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="animal-figure">
+                    <div class="product-thumb">
+                        <span class="product-tag">ANIMAL FIGURE</span>
+                        <img src="img/animalfigure/6.jpeg" alt="BULLDOG BLACK GOLD">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT16U1</span>
+                        <h3 class="product-name">GOLD LEOPARD</h3>
+                        <p class="product-desc">ANIMAL FIGURE</p>
+                        <div class="product-price">10.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GOLD LEOPARD', 10500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="animal-figure">
+                    <div class="product-thumb">
+                        <span class="product-tag">ANIMAL FIGURE</span>
+                        <img src="img/animalfigure/7.jpeg" alt="BULLDOG BLACK GOLD">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT16U1</span>
+                        <h3 class="product-name">SILVER LEOPARD</h3>
+                        <p class="product-desc">ANIMAL FIGURE</p>
+                        <div class="product-price">7.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SILVER LEOPARD', 7500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="animal-figure">
+                    <div class="product-thumb">
+                        <span class="product-tag">ANIMAL FIGURE</span>
+                        <img src="img/animalfigure/9.jpeg" alt="BULLDOG BLACK GOLD">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT16U1</span>
+                        <h3 class="product-name">SILVER LEOPARD</h3>
+                        <p class="product-desc">ANIMAL FIGURE</p>
+                        <div class="product-price">6.800,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SILVER LEOPARD', 6800)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="animal-figure">
+                    <div class="product-thumb">
+                        <span class="product-tag">ANIMAL FIGURE</span>
+                        <img src="img/animalfigure/10.jpeg" alt="BULLDOG BLACK GOLD">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT16U1</span>
+                        <h3 class="product-name">SILVER RHINO</h3>
+                        <p class="product-desc">ANIMAL FIGURE</p>
+                        <div class="product-price">4.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SILVER RHINO', 4500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="animal-figure">
+                    <div class="product-thumb">
+                        <span class="product-tag">ANIMAL FIGURE</span>
+                        <img src="img/animalfigure/11.jpeg" alt="BULLDOG BLACK GOLD">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT16U1</span>
+                        <h3 class="product-name">SILVER ELEPHANT</h3>
+                        <p class="product-desc">ANIMAL FIGURE</p>
+                        <div class="product-price">4.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('SILVER ELEPHANT', 4500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="animal-figure">
+                    <div class="product-thumb">
+                        <span class="product-tag">ANIMAL FIGURE</span>
+                        <img src="img/animalfigure/12.jpeg" alt="BULLDOG BLACK GOLD">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT16U1</span>
+                        <h3 class="product-name">GOLD TURTLE</h3>
+                        <p class="product-desc">ANIMAL FIGURE</p>
+                        <div class="product-price">2.600,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('GOLD TURTLE', 2600)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="animal-figure">
+                    <div class="product-thumb">
+                        <span class="product-tag">ANIMAL FIGURE</span>
+                        <img src="img/animalfigure/13.jpeg" alt="BULLDOG BLACK GOLD">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT16U1</span>
+                        <h3 class="product-name">GOLD LION</h3>
+                        <p class="product-desc">ANIMAL FIGURE</p>
+                        <div class="product-price">10.000,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('RELAXING CHAIR', 10000)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="animal-figure">
+                    <div class="product-thumb">
+                        <span class="product-tag">ANIMAL FIGURE</span>
+                        <img src="img/animalfigure/14.jpeg" alt="BULLDOG BLACK GOLD">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT16U1</span>
+                        <h3 class="product-name">DISCO BULLDOG</h3>
+                        <p class="product-desc">ANIMAL FIGURE</p>
+                        <div class="product-price">4.500,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('DISCO BULLGOD', 4500)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="animal-figure">
+                    <div class="product-thumb">
+                        <span class="product-tag">ANIMAL FIGURE</span>
+                        <img src="img/animalfigure/15.jpeg" alt="BULLDOG BLACK GOLD">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT16U1</span>
+                        <h3 class="product-name">COOL DUDE ORANGE</h3>
+                        <p class="product-desc">ANIMAL FIGURE</p>
+                        <div class="product-price">4.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('COOL DUDE', 4200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="animal-figure">
+                    <div class="product-thumb">
+                        <span class="product-tag">ANIMAL FIGURE</span>
+                        <img src="img/animalfigure/16.jpeg" alt="BULLDOG BLACK GOLD">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-code">CODE: OUT16U1</span>
+                        <h3 class="product-name">MARBLE LION</h3>
+                        <p class="product-desc">ANIMAL FIGURE</p>
+                        <div class="product-price">4.200,00 MZN</div>
+                        <button class="btn-add-cart" onclick="addToCart('MARBLE LION', 4200)" data-i18n="btn-add">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Feedback dos Clientes -->
+    <section class="feedback-section" id="feedback">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-subtitle" data-i18n="feedback-sub">Depoimentos Reais</span>
+                <h2 class="section-title" data-i18n="feedback-title">Feedback dos Clientes</h2>
+            </div>
+
+            <div class="feedback-grid" id="feedbackGrid">
+                <div class="feedback-card" onclick="openFeedbackLightbox('img/feedback/feedback1.jpg')">
+                    <img src="img/feedback/1.jpeg" alt="Feedback Cliente 1" loading="lazy">
+                </div>
+                <div class="feedback-card" onclick="openFeedbackLightbox('img/feedback/feedback2.jpg')">
+                    <img src="img/feedback/2.jpeg" alt="Feedback Cliente 2" loading="lazy">
+                </div>
+                <div class="feedback-card" onclick="openFeedbackLightbox('img/feedback/feedback3.jpg')">
+                    <img src="img/feedback/3.jpeg" alt="Feedback Cliente 3" loading="lazy">
+                </div>
+                <div class="feedback-card" onclick="openFeedbackLightbox('img/feedback/feedback4.jpg')">
+                    <img src="img/feedback/4.jpeg" alt="Feedback Cliente 4" loading="lazy">
+                </div>
+                <div class="feedback-card" onclick="openFeedbackLightbox('img/feedback/feedback5.jpg')">
+                    <img src="img/feedback/5.jpeg" alt="Feedback Cliente 5" loading="lazy">
+                </div>
+                <div class="feedback-card" onclick="openFeedbackLightbox('img/feedback/feedback6.jpg')">
+                    <img src="img/feedback/6.jpeg" alt="Feedback Cliente 6" loading="lazy">
+                </div>
+                <div class="feedback-card" onclick="openFeedbackLightbox('img/feedback/feedback7.jpg')">
+                    <img src="img/feedback/7.jpeg" alt="Feedback Cliente 7" loading="lazy">
+                </div>
+                <div class="feedback-card" onclick="openFeedbackLightbox('img/feedback/feedback8.jpg')">
+                    <img src="img/feedback/8.jpeg" alt="Feedback Cliente 8" loading="lazy">
+                </div>
+                <div class="feedback-card" onclick="openFeedbackLightbox('img/feedback/feedback9.jpg')">
+                    <img src="img/feedback/9.jpeg" alt="Feedback Cliente 9" loading="lazy">
+                </div>
+                <div class="feedback-card" onclick="openFeedbackLightbox('img/feedback/feedback10.jpg')">
+                    <img src="img/feedback/10.jpeg" alt="Feedback Cliente 10" loading="lazy">
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Lightbox de Zoom para Feedback (sem opção de download) -->
+    <div class="feedback-lightbox" id="feedbackLightbox" onclick="closeFeedbackLightbox()">
+        <span class="feedback-lightbox-close" onclick="closeFeedbackLightbox()">&times;</span>
+        <img class="feedback-lightbox-img" id="feedbackLightboxImg" src="" alt="Feedback ampliado">
+    </div>
 
     <!-- Como Encomendar -->
     <section class="info-section" id="como-encomendar">
@@ -4173,7 +5405,11 @@
             'filter-coffe': 'Coffe tables',
             'filter-mirrors': 'Mirrors',
             'filter-console': 'Console Table',
-            'filter-center': 'Mesinhas de Centro'
+            'filter-center': 'Mesinhas de Centro',
+
+            // Feedback
+            'feedback-sub': 'Depoimentos Reais',
+            'feedback-title': 'Feedback dos Clientes'
         },
         en: {
             // Navigation
@@ -4240,7 +5476,11 @@
             'filter-coffe': 'Coffe tables',
             'filter-mirrors': 'Mirrors',
             'filter-console': 'Console Table',
-            'filter-center': 'Center Tables'
+            'filter-center': 'Center Tables',
+
+            // Feedback
+            'feedback-sub': 'Real Testimonials',
+            'feedback-title': 'Customer Feedback'
         }
     };
 
@@ -4358,7 +5598,7 @@
         // ============================================
         // PROTEÇÃO DAS FOTOS (evita download/cópia fácil)
         // ============================================
-        const protectedZones = document.querySelectorAll('.product-thumb, .hero-image-card');
+        const protectedZones = document.querySelectorAll('.product-thumb, .hero-image-card, .feedback-card, .feedback-lightbox');
 
         protectedZones.forEach(zone => {
             // Bloqueia o menu de clique direito (Salvar imagem como...)
@@ -4367,7 +5607,7 @@
             });
         });
 
-        document.querySelectorAll('.product-thumb img, .hero-image-card img').forEach(img => {
+        document.querySelectorAll('.product-thumb img, .hero-image-card img, .feedback-card img, .feedback-lightbox-img').forEach(img => {
             // Impede arrastar a imagem para a área de trabalho
             img.setAttribute('draggable', 'false');
             img.addEventListener('dragstart', function(e) {
@@ -4378,7 +5618,31 @@
                 e.preventDefault();
             });
         });
+
+        // Fecha o lightbox de feedback com a tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeFeedbackLightbox();
+            }
+        });
     });
+
+    // ============================================
+    // LIGHTBOX DE ZOOM - FEEDBACK (sem permitir download)
+    // ============================================
+    function openFeedbackLightbox(imgSrc) {
+        const lightbox = document.getElementById('feedbackLightbox');
+        const lightboxImg = document.getElementById('feedbackLightboxImg');
+        lightboxImg.src = imgSrc;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeFeedbackLightbox() {
+        const lightbox = document.getElementById('feedbackLightbox');
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 
     // ============================================
     // FUNÇÕES EXISTENTES (CARRINHO, FILTROS, ETC)
