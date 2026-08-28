@@ -5973,7 +5973,7 @@
             });
         });
     }
-
+ 
     // Função auxiliar para extrair nós de texto
     function getTextNodes(element) {
         const nodes = [];
@@ -6089,11 +6089,32 @@
         }, 2500);
     }
 
-    function addToCart(name, price) {
-        cart.push({ name, price });
-        updateCartUI();
-        showToast();
+    // Função addToCart atualizada para aceitar a imagem (ou extrair automaticamente se não for enviada)
+function addToCart(name, price, image) {
+    // Se o parâmetro 'image' não for passado no onclick, busca a imagem do card do produto
+    if (!image && window.event) {
+        const btn = window.event.currentTarget || window.event.target;
+        if (btn) {
+            const card = btn.closest('.product-card');
+            if (card) {
+                const imgElement = card.querySelector('.product-thumb img');
+                if (imgElement) {
+                    image = imgElement.getAttribute('src');
+                }
+            }
+        }
     }
+
+    // Adiciona o item ao carrinho com o caminho da imagem
+    cart.push({ 
+        name: name, 
+        price: price, 
+        image: image || '' 
+    });
+
+    updateCartUI();
+    showToast();
+}
 
     function removeFromCart(index) {
         cart.splice(index, 1);
@@ -6138,44 +6159,57 @@
         totalVal.textContent = total.toLocaleString('pt-MZ') + ' MZN';
     }
 
-    function checkoutWhatsApp() {
-        if (cart.length === 0) {
-            const msg = currentLang === 'pt' ? 'O seu carrinho está vazio.' : 'Your cart is empty.';
-            alert(msg);
-            return;
-        }
-
-        let message = currentLang === 'pt' 
-            ? 'Olá, gostaria de realizar a encomenda dos seguintes itens na Luxury Parcels:\n\n'
-            : 'Hello, I would like to order the following items from Luxury Parcels:\n\n';
-        
-        let total = 0;
-
-        cart.forEach((item, index) => {
-            message += `${index + 1}. ${item.name} - ${item.price.toLocaleString('pt-MZ')} MZN\n`;
-            total += item.price;
-        });
-
-        const totalLabel = currentLang === 'pt' ? 'Total Estimado' : 'Estimated Total';
-        const paymentLabel = currentLang === 'pt' 
-            ? 'Aguardo a confirmação do pagamento do sinal (60%) e detalhes de entrega.'
-            : 'Awaiting confirmation of the deposit payment (60%) and delivery details.';
-
-        const paymentMethodsLabel = currentLang === 'pt'
-            ? 'Métodos de Pagamento'
-            : 'Payment Methods';
-        const paymentMethodsDetails = currentLang === 'pt'
-            ? `M-Pesa: 840 353 058 (Glynese Macou)\nConta Móvel: 840 353 058\nBCI NIB: 00 0800007968874101 13\nBCI Conta: 20796887410001`
-            : `M-Pesa: 840 353 058 (Glynese Macou)\nMobile Account: 840 353 058\nBCI NIB: 00 0800007968874101 13\nBCI Account: 20796887410001`;
-
-        message += `\n${totalLabel}: ${total.toLocaleString('pt-MZ')} MZN\n`;
-        message += `\n${paymentLabel}`;
-        message += `\n\n${paymentMethodsLabel}:\n${paymentMethodsDetails}`;
-
-        const encodedMessage = encodeURIComponent(message);
-        window.open(`https://wa.me/258840353058?text=${encodedMessage}`, '_blank');
+    // Função checkoutWhatsApp atualizada para incluir o link/caminho da imagem
+function checkoutWhatsApp() {
+    if (cart.length === 0) {
+        const msg = currentLang === 'pt' ? 'O seu carrinho está vazio.' : 'Your cart is empty.';
+        alert(msg);
+        return;
     }
 
+    // Domínio principal do site para gerar um link direto e clicável no WhatsApp
+    const baseUrl = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '/');
+
+    let message = currentLang === 'pt' 
+        ? 'Olá, gostaria de realizar a encomenda dos seguintes itens na Luxury Parcels:\n\n'
+        : 'Hello, I would like to order the following items from Luxury Parcels:\n\n';
+    
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        message += `${index + 1}. *${item.name}*\n`;
+        message += `   Preço: ${item.price.toLocaleString('pt-MZ')} MZN\n`;
+        
+        if (item.image) {
+            // Se a imagem for um caminho relativo (ex: img/produto.jpg), converte para um link completo clicável
+            const imgUrl = item.image.startsWith('http') ? item.image : baseUrl + item.image;
+            message += `   Foto: ${imgUrl}\n`;
+        }
+        message += `\n`;
+        
+        total += item.price;
+    });
+
+    const totalText = currentLang === 'pt' ? 'Total Estimado' : 'Estimated Total';
+    message += `*${totalText}: ${total.toLocaleString('pt-MZ')} MZN*\n\n`;
+    
+    const paymentHeader = currentLang === 'pt' ? 'Métodos de Pagamento (sinal de 60%):' : 'Payment Methods (60% deposit):';
+    message += `${paymentHeader}\n`;
+    message += `• M-Pesa: 840 353 058 (Glynese Macou)\n`;
+    message += `• Conta Móvel: 840 353 058\n`;
+    message += `• BCI NIB: 00 0800007968874101 13\n`;
+    message += `• BCI Conta: 20796887410001\n\n`;
+    
+    const shippingNote = currentLang === 'pt' 
+        ? 'Nota: Para entregas haverá custos adicionais sob consulta.'
+        : 'Note: Additional delivery costs apply upon request.';
+    message += shippingNote;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/258840353058?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, '_blank');
+}
     // ============================================
     // AVALIAÇÃO DOS SERVIÇOS (RATE OUR SERVICES)
     // ============================================
